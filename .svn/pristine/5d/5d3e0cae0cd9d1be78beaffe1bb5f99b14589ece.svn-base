@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Copy of Default.aspx.cs" Inherits="_Default" %>
+<%@ Register TagPrefix="CMS" Namespace="Ektron.Cms.Controls" Assembly="Ektron.Cms.Controls" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<style type="text/css">
+  
+</style>
+ 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
+<div id="irx_header" class="heading_background" style="overflow:auto;">
+     <div class="row">
+     
+     </div>
+</div>
+</asp:Content>

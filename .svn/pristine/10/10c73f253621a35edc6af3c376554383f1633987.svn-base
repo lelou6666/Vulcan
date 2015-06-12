@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="BaseSearchView.cs" server="173.203.189.72//vulcan/" local="130410160056566759" remote="129182832000000000" Dst="2" />
+<file name="ContentSearchView.cs" server="173.203.189.72//vulcan/" local="130410160057658780" remote="129182832000000000" Dst="2" />
+<file name="DefaultSearchView.cs" server="173.203.189.72//vulcan/" local="130410160057658780" remote="129182832000000000" Dst="2" />
+<file name="MapSearchView.cs" server="173.203.189.72//vulcan/" local="130410160057814783" remote="129182832000000000" Dst="2" />
+<file name="PagedSearchView.cs" server="173.203.189.72//vulcan/" local="130410160058750801" remote="129182832000000000" Dst="2" />
+<file name="NonPagedSearchView.cs" server="173.203.189.72//vulcan/" local="130410160058750801" remote="129182832000000000" Dst="2" />
+<file name="MetaDataSearchView.cs" server="173.203.189.72//vulcan/" local="130410160058750801" remote="129182832000000000" Dst="2" />
+<file name="SearchQuery.cs" server="173.203.189.72//vulcan/" local="130410160059686819" remote="129182832000000000" Dst="2" />
+<file name="SearchDataSource.cs" server="173.203.189.72//vulcan/" local="130410160059842822" remote="129182832000000000" Dst="2" />
+<file name="SimpleSearchView.cs" server="173.203.189.72//vulcan/" local="130410160059842822" remote="129182832000000000" Dst="2" />
+<file name="TaxonomySearchView.cs" server="173.203.189.72//vulcan/" local="130410160061090846" remote="129182832000000000" Dst="2" />
+</dwsync>

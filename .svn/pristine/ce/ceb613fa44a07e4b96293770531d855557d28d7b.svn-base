@@ -1,0 +1,248 @@
+﻿using System;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Net;
+using System.IO;
+using System.Xml;
+
+public partial class MasterPage : System.Web.UI.MasterPage
+{
+	bool bSuccess;
+	string email = "";
+	
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		String request = Request.Url.AbsoluteUri;
+	
+		//Redirects from Old Site
+		if(request.IndexOf("/Vulcan/Products/products.aspx?brand=Vulcan&cid=3&gid=43&scid=6") > -1) {
+			Response.Redirect("/Products/Electric-Counter-Convection-Steamers/");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1261&title=PowerFry%20VK%20Series") > -1) {
+			Response.Redirect("/video-library/?video=48031968&title=Vulcan%20PowerFry™%20VK%20Series%20Fryer&player=4");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1304&title=Vulcan%20Endurance%20Ranges") > -1) {
+			Response.Redirect("/video-library/?video=79725652&title=Vulcan%20Endurance™%20Ranges&player=2");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1297&title=VC%20Series%20Gas%20Convection%20Ovens>&title=VC%20Series%20Gas%20Convection%20Ovens") > -1) {
+			Response.Redirect("/video-library/?video=47962761&title=Vulcan%20VC%20Series%20Gas%20Convection%20Ovens&player=6");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1296&title=VRH%20Restaurant%20Series%20Cook%20&%20Hold%20Ovens") > -1) {
+			Response.Redirect("/products/ovens/");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1295&title=VTEC%20Charbroiler%20Featuring%20IRX%20100%25%20Infrared%20Technology") > -1) {
+			Response.Redirect("/video-library/?video=47963703&title=Vulcan%20VTEC%20Series%20Charbroiler&player=3");
+		}
+		else if(request.IndexOf("/Vulcan/Products/Steam/?brand=Vulcan&cid=3") > -1) {
+			Response.Redirect("/products/steamers/");
+		}
+		else if(request.IndexOf("/vulcan/products/news.aspx?id=1323") > -1) {
+			Response.Redirect("/video-library/?video=48033965&title=Vulcan%20K%20Series%20Kettles%20Make%20Perfect%20Soup%20Stock&player=5");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1222&title=Rapid") > -1) {
+			Response.Redirect("/video-library/?video=47962760&title=Vulcan%20Rapid%20Recovery%20Griddle™%20Pancake%20Test&player=3");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1261&title=VK%20PowerFry") > -1) {
+			Response.Redirect("/video-library/?video=48031968&title=Vulcan%20PowerFry™%20VK%20Series%20Fryer&player=4");
+		}
+		else if(request.IndexOf("/vulcan/products/k12/") > -1) {
+			Response.Redirect("/k-12/");
+		}
+		else if(request.IndexOf("/Vulcan/Products/products.aspx?brand=Vulcan&cid=7&gid=715&scid=17") > -1) {
+			Response.Redirect("/products/vpt-pass-through-series-cabinets/");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1296&title=VRH%20Restaurant%20Series%20Cook%20&%20Hold%20Ovens") > -1) {
+			Response.Redirect("/video-library/?video=48031970&title=Vulcan%20VRH%20Restaurant%20Series%20Cook%20%26%20Hold%20Ovens&player=7");
+		}
+		else if(request.IndexOf("/Vulcan/Products/RestaurantRanges/?brand=Vulcan&cid=1") > -1) {
+			Response.Redirect("/products/ranges/");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1241") > -1) {
+			Response.Redirect("/video-library/?video=47668356&title=V%20Series%20Heavy%20Duty%20Ranges&player=2");
+		}
+		else if(request.IndexOf("/Vulcan/Products/news.aspx?id=1323") > -1) {
+			Response.Redirect("/video-library/?video=48033965&title=Vulcan%20K%20Series%20Kettles%20Make%20Perfect%20Soup%20Stock&player=5");
+		}
+    }
+    
+    protected void searchText(object sender, EventArgs e)
+    {
+		if(txtSearch.Text != "keyword search")
+		{
+			Response.Redirect("/search/?searchtext=" + txtSearch.Text);
+		}
+    }
+    
+    protected void searchText2(object sender, EventArgs e)
+    {
+		if(txtSearch2.Text != "keyword search")
+		{
+			Response.Redirect("/search/?searchtext=" + txtSearch2.Text);
+		}
+    }
+    
+    protected void signup(object sender, EventArgs e)
+    {
+		if(signup_email.Text != "" && signup_email.Text != "email address")
+		{
+			email = signup_email.Text;
+		}
+		else if(signup_email_main.Text != "" && signup_email_main.Text != "email address")
+		{
+			email = signup_email_main.Text;
+		}
+		
+		if(email.Trim() != "")
+		{
+			string MatchEmailPattern = @"\w+([-+.']\w+)@\w+([-.]\w+).\w+([-.]\w+)*";
+			
+			if (Regex.IsMatch(email, MatchEmailPattern))
+			{
+				addContact();
+			}
+			Response.Redirect("/newsletter/?email=" + email);
+		}
+		else
+		{
+			signup_email.Style.Add("background", "#f8dbdf");
+            signup_email.Style.Add("border", "1px solid #e13433");
+            signup_email_main.Style.Add("background", "#f8dbdf");
+            signup_email_main.Style.Add("border", "1px solid #e13433");
+		}
+    }
+    
+    /*
+     * The following process will subscribe the new contact to the newsletter in iContact.
+     * */
+    private void addContact()
+    {
+        try
+        {
+            // Create a request using a URL that can receive a post.  48076 is the account id, and 35058 is the vulcan client id
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://app.icontact.com/icp/a/48076/c/35058/contacts/");
+
+            // Set the Method property of the request to POST.
+            request.Method = "POST";
+            request.ContentType = "text/xml";
+            request.Accept = "text/xml";
+
+            //Set header information to gain access to correct contact list
+            request.Headers.Add("API-Version", "2.0");
+            request.Headers.Add("API-AppId", "sjLUUCROIyPqbUI7lGNKNv0tqAKyjdmB");
+            request.Headers.Add("API-Username", "marriner");
+            request.Headers.Add("API-Password", "mmcdevpass");
+
+            // Create POST data string in xml format. (iContacts.com accepts xml)
+            string postData = "<contacts><contact><email>" + email + "</email></contact></contacts>";
+
+            //Write xml data to site
+            StreamWriter writer = new StreamWriter(request.GetRequestStream());
+            writer.WriteLine(postData);
+            writer.Close();
+
+            // Get the response.
+            WebResponse response = request.GetResponse();
+
+            if (((HttpWebResponse)response).StatusDescription.ToString() == "OK")
+            {
+                addToSubscrption();
+            }
+            else
+            {
+                bSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            bSuccess = false;
+        }
+    }
+
+    private void addToSubscrption()
+    {
+        string sContactId;
+
+        try
+        {
+            // Create a request using a URL that can receive a post. 
+            HttpWebRequest subRequest = (HttpWebRequest)WebRequest.Create("https://app.icontact.com/icp/a/48076/c/35058/subscriptions/");
+
+            // Set the Method property of the request to POST.
+            subRequest.Method = "POST";
+            subRequest.ContentType = "text/xml";
+            subRequest.Accept = "text/xml";
+
+            //Set header information to gain access to correct contact list
+            subRequest.Headers.Add("API-Version", "2.0");
+            subRequest.Headers.Add("API-AppId", "sjLUUCROIyPqbUI7lGNKNv0tqAKyjdmB");
+            subRequest.Headers.Add("API-Username", "marriner");
+            subRequest.Headers.Add("API-Password", "mmcdevpass");
+
+            // Create POST data string in xml format.
+            sContactId = getContactId();                         //Note: this list ID is specific to the Vulcan Newsletter 9919023 (got this id via url when viewing list settings)
+            string postData = "<subscriptions><subscription><contactId>" + sContactId + "</contactId><listId>9919023</listId><status>normal</status></subscription></subscriptions>";
+
+            //Write xml data to site
+            StreamWriter writer = new StreamWriter(subRequest.GetRequestStream());
+            writer.WriteLine(postData);
+            writer.Close();
+
+            // Get the response.
+            WebResponse subResponse = subRequest.GetResponse();
+
+            if (((HttpWebResponse)subResponse).StatusDescription.ToString() == "OK")
+            {
+                bSuccess = true;
+            }
+            else
+            {
+                bSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            bSuccess = false;
+        }
+    }
+
+    /*
+     * This method will obtain the contactId of recently added contact.
+     * */
+    private string getContactId()
+    {
+        string contactId = "";
+
+        try
+        {
+            HttpWebRequest getRequest = (HttpWebRequest)WebRequest.Create("https://app.icontact.com/icp/a/48076/c/35058/contacts?&email=" + email);
+            getRequest.Method = "GET";
+            getRequest.ContentType = "text/xml";
+            getRequest.Accept = "text/xml";
+
+            //Set header information to gain access to correct contact list
+            getRequest.Headers.Add("API-Version", "2.0");
+            getRequest.Headers.Add("API-AppId", "sjLUUCROIyPqbUI7lGNKNv0tqAKyjdmB");
+            getRequest.Headers.Add("API-Username", "marriner");
+            getRequest.Headers.Add("API-Password", "mmcdevpass");
+
+            // Get the response.
+            WebResponse GetResponse = getRequest.GetResponse();
+            XmlDocument xdoc = new XmlDocument();
+
+            xdoc.Load(((HttpWebResponse)GetResponse).GetResponseStream());
+
+            XmlNodeList xNodeList = xdoc.SelectNodes("/response/contacts/contact");
+            foreach (XmlNode xNode in xNodeList)
+            {
+                contactId = xNode.SelectSingleNode("contactId").InnerText;
+            }
+        }
+        catch (Exception ex)
+        {
+            bSuccess = false;
+        }
+
+        return contactId;
+    }
+}

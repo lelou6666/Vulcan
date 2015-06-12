@@ -1,0 +1,565 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register TagPrefix="CMS" Namespace="Ektron.Cms.Controls" Assembly="Ektron.Cms.Controls" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/TR/html5/">
+<head runat="server">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<CMS:MetaData ID="MetaData1" runat="server" DynamicParameter="id" DefaultContentID="1854" DefaultItemList="title, description, keyword" />
+	
+	
+	<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="/css/main.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/js/jqtransformplugin/jqtransform.css" type="text/css" />
+	<link href="/css/masterpage.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="/floatbox/floatbox.css" />
+	
+    <!--[if gte IE 10]>
+        <link href="/css/loader_gif.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+	
+    <![if !IE]>
+        <link href="/css/loader_gif.css" rel="stylesheet" type="text/css" />
+    <![endif]>
+	
+	
+
+<asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div id="header_background">
+			<div id="header">
+				<div id="search_bar">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td><a href="http://casportswearstore-vulcan.com/" target="_blank">apparel store</a></td>
+							<td width="40" style="text-align:center;">|</td>
+							<td style="padding-right:20px;"><a href="/news-and-events/">news &amp; events</a>
+							</td>
+							<td style="margin-left:20px; background-image:url('/images/search_background.jpg'); background-repeat:no-repeat;">
+							    <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput defaultText" title="keyword search"  />
+							    <asp:ImageButton ID="btnSearch" runat="server" OnClick="searchText" ImageUrl="/images/search_go.jpg" 
+							    style="position:relative; top:5px; padding-left:3px; padding-right:4px;" />
+							</td>
+							<td width="85" style="padding-top:5px;">
+			                    <span style="margin-left:15px; margin-right:10px;" class='st_sharethis_custom' displayText='ShareThis' title="Social Sharing"></span>
+	                            <span><a id="A1" href="javascript:print();"><img src="/images/print_icon.png" alt="Print" title="Print" style="width:23px; padding-right:5px;" border="0" /></a></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="nav_main">
+				    <div style="float:left; width:20%; z-index:15001;">
+				        <div style="width:221px; z-index:15000;"><a href="javascript:showSites();"><img src="/images/more_sites_arrow.png" border="0" id="more_sites_arrow" /></a> <a href="/" style="z-index:15000;"><img src="/images/vulcan_site.jpg" border="0" style="z-index:15000;" id="logo" alt="Vulcan" /></a></div>
+				    </div>
+				    <div class="row">
+		                <div id="othersites" style="position:absolute; top:90px; z-index:4000;">
+		                    <div style="height:20px;"><img src="/images/more_sites_fade.png" height="20" border="0" /></div>
+		                    <div style="background-color:#0e0e0e;">
+		                    <div style="padding:20px;"><table cellpadding="0" cellspacing="0">
+		                        <tr>
+		                            <td><a href="http://www.wolfequipment.com/Wolf/" target="_blank"><img src="/images/wolf.jpg" border="0" /></a></td>
+		                            <td style="width:20px;">&nbsp;</td>
+		                            <td><a href="http://www.berkelequipment.com/Berkel/" target="_blank"><img src="/images/berkel.jpg" border="0" /></a></td>
+		                        </tr>
+		                    </table>
+		                    </div>
+		                    </div>
+	                    </div>
+	                </div>
+				     <div style="float:left; width:5%;">&nbsp;</div>
+				    <div class="menu-float" style="z-index:80000;"><div class="menu-float-padding">
+				            <div class="nav">
+				                <div class="menu_expand"></div>
+				                <div class="share_this">
+				                    <span class='st_sharethis_custom' displayText='ShareThis' title="Social Sharing"></span>
+		                        </div>
+				                <div class="search_expand">
+				                    <table>
+				                        <tr>
+				                            <td><img src="/images/mobile_search.png" id="seach_btn" style="padding-right:10px;" /></td>
+				                            <td>
+				                                <div style="margin-left:5px; background-image:url('/images/search_background.jpg'); background-repeat:no-repeat;">
+							                        <asp:TextBox ID="txtSearch2" runat="server" CssClass="searchInput defaultText" title="keyword search"  />
+							                        <asp:ImageButton ID="btnSearch2" runat="server" OnClick="searchText2" ImageUrl="/images/search_go.jpg" 
+							                        style="position:relative; top:5px; padding-left:3px; padding-right:4px;" />
+							                    </div>
+							                </td>
+							            </tr>
+							        </table>
+				                </div>
+				                <ul style="z-index:5000;">
+				                    <li id="product_menu_link" class="nav-link"><a href="/products/"><img src="/images/nav_more.png" class="nav_more" border="0" />PRODUCTS</a>
+				                        <div id="product_on_bar" style="height:30px;"><img src="/images/more_sites_fade.png" style="width:100%; height:30px;" border="0" /></div>
+			                            <div id="product_menu" class="row">
+	                                        <div style="position:absolute; top:47px; background-color:#0e0e0e; z-index:3000;">
+	                                            <div class="row" style="overflow:auto; padding-top:20px;">
+                                                    <div class="row_padding">
+                                                         <div class="fivecolumn">
+														  <div class="fade">
+																<a href="/products/fryers/"><img src="/images/products/fryer.png" alt="Fryers" style="width:100%; max-width:186px;" border="0" /></a>
+																<div>
+																	<a href="/products/fryers/"><img src="/images/products/fryer_on.png" alt="Fryers" style="width:100%; max-width:186px; margin:0 auto;" border="0" /></a>
+																</div>
+														 </div>
+													 </div>
+													 <div class="fivecolumn">
+															<div class="fade">
+																<a href="/products/ranges/"><img src="/images/products/ranges.png" alt="Ranges" style="width:100%; max-width:186px;" border="0" /></a>
+																<div>
+																	<a href="/products/ranges/"><img src="/images/products/ranges_on.png" alt="Ranges" style="width:100%; max-width:186px;" border="0" /></a>
+																</div>
+														 </div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/ovens/"><img src="/images/products/ovens.png" alt="Ovens" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/ovens/"><img src="/images/products/ovens_on.png" alt="Ovens" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/griddles-charbroilers/"><img src="/images/products/griddles.png" alt="Griddles &amp; Charbroilers" style="width:100%; max-height:97px; max-width:186px;" border="0" /></a>
+															<div>
+																<a href="/products/griddles-charbroilers/"><img src="/images/products/griddles_on.png" alt="Griddles &amp; Charbroilers" style="width:100%; max-height:97px; max-width:186px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/steamers/"><img src="/images/products/steamers.png" alt="Steamers"  style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/steamers/"><img src="/images/products/steamers_on.png" alt="Steamers" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/kettles/"><img src="/images/products/kettles.png" alt="Kettles"  style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/kettles/"><img src="/images/products/kettles_on.png" alt="Kettles"  style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/braising-pans/"><img src="/images/products/braising.png" alt="Braising Pans"  style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/braising-pans/"><img src="/images/products/braising_on.png" alt="Braising Pans"  style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/heated-holding/"><img src="/images/products/heated.png" alt="Heated Holding" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/heated-holding/"><img src="/images/products/heated_on.png" alt="Heated Holding" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/combi/"><img src="/images/products/combi_btn.png" alt="Combi" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/combi/"><img src="/images/products/combi_btn_on.png" alt="Combi" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+													 <div class="fivecolumn">
+														<div class="fade">
+															<a href="/products/all-products/"><img src="/images/products/all_products.png" alt="All Products" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															<div>
+																<a href="/products/all-products/"><img src="/images/products/all_products_on.png" alt="All Products" style="width:100%; max-width:186px; max-height:97px;" border="0" /></a>
+															</div>
+														</div>
+													 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+				                    </li>
+				                        <li id="resource_menu_link" class="nav-link"><div id="resource_menu_link_click"><img src="/images/nav_more.png" class="nav_more" border="0" /><div id="resource_title">RESOURCES</div></div>
+				                        <div id="resources_menu">
+	                                        <div class="resource_menu">
+	                                            <div class="row">
+                                                     <div class="fivecolumn">
+                                                            <div class="resource_menu_margin"><a href="/video-library/"><img src="/images/video_library_btn.jpg" alt="Video Library" style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                            <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/default.aspx" target="_blank"><img src="/images/resource_center_btn.jpg" alt="Resource Center" style="width:100%; max-width:149px; max-height:78px;" border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                            <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/ProductDocumentation/Forms/ViewAllSpecs.aspx" target="_blank"><img src="/images/spec_sheets_btn.jpg" alt="Spec Sheets" style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                    </div>
+                                                     <div class="fivecolumn">
+                                                            <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/ProductDocumentation/Forms/ViewAllIOManuals.aspx" target="_blank"><img src="/images/manual_btn.jpg" alt="Operations Manuals" style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                            <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/ProductDocumentation/Forms/ViewAllServiceManuals.aspx" target="_blank"><img src="/images/service_manual_btn.jpg" alt="Service Manuals" style="width:100%; max-width:149px; max-height:78px;" border="0" /></a></div>
+                                                     </div>
+                                                     
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/ProductDocumentation/Forms/ViewAllPartsCatalogs.aspx" target="_blank"><img src="/images/parts_btn.jpg" alt="Parts Catalogs"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/Lists/ProductImages/AllItems.aspx" target="_blank"><img src="/images/product_image_btn.jpg" alt="Product Images"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="http://vulcanhart.kclcad.com/" target="_blank"><img src="/images/cad_btn.jpg" alt="CAD/Revit"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="/Vulcan/Products/VK45_Savings_Calculator/" class="alt floatbox" 
+	                                                        data-fb-options="width:950 height:570 outsideClickCloses:true splitResize:false showNewWindow:false showPrint:false enableDragResize:true disableScroll:true">
+	                                                        <img src="/images/vtec_btn.jpg" alt="VTEC Energy Calculator"  style="width:100%; max-width:149px; max-height:78px;" border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="/Vulcan/Products/VTEC_Savings_Calculator/" class="alt floatbox" 
+	                                                        data-fb-options="width:950 height:570 outsideClickCloses:true splitResize:false showNewWindow:false showPrint:false enableDragResize:true disableScroll:true">
+	                                                        <img src="/images/vk_btn.jpg" alt="PowerFry5&trade; Energy Calculator" style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="/uploadedFiles/Vulcan/PriceBook.pdf" target="_blank"><img src="/images/price_book_btn.jpg" alt="Price Book"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="/uploadedFiles/Vulcan/2014_Product_Showcase.pdf" target="_blank"><img src="/images/product_showcase_btn.jpg" alt="Product Showcase"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                        <div class="resource_menu_margin"><a href="/Vulcan/Products/Configuration/"><img src="/images/configurator_btn.png" alt="Range Configurator"  style="width:100%; max-width:149px; max-height:78px;"  border="0" /></a></div>
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                     </div>
+                                                     <div class="fivecolumn">
+                                                     </div>
+                                                </div>
+                                           </div> 
+				                        </div> 
+				                    </li>
+				                    <li class="nav-link"><a href="/sales-and-service/">SALES/SERVICE</a></li>
+				                    <li class="nav-link"><a href="/about-vulcan/">ABOUT VULCAN</a></li>
+				                    <li class="nav-link"><a href="/contact-us/">CONTACT US</a></li> 
+				                    <li class="nav-link" id="news_link"><a href="/news-and-events/">NEWS & EVENTS</a></li> 
+				                </ul>
+				            </div>
+				        </div> 
+                    </div>
+                </div>
+			</div>
+			
+	    </div>
+	    <asp:ContentPlaceHolder id="product_segment" runat="server"></asp:ContentPlaceHolder>
+	 
+		<div class="body-top-padding">
+		   
+		    <asp:ContentPlaceHolder id="slider_main" runat="server"></asp:ContentPlaceHolder>
+    		
+		    <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+    	
+		    <div style="width:100%; border-bottom:3px solid #525252;"></div>
+    		
+		    <div id="footer_squares">
+		        <div class="row" style="height:110px;">
+		            <div id="newsletter1" style="width:100%; position:relative; float:left; margin:0 auto;">
+		                <table cellpadding="0" cellspacing="0" width="100%">
+		                    <tr>
+		                        <td class="slant"><img src="/images/newsletter_left_slant.jpg" /></td>
+		                        <td class="newsletter_bar">
+		                            <table cellpadding="0" cellspacing="0" width="100%">
+		                                 <tr>
+		                                    <td style="height:12px; line-height:12px;" colspan="3">&nbsp;</td>
+		                                </tr>
+		                                <tr>
+		                                    <td class="newsletter_copy" valign="middle"> 
+		                                        <div class="newsletter1_line">
+		                                            <img src="/images/newsletter.png" style="width:100%; max-width:314px; vertical-align:middle;" />
+		                                        </div>
+		                                        <div class="newsletter2_line" style="text-align:right;">
+		                                            <img src="/images/newsletter2.png" style="width:100%; max-width:112px; vertical-align:middle;" />
+		                                        </div>
+		                                    </td>
+		                                    <td class="newsletter_textbox" valign="top">
+		                                        <asp:TextBox runat="server" ID="signup_email_main" CssClass="signup_email_main defaultText" title="email address" />
+		                                    </td>
+		                                    <td style="line-height:40px;"  valign="middle">
+		                                        <asp:ImageButton ID="btnGo1" runat="server" OnClick="signup" ImageUrl="/images/newsletter_go.jpg"
+							                            style="width:100%; max-width:43px; max-height:40px; vertical-align:middle;" />
+		                                    </td>
+		                                </tr>
+		                            </table>
+		                        </td>
+		                        <td  class="slant"><img src="/images/newsletter_right_slant.jpg" /></td>
+		                    </tr>
+		                </table>
+		            </div>
+    		        
+		            <div id="newsletter2" style="width:100%; height:72px; position:relative; float:left; margin:0 auto; background-image:url('/images/newsletter_bg2.png'); background-position:center;">
+		                <div style="max-width:390px; margin:0 auto;">
+		                    <table cellpadding="0" cellspacing="0" width="100%">
+                                 <tr>
+                                    <td style="height:12px; line-height:12px;" colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="newsletter_copy" valign="middle"> 
+                                        <div class="newsletter1_line">
+                                            <img src="/images/newsletter.png" style="width:100%; max-width:314px; max-height:41px; vertical-align:middle;" />
+                                        </div>
+                                        <div class="newsletter2_line" style="text-align:right;">
+                                            <img src="/images/newsletter2.png" style="width:100%; max-width:112px; vertical-align:middle;" />
+                                        </div>
+                                    </td>
+                                    <td class="newsletter_textbox" valign="middle">
+                                        <asp:TextBox runat="server" ID="signup_email" CssClass="signup_email defaultText" title="email address" />
+                                    </td>
+                                    <td style="width:10%; line-height:40px;"  valign="middle">
+                                        <asp:ImageButton ID="btnGo2" runat="server" OnClick="signup" ImageUrl="/images/newsletter_go.jpg"
+							                            style="width:100%; max-width:43px; vertical-align:middle;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+		            </div>
+		        </div>
+
+    		    
+    		    
+		        <div class="row">
+	                <div class="twocolumn">
+		                <div class="footer_square">
+		                    <div class="foooter_header"><img src="/images/itw.png" alt="ITW Food Equipement Group" style="position:relative; top:5px;" />BRANDS</div>
+		                    <div style="text-align:center;"><img src="/images/brands.png" style="width:100%; max-width:372px; max-height:136px;" alt="Brands" id="brands" usemap="#brandsMap" border="0" /></div>
+		                </div>
+		             </div> 
+		             <div class="twocolumn">
+		                <div class="footer_square">
+		                    <div class="foooter_header" id="footer_tech">TECHNOLOGIES & TOOLS</div>
+		                    <div class="footer_tools">
+		                        <table cellpadding="0" cellspacing="0" width="100%">
+		                            <tr>
+		                                <td style="width:7%">&nbsp;</td>
+		                                <td valign="top" style="width:41%; text-align:left; padding-bottom:3%;"><a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/default.aspx" target="_blank">Resource Center</a></td>
+		                                <td style="width:4%">&nbsp;</td>
+		                                <td valign="top"  style="width:41%; text-align:left; padding-bottom:3%;"><a href="http://vulcanhart.kclcad.com/" target="_blank">CAD and Revit Libraries</a></td>
+		                                <td style="width:7%">&nbsp;</td>
+		                            </tr>
+		                            <tr>
+		                                <td style="width:7%">&nbsp;</td>
+		                                <td valign="top"  style="width:41%; text-align:left; padding-bottom:3%;">
+		                                <a href="/Vulcan/Products/VTEC_Savings_Calculator/" class="alt floatbox" 
+		                                data-fb-options="width:950 height:570 outsideClickCloses:true splitResize:false showNewWindow:false showPrint:false enableDragResize:true disableScroll:true">
+		                                VTEC Energy Calculator</a></td>
+		                                <td style="width:4%">&nbsp;</td>
+		                                <td  valign="top" style="width:41%; text-align:left; padding-bottom:3%;"><a href="/irx/">Vulcan's IRX&trade; Technology</a>
+		                                </td>
+		                                <td style="width:7%">&nbsp;</td>
+		                            </tr>
+		                            <tr>
+		                                <td style="width:7%">&nbsp;</td>
+		                                <td valign="top"  style="width:41%; text-align:left; padding-bottom:3%;">
+		                                <a href="/Vulcan/Products/VK45_Savings_Calculator/" class="alt floatbox" 
+		                                data-fb-options="width:950 height:570 outsideClickCloses:true splitResize:false showNewWindow:false showPrint:false enableDragResize:true disableScroll:true">
+		                                PowerFry<i>5</i>&trade; Energy Calculator</a>
+		                                </td>
+		                                <td style="width:4%">&nbsp;</td>
+		                                <td  valign="top" style="width:41%; text-align:left; padding-bottom:3%;"><a href="/Vulcan/Products/Configuration/">Endurance&trade; Range Customizer</a></td>
+		                                <td style="width:7%">&nbsp;</td>
+		                            </tr>
+		                        </table>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
+		    <map name="brandsMap" id="brandsMap">
+              <area shape="rect" coords="113,18,228,49" href="/" title="Vulcan Equipment" />
+              <area shape="rect" coords="0,12,106,48" href="http://www.wolfequipment.com/Wolf/" title="Wolf Equipment" target="_blank" />
+              <area shape="rect" coords="261,18,337,48" href="http://www.berkelequipment.com/Berkel/" title="Berkel Equipment" target="_blank" />
+              <area shape="rect" coords="130,96,213,135" href="http://gaylordventilation.com/" title="Gaylord Ventilation" target="_blank" />
+              <area shape="rect" coords="3,57,86,89" href="http://www.baxterbakery.com/" title="Baxter Bakery" target="_blank" />
+              <area shape="rect" coords="117,56,222,89" href="http://www.hobartcorp.com/" title="Hobart Corp" target="_blank" />
+              <area shape="rect" coords="257,60,343,89" href="http://www.traulsen.com/" title="Traulsen" target="_blank" />
+            </map>
+    		
+    		
+		    <div id="disclaimer" style="width:100%; background-color:#141414; overflow:auto;">
+			    <div class="row" style="font-size:11px; font-family:'helvetica', arial, sans-serif; color:#acacac;">
+			        <div style="padding:15px;">
+			            <table cellpadding="0" cellspacing="0">
+			                <tr>
+			                    <td>Notice to all users: Carefully read the <a href="/notice/" style="text-docoration:none; color:#acacac;">Terms of Use, Privacy Policy, International and Other Notices</a> before using the website. By using this website, you signify you assent to all terms of these notices.<br />
+	                    If you do not agree, please disconnect from and do not use this website.<br /><br />
+	                    &copy;<script>document.write(new Date().getFullYear())</script>. Vulcan is a division of the ITW Food Equipment Group LLC.</td>
+			                    <td valign="top" style="padding-left:15px;"><a href="http://www.youtube.com/channel/UCMGriCB6pUjpfCHHP_3RyvQ" target="_blank"><img src="/images/youtube.png" alt="Youtube" border="0" /></a></td>
+			                </tr>
+			            </table>
+	                </div>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="row"><div style="width:100%; display:block;"><a href="#" class="scrollup"></a></div></div>
+	    
+	    
+	    <script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="/js/jqtransformplugin/jquery.jqtransform.js" ></script>
+        <script type="text/javascript" src="/floatbox/floatbox.js"></script>
+        <script type="text/javascript" src="/js/jquery.tinyscrollbar.min.js"></script>
+        <script type="text/javascript" src="/js/tooltip.js"></script>
+    	
+	    <script type="text/javascript">	    var switchTo5x = false;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">        stLight.options({ publisher: "0ac457fc-e123-4a71-bb9d-b2e21e06234f", doNotHash: false, doNotCopy: false, hashAddressBar: false, onhover: false });</script>
+        	
+	
+	 <script type="text/javascript">
+	    function showSites() {
+	        $('#othersites').slideToggle("fast");
+	    }
+
+	    function showProducts() {
+	        $('#product_on_bar').toggle();
+	        $('#product_menu').slideToggle("fast");
+	    }
+
+	    function showResources() {
+	        $('#resource_on_bar').toggle();
+	        $('#resources_menu').slideToggle("fast");
+	    }
+
+
+	    /* get querystring values */
+	    function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+	    $(document).ready(function() {
+	        if ($(window).width() > 900) {
+	            $('#resource_menu_link').hover(function() {
+	                showResources();
+	            });
+
+	            $('#product_menu_link').hover(function() {
+	                showProducts();
+	            });
+	        }
+	        else {
+	            $('#resource_menu_link_click').click(function() {
+	                window.location.replace("/resources/");
+	            });
+	        }
+	
+	        if ($(window).width() < 900) {
+	            //$('.scrollbar_resource').tinyscrollbar();
+	        }
+
+	        $(".defaultText").focus(function(srcc) {
+	            if ($(this).val() == $(this)[0].title) {
+	                $(this).removeClass("defaultTextActive");
+	                $(this).val("");
+	            }
+	        });
+
+	        $(".defaultText").blur(function() {
+	            if ($(this).val() == "") {
+	                $(this).addClass("defaultTextActive");
+	                $(this).val($(this)[0].title);
+	            }
+	        });
+
+	        $(".defaultText").blur();
+
+	        var clicked = false;
+	        $(".menu_expand").click(function() {
+
+	            if (clicked == false) {
+	                clicked = true;
+	                $(".nav UL LI").show();
+	                $(".nav UL").css("border-bottom", "6px solid #000000");
+	                $(".nav UL LI UL").css({ display: "inherit" });  //This will display the sub items
+	            }
+	            else {
+	                clicked = false;
+	                $(".nav UL LI").hide();
+	                $(".nav UL").css("border-bottom", "none");
+	                $(".nav UL LI UL").css({ display: "none" });  //This will hide the sub items
+	                if (mobileResourceHidden == false) {
+	                    hideMobileResourcesOnly(); //This will hide the resources items if open
+	                }
+	            }
+	        });
+
+	        var closeSearch = "yes";
+	        $("#seach_btn").click(function() {
+	            if (closeSearch == "yes") {
+	                $(".search_expand").animate({
+	                    right: "+=220"
+	                }, 500, function() {
+	                });
+	                closeSearch = "no";
+	            }
+	            else {
+	                $(".search_expand").animate({
+	                    right: "-=220"
+	                }, 500, function() {
+	                });
+	                closeSearch = "yes";
+	            }
+	        });
+	    });
+
+	    $(function() {
+	        // find the div.fade elements and hook the hover event
+	        $('div.fade').hover(function() {
+	            // on hovering over find the element we want to fade *up*
+	            var fade = $('> div', this);
+	            fade.stop().fadeIn(250);
+	        }, function() {
+	            var fade = $('> div', this);
+	            fade.stop().fadeOut(250);
+	        });
+	    });  
+
+	    //Scroll to top js
+	    $(document).ready(function() {
+
+	        $(window).scroll(function() {
+	            if ($(this).scrollTop() > 700) {
+	                $('.scrollup').fadeIn();
+	            } else {
+	                $('.scrollup').fadeOut();
+	            }
+	        });
+
+	        $('.scrollup').click(function() {
+	            $("html, body").animate({ scrollTop: 0 }, 600);
+	            return false;
+	        });
+
+	    });
+
+	</script>
+	
+	<!--Google Analytics  -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-516396-112");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+	
+	<asp:ContentPlaceHolder id="pageScripts" runat="server"></asp:ContentPlaceHolder>
+	
+	</form>
+	<asp:ContentPlaceHolder id="postback_script" runat="server"></asp:ContentPlaceHolder>
+</body>
+
+
+</html>

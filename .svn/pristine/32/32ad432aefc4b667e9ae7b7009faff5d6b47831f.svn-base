@@ -1,0 +1,286 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default" MaintainScrollPositionOnPostback="true" %>
+<%@ Register Src="~/controls/pager.ascx" TagPrefix="ctrl" TagName="datapager" %>
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-2.2.1/resources/css/ext-all.css" /> 
+    <link type="text/css" href="/css/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://extjs.cachefly.net/builds/ext-cdn-1853.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBceJ4ereZCAJt8bodBzq-k58RanFKu-Ww&sensor=false"></script> 
+    <script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+    
+    <style type="text/css">
+        .listings p {padding-bottom:0px;}
+        .defaultText { width: 100px; }
+        .defaultTextActive { color: #a1a1a1; font-style: italic; }
+        
+        @media all and (max-width:860px) 
+	    {
+	        .fourcolumn
+	        {
+	            width:50%;
+	        }
+	    }
+	    
+	    @media all and (max-width:550px) 
+	    {
+	        .fourcolumn
+	        {
+	            width:100%;
+	        }
+	    }
+    </style> 
+    
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+            $(".defaultText").focus(function(srcc) {
+                if ($(this).val() == $(this)[0].title) {
+                    $(this).removeClass("defaultTextActive");
+                    $(this).val("");
+                }
+            });
+
+            $(".defaultText").blur(function() {
+                if ($(this).val() == "") {
+                    $(this).addClass("defaultTextActive");
+                    $(this).val($(this)[0].title);
+                }
+            });
+
+            $(".defaultText").blur();
+        });
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBceJ4ereZCAJt8bodBzq-k58RanFKu-Ww&sensor=false"></script> 
+        
+     <script type="text/javascript">
+        Ext.onReady(function() {
+            // make sure the enter key press event acts like clicking submit
+            var s = Ext.get('<%= txtSearch.ClientID %>');
+            s.on('keypress', function(e) {
+                if (e.keyCode == Ext.EventObject.ENTER) {
+                    e.stopEvent();
+                    btnSearch_onclick();
+                }
+            });
+            mapon = false;
+            <% if(Dealers.Count != 0)
+            { %>
+                mapon = true;
+                zipcode = Ext.get('<%= hZip.ClientID %>').getValue();
+            
+                initialize();
+            <% } %>
+        });
+        // this is fired when either someone clicks submit or they press enter while in the search box
+        function btnSearch_onclick() {
+            var txt = Ext.get('<%= txtSearch.ClientID %>');
+            var dist = 50;
+            var brand = Ext.get('<%= vBrand.ClientID %>');
+            
+            if (txt.getValue().length > 0) {
+                //window.location = 'Default.aspx?brand=' + escape(brand.getValue()) + '&search=' + escape(txt.getValue()) + '&distance=' + escape(dist);
+				window.location = 'Default.aspx?search=' + escape(txt.getValue()) + '&distance=' + escape(dist);
+                return true;
+
+            } else {
+                return false;
+            }
+        }
+			
+        var map;
+        var infowindow = [];
+        var marker = [];
+        
+        function initialize() {
+            var mapOptions = {
+              zoom: 9,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              scrollwheel: false
+            };
+            
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            
+            setMarkers();
+        }
+          
+      function setMarkers() {        <%  
+		int counter = 0;
+		
+		foreach (Company d in Dealers){ 
+
+			counter++;
+			
+		    if(counter == 1) { %>
+					map.setCenter(new google.maps.LatLng("<%= d.Latitude %>", "<%= d.Longitude %>"), 8);
+			<% } %>
+			
+			<% if(counter > (dp.CurrentPage - 1) * 8 && counter <= (dp.CurrentPage -1) * 8 + 8) { %>
+			    var inner = "<%= d.Address %> <%= d.City %>, <%= d.State %> <%= d.Zip %>";
+				var html = "<b><%= d.Name %></b> <br/><%= d.Address %><br/><%= d.City %>, <%= d.State %> <%= d.Zip %>"
+					 + "<br/><a target='_blank' href='http://maps.google.com/maps?daddr=" + escape(inner) + "&hl=en'>get directions</a>" ;
+				
+				var myLatlng = new google.maps.LatLng(<%= d.Latitude %>, <%= d.Longitude %>);                var newmarker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    html: html,
+                    icon: '/images/marker.png'
+                });                                                newmarker['infowindow'] = new google.maps.InfoWindow({
+                    content: html
+                });                                <% if ((!string.IsNullOrEmpty(d.Address)) && (!string.IsNullOrEmpty(d.City)) && (!string.IsNullOrEmpty(d.State))) { %>                     google.maps.event.addListener(newmarker, 'click', function() {
+                        for (var i=0;i<marker.length;i++) {
+                             marker[i]['infowindow'].close();
+                          }
+                        this['infowindow'].open(map, this);
+                    });
+                <% } %> 
+                
+                marker.push(newmarker);        
+			<% } %>
+		<% } %>      }
+        
+   function gotoPoint(myPoint){
+         for (var i=0;i<marker.length;i++) {
+             marker[i]['infowindow'].close();
+          }
+
+        map.setCenter(new google.maps.LatLng(marker[myPoint].position.lat(), marker[myPoint].position.lng()));
+        marker[myPoint]['infowindow'].open(map, marker[myPoint]);
+    }
+    
+    // this is used to resize the parent iframe to the correct height
+        function WinResize(w, h) {
+            if(parent)
+                parent.resizeIframe("grocery", h);
+        }
+    
+</script>
+
+<!-- Activate responsiveness in the "child" page -->
+    <script src="/js/jquery.responsiveiframe.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var ri = responsiveIframe();
+        ri.allowResponsiveEmbedding();
+    </script>
+</head>
+<body style="background:transparent; height:100%;">
+ 
+<input type="hidden" runat="server" id="vBrand" />
+<input type="hidden" runat="server" id="hZip" />
+<form id="form1" runat="server" class="mainform">
+    <div id="itemcontainer">
+        <div class="row">
+            <div class="row_padding">
+                <table border="0" align="center" width="100%">
+                    <tr>
+                        <td id="contact_us">
+                            <table border="0" align="center" width="300" style="margin:0 auto;">
+                                <tr>
+                                    <td align="center"><asp:TextBox ID="txtSearch" class="defaultText" title="Search by zip code" runat="server" Width="200"></asp:TextBox></td>
+                                    <td align="left"><input type="button" id="Button1" onclick="return btnSearch_onclick();" style="width:81px; height:40px; background-image:url('/images/go.jpg'); border:none;" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="height:42px; margin:0 auto;">
+                        <% if (Request.QueryString["search"] != null) { %>
+                            <p style="margin-right:235px;"><%= itemcount %> results</p>
+                            <br />
+                        <% } %>
+                        </td>
+                    </tr>
+                 </table>
+             </div>
+        </div>
+    </div>
+        
+        <% if (Dealers.Count != 0) { %>
+            <div><a name="mloco"></a></div>
+            <div id="map_canvas" style="height:350px; width:100%;"></div>
+            <br />
+               <% int localidx = 0;
+			   	  int count = 0;
+
+                   foreach (Company d in Dealers)
+                   { 
+				   count++;
+				   
+				       if(count > (dp.CurrentPage - 1) * 8 && count <= (dp.CurrentPage -1) * 8 + 8) { 
+				       %>
+					        <% if(count > (dp.CurrentPage - 1) * 8 && count <= (dp.CurrentPage -1) * 8 + 1) {  %>
+	                            <div class="row">
+                                <div class="row_padding">
+                            <% } %>
+    					   
+				           <div class="fourcolumn">
+                               <table cellpadding="0" cellspacing="0" style="margin:5px; height:200px;" class="listings">
+                                    <tr>                        
+                                        <td valign="top">
+                                            <p style="padding-top:12px;">
+								                 <% if ((!string.IsNullOrEmpty(d.Address)) && (!string.IsNullOrEmpty(d.City)) && (!string.IsNullOrEmpty(d.State))) { %> 
+                                                        <b><a href='javascript: gotoPoint(<%= localidx++ %>)'><%= d.Name%></a></b>
+                                                  <%} else { %>
+                                                        <b><a id='<%= localidx++ %>'><%= d.Name%></a></b>
+                                                  <%} %> 
+                                             </p>
+                                             
+                                            <%  if ((!string.IsNullOrEmpty(d.CompanyName))) { %>
+                                                    <p><%=d.CompanyName%></p>
+                                            <% } 
+                                               
+							                 if ((!string.IsNullOrEmpty(d.Address)) && (!string.IsNullOrEmpty(d.City)) && (!string.IsNullOrEmpty(d.State))) { %>   
+                                                    <p><%= d.Address%></p>
+                                                    <p><%= d.City %>, <%= d.State%> <%= d.Zip%></p>
+                                            <%} %> 
+
+                                            <% if (d.Phone != "null") { %>
+                                                  <% if (!string.IsNullOrEmpty(d.Phone)) { %>
+                                                        <p>Phone: <%= d.Phone%></p>
+                                                  <% } %>
+                                            <% } %>
+                                           
+                                           <% if (d.Email != "null") { %>
+                                                    <% if (!string.IsNullOrEmpty(d.Email)) { %>
+                                                        <p>Email: <a href="mailto:<%= d.Email%>"><%= d.Email%></a></p>
+                                                    <% }
+                                            } %>
+                                            
+	                                       <% if (!string.IsNullOrEmpty(d.Website))
+                                              {
+                                                  if (Convert.ToString(d.Website) != "")
+                                                  { %>
+                                                    <p><a target="_blank" href="<%= d.Website %>"><%= d.Website.ToString().Replace("https://", "").Replace("http://", "").Replace("www.", "") %></a></p>
+                                           <% } } %>
+                                           
+                                           <% if (d.Distance != "null") { %>
+                                                <p><b>Distance:</b> <%= d.Distance %> mile(s)</p>
+                                           <% } %>
+                                        </td>
+                                    </tr>
+                               </table>
+                          </div>
+                          
+                                       
+                                  
+                           <% if(count > (dp.CurrentPage - 1) * 8 && count < (dp.CurrentPage -1) * 8 + 1) {  %>
+                                </div>
+                                </div>
+                           <% } %>
+                        
+                        
+                      <% } %>
+                                       
+                  <% } %>
+
+            <br style="clear:both;" />
+            <div class="row">
+                <p style="border-top:1px solid #626160; width:100%; padding-top:10px;"><ctrl:datapager runat="server" ID="dp"></ctrl:datapager></p> 
+           </div> 
+           
+           <% Response.Write("<script type='text/javascript'>WinResize(0, Ext.get('itemcontainer').getHeight());</script>");  %>
+        <% } %>  
+    </form>
+    </body>
+</html>

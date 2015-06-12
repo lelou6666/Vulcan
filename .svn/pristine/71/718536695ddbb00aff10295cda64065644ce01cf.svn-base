@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /CAPTCHAimage/
+Disallow: /widgets/
+Disallow: /workarea/
+Disallow: /Documentation/
+Disallow: /LatestChanges/
+Disallow: /PrivateAssets/
+Disallow: /uploadedfiles/
+Disallow: /uploadedimages/

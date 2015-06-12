@@ -1,0 +1,382 @@
+#othersites, #product_menu, #product_on_bar, #resources_menu {display:none;}
+	    
+	    .st_sharethis_custom
+        {
+	        background: url("/images/share.png") no-repeat scroll left top transparent;
+	        padding:0px 30px 40px 0;
+	        cursor:pointer;
+        }
+	    
+	    #resource_menu_link
+	    {
+	        cursor:pointer;
+	    }
+	    
+	    #resource_title
+	    {
+	        display:inline;
+	    }
+	    .slant
+	    {
+	        width:194px;
+	    }
+	    
+	    .newsletter_bar
+	    {
+	        position:relative; 
+	        width:100%; 
+	        max-width:667px; 
+	        background-color:#818181; 
+	        height:72px; 
+	        float:left;
+	    }
+	    
+	    .newsletter_copy
+	    {
+	        width:45%; 
+	        line-height:40px;
+	    }
+	    
+	    .newsletter_textbox
+	    {
+	        width:45%;
+	    }
+	    
+	    .newsletter2_line {display:none;}
+	    
+	    #newsletter2
+	    {
+	        display:none;
+	    }
+	    
+	    
+	    .signup_email, .signup_email_main
+	    {
+	        height:40px; 
+	        line-height:40px;
+	        vertical-align:middle;
+	        padding-left:5%;
+	        width:95%; 
+	        max-width:359px; 
+	        background-color:#c6c6c6; 
+	        border:none;
+	        color:#545454;
+	        font-size:24px;
+	        font-family:'futura light condensed', Arial, Sans-Serif;
+	    }
+	    
+	    
+	    .menu-float
+	    {
+	        float:left; width:75%;
+	    }
+	    
+	    .menu-float-padding
+        {
+             padding-top:19px; 
+             padding-left:20px;
+        }
+        
+        .search_expand
+        {
+            display:none;
+        }
+        
+        .resource_menu
+        {
+            position:absolute; 
+            top:47px; 
+            z-index:4000; 
+            background-color:#0e0e0e; 
+            width:850px; 
+            padding:20px; 
+            margin:0 auto; 
+            right:0;
+        }
+        
+        .resource_menu_margin
+        {
+            margin:10px;
+            text-align:center;
+        }
+        
+        .fivecolumn
+        {
+            width:20%;
+            float:left;
+            position:relative;
+        }
+        
+        .share_this 
+        {
+            display:none;
+        }
+        
+        @media all and (max-width:900px) 
+        {
+            /*scrollbar */
+            .scrollbar_resource { width: 100%; clear: both; }
+            .scrollbar_resource .viewport { width: 95%; height: 370px; margin:0 auto; overflow: hidden; position: relative; }
+            .scrollbar_resource .overview { list-style: none; position: relative; }
+            .scrollbar_resource .thumb .end,
+            .scrollbar_resource .thumb { background-color: #85878d; border-radius: 8px; }
+            .scrollbar_resource .scrollbar { position: relative; float: right; width: 15px; right:10px;}
+            .scrollbar_resource .track { background-color: #222326; height: 100%; width:13px; position: relative; top:15px; padding: 0; border-radius: 8px; z-index:9000;}
+            .scrollbar_resource .thumb { height: 20px; width: 13px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
+            .scrollbar_resource .thumb .end { overflow: hidden; height: 5px; width: 13px; }
+            .scrollbar_resource .disable{ display: none; }
+            .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+            
+            .detail_padding
+            {
+                padding-left:25px;
+            }
+        }
+       
+	    
+	    @media all and (max-width:930px) 
+	    {
+            .newsletter1_line
+            {
+                display:none;
+            }
+            
+            .newsletter2_line
+            {
+                display:block;
+            }
+            
+            .newsletter_copy
+            {
+                width:30%; 
+                line-height:40px;
+            }
+            
+            .newsletter_textbox
+            {
+                width:60%;
+            }
+	    }
+	    
+	    
+	    @media all and (max-width:696px) 
+	    {
+	        #newsletter1
+	        {
+	            display:none;
+	        }
+	        
+	        #newsletter2
+	        {
+	            display:block;
+	        }
+	    }
+	    
+	    .searchInput
+	    {
+	        height:36px; 
+	        width:165px; 
+	        background-color:Transparent; 
+	        border:none;
+	        color:#a8a7a7;
+	        font-size:15px;
+	        font-family: 'helvetica', Arial, Sans-Serif;
+	        padding-left:4px;
+	    }
+	    
+	  
+        .defaultTextActive { color: #a8a7a7; font-style: italic; }
+        
+	    .nav {
+	        position: relative;
+        }
+        .nav ul {
+	        margin: 0;
+	        padding: 0;
+        }
+        .nav li {
+	        padding: 0;
+	        list-style: none;
+	        display: inline-block;
+        }
+        
+        
+    #news_link {display:none;} 
+
+    @media screen and (min-width: 899px) 
+     {   
+         #news_link {display:none;}
+     }    
+     
+
+    @media screen and (max-width: 900px) 
+    {
+        .st_sharethis_custom
+        {
+	        background: url("/images/share_lg.png") no-repeat scroll left top transparent;
+	        padding:0px 28px 40px 0;
+        }
+    
+        .resource_menu {display:none;}
+        .body-top-padding
+        {
+            position:relative; 
+            top:63px;
+        }
+
+        #header_background
+        {
+            height:60px;
+        }
+        
+        #search_bar
+        {
+            display:none;
+        }
+        #more_sites_arrow
+        {
+            display:none;
+        }
+        #logo 
+        {
+            height:30px;
+            padding-left:15px;
+        }
+        
+        .nav-link
+	        {
+	            width:100%;
+	            position:absolute;
+	            display: inline-block;
+	        }
+	        
+        .nav_more
+        {
+            display:none;
+        }
+        
+        .nav_main 
+        {
+            padding-top:15px;
+        }
+        
+        
+	    .nav {
+		    position: relative;
+	    }	
+	    .nav ul {
+		    width: 100%;
+		    position: absolute;
+		    top: 42px;
+		    left: 0;
+		    background: #161616;
+
+	    }
+	    .nav li {
+		    display: none; /* hide all <li> items */
+		    margin: 0;
+		    width:100%;
+		    padding:20px 0px;
+		    border-bottom:1px solid #282828;
+		    font-family: 'futura light condensed', Arial, Sans-Serif; 
+	        font-size: 24px;
+	        color:#ebebeb;
+	    }
+
+	    .nav-link 
+	    {
+	        position:relative;
+	    }
+    	
+	    .menu_expand {
+            width: 37px;
+            height:28px;
+            position: absolute;
+            top: 0px;
+            right: 110px;
+            background: #161616 url(/images/mobile_menu.png) no-repeat;
+            cursor:pointer;
+        }
+        
+        .search_expand {
+            width: 270px;
+            height:45px;
+            position: absolute;
+            top: -3px;
+            right: -225px;
+            background-color: #161616;
+            /* background: #161616 url(/images/mobile_search.png) no-repeat; */
+            cursor:pointer;
+            z-index:5000;
+            display:block;
+        }
+    
+        .menu-float
+        {
+            float:none;
+            width:100%;
+        }
+        
+        .menu-float-padding
+        {
+            padding:0px;
+        }
+        
+        .resource_menu
+        {
+            width:100%;
+        }
+        
+        .fivecolumn
+        {
+            width:25%;
+        }
+        .resource_menu
+        {
+            padding:0px;
+        }
+        
+        .share_this 
+        {
+            position:absolute;
+            right:65px;
+            top:auto;
+            display:inline;
+        }
+        
+        #printer
+        {
+            display:none;
+        }
+    }
+    
+    @media screen and (max-width: 715px) 
+    {
+        .fivecolumn
+        {
+            width:33%;
+        }
+    }
+    
+    @media screen and (max-width: 545px) 
+    {
+        .fivecolumn
+        {
+            width:50%;
+        }
+        
+        .resource_menu_margin
+        {
+            margin:0px;
+        }
+    }
+    
+    @media screen and (max-width: 400px) 
+    {
+        #logo 
+        {
+            height:26px;
+            padding-top:2px;
+            padding-left:6px;
+        }
+    }

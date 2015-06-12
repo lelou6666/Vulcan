@@ -1,0 +1,24 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" EnableViewState="false" %>
+<%@ Register TagPrefix="CMS" Namespace="Ektron.Cms.Controls" Assembly="Ektron.Cms.Controls" %>
+<%@ Register src="SiteSearchControl.ascx" tagname="SiteSearchControl" tagprefix="uc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+ 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
+    <div class="body_wrapper">
+    <div class="body_wrapper2">
+    <div class="row">
+        <div class="row_padding">
+             <h1>Search</h1>
+                 <uc1:SiteSearchControl ID="SiteSearchControl1" MultipleProductFolders="84" MultipleOtherFolders="82, 91, 85, 86, 80, 81, 83, 120, 116, 110, 111, 113, 114, 117, 115, 112"
+                     EnableAdvancedLink="true" ResultsPageSize="10" Recursive="true" ShowCustomSummary="true" ShowCategories="False"  
+                     ShowSearchOptions="False" OrderBy="Rank"
+                     OrderDirection="Ascending" ShowSuggestedResults="False" EnableForms="False" 
+                runat="server" />
+        </div>
+    </div>
+    <br style="clear:both;" /><br />
+    </div>
+    </div>
+</asp:Content>
