@@ -1,0 +1,36 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Quiz.aspx.cs" Inherits="Quiz" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="floatbox/floatbox.css" />
+    <script type="text/javascript" src="floatbox/floatbox.js"></script>
+    <script type="text/javascript">
+        function Close() {
+            fb.end();
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center">        
+        <asp:Label ID="lblStatus" runat="server" ForeColor="Red"></asp:Label><br />
+        <asp:Button ID="btnReTest" runat="server" Text="Do Test Again" OnClick="btnReTest_Click" Visible="false" />
+        <asp:Panel ID="pnlQuestion" runat="server" Width="500" BackColor="Gray">
+            <asp:Label ID="lblQuestion1" runat="server"></asp:Label><br />
+            <asp:RadioButtonList ID="rblChoice" runat="server" AutoPostBack="false">
+            </asp:RadioButtonList>
+            <br />
+            <asp:Button ID="btnChkAnswer" runat="server" Text="CheckAnswer" OnClick="btnChkAnswer_Click" />
+            <asp:Button ID="btnNextQuestion" runat="server" Text="Next Question" OnClick="btnNextQuestion_Click" /><br />
+            <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+            <asp:Label ID="lblAnswer" runat="server" ForeColor="Red"></asp:Label>
+            <asp:HiddenField ID="hfQuestionId" runat="server" />
+            <asp:HiddenField ID="hfCorrectAnswer" runat="server" />
+        </asp:Panel>
+    </div>
+    </form>
+</body>
+</html>

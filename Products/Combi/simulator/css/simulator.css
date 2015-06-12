@@ -1,0 +1,337 @@
+/* Fonts */
+@font-face {
+	font-family:"Digital Display";
+	src:url('fonts/digital_display.eot');
+	src:url('fonts/digital_display.eot?#iefix') format('eot'),
+		url('fonts/digital_display.woff') format('woff'),
+		url('fonts/digital_display.ttf') format('truetype'),
+		url('fonts/digital_display.svg#Digital_Display') format('svg');
+	font-weight:200;
+	font-style:normal;
+}
+
+/* Body & Layout */
+body {
+	margin:0;
+	padding:0;
+}
+#container {
+	position:relative;
+	width:772px;
+	height:938px;
+	margin:0 auto;
+}
+#header {
+	background:url(../images/header_bg.jpg) top left repeat-x;
+	height:86px;
+}
+#logo {
+	background:url(../images/logo.png) top left no-repeat;
+	float:left;
+	width:479px;
+	height:86px;
+}
+#callout {
+	float:right;
+	width:205px;
+	height:51px;
+	padding:21px 20px 0 0;
+	cursor:pointer;
+}
+.clearer {
+	clear:both;
+}
+
+a {font-family:Arial, Helvetica, sans-serif;}
+
+/* Form */
+#form {
+	background:url(../images/form_bg.png) top left no-repeat;
+	position:absolute;
+	top:86px;
+	left:0;
+	width: 653px;
+	height: 1000px;
+	padding:10px 0 0 124px;
+	font-size:16px;
+	z-index:30;
+}
+#form td {
+	text-align:left;
+	padding-right:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-style:italic;
+	color:#B8B7B7;
+	padding-bottom:10px;
+}
+
+#form input[type="text"], #form textarea {
+	background-color:#A5A5A5;
+	border:none;
+	width:282px;
+	height:46px;
+	font-size:16px;
+	font-weight:bold;
+}
+#form input[type="text"] {
+	padding:0 15px;
+}
+#form textarea {
+	width:309px;
+	height:55px;
+}
+#form a {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+#form a:hover {
+	text-decoration:none;
+}
+
+/* Intro */
+#intro_1, #intro_2 {
+	position:absolute;
+	top:86px;
+	left:0;
+	width:772px;
+	height:938px;
+	overflow:hidden;
+	z-index:20;
+}
+#intro_2 {
+	z-index:17;
+}
+#intro_1 .content, #intro_2 .closed, #intro_2 .open {
+	background:url(../images/intro_1.jpg) top left no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	width:772px;
+	height:938px;
+}
+#intro_2 .closed {
+	background-image:url(../images/intro_2_closed.jpg);
+	z-index:18;
+}
+#intro_2 .open {
+	background-image:url(../images/intro_2_open.jpg);
+	z-index:19;
+}
+
+/* Directions */
+#directions {
+	background:url(../images/directions_bg.png) top left no-repeat;
+	background-color:#FFFFFF;
+	background-color:rgba(255,255,255,0.75);
+	position:absolute;
+	top:86px;
+	left:0;
+	width:772px;
+	height:938px;
+	z-index:16;
+}
+#directions .power, #directions .temp, #directions .time, #directions .humidity {
+	background:url(../images/directions_power.png) top left no-repeat;
+	position:absolute;
+	top:145px;
+	left:267px;
+	width:234px;
+	height:55px;
+}
+#directions .temp {
+	background-image:url(../images/directions_temp.png);
+	top:279px;
+	left:297px;
+	width:274px;
+	height:32px;
+}
+#directions .time {
+	background-image:url(../images/directions_time.png);
+	top:388px;
+	left:293px;
+	width:183px;
+	height:44px;
+}
+#directions .humidity {
+	background-image:url(../images/directions_humidity.png);
+	top:498px;
+	left:293px;
+	width:339px;
+	height:63px;
+}
+#directions .cta {
+	position:absolute;
+	top:580px;
+	left:430px;
+	width:203px;
+}
+#directions .cta p {
+	margin:0;
+}
+#directions .cta img {
+	cursor:pointer;
+}
+#directions .cta a {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+#directions .cta a:hover {
+	text-decoration:none;
+}
+
+/* Door */
+#door, #door_open {
+	background:url(../images/door_closed.jpg) top left no-repeat;
+	position:absolute;
+	top:86px;
+	left:0;
+	width:465px;
+	height:938px;
+	z-index:1;
+}
+#door_open {
+	background-image:url(../images/door_open.jpg);
+	z-index:2;
+}
+#door_button {
+	background:url(../images/button_open_door.png) top left no-repeat;
+	position:absolute;
+	top:543px;
+	left:327px;
+	width:84px;
+	height:84px;
+	z-index:3;
+}
+#door_button.close {
+	background-image:url(../images/button_close_door.png);
+}
+
+/* Popups */
+#power_switch_popup {
+	background:url(../images/popup_power_switch.png) top left no-repeat;
+	position:absolute;
+	top:51px;
+	left:-270px;
+	width:400px;
+	height:191px;
+	z-index:3;
+}
+#temp_popup {
+	background:url(../images/popup_temp.png) top left no-repeat;
+	position:absolute;
+	top:319px;
+	left:-274px;
+	width:400px;
+	height:169px;
+	z-index:10;
+}
+#time_popup {
+	background:url(../images/popup_time.png) top left no-repeat;
+	position:absolute;
+	top:536px;
+	left:-274px;
+	width:400px;
+	height:138px;
+	z-index:10;
+}
+#humidity_popup {
+	background:url(../images/popup_humidity.png) top left no-repeat;
+	position:absolute;
+	top:683px;
+	left:-331px;
+	width:458px;
+	height:180px;
+	z-index:3;
+}
+#another_batch_popup {
+	background:url(../images/popup_another_batch.png) top left no-repeat;
+	position:absolute;
+	top:340px;
+	left:190px;
+	width:325px;
+	height:203px;
+	z-index:3;
+}
+
+/* Controls */
+#controls {
+	background:url(../images/controls.jpg) top left no-repeat;
+	position:relative;
+	left:466px;
+	width:299px;
+	height:938px;
+}
+#power_switch {
+	background:url(../images/switch_on.jpg) 5px 4px no-repeat;
+	position:absolute;
+	top:123px;
+	left:129px;
+	width:36px;
+	height:27px;
+}
+#power_switch.on {
+	background-image:url(../images/switch_off.jpg);
+}
+#temp_container {
+	position:absolute;
+	top:365px;
+	left:108px;
+}
+#temp_container .knob .top {
+	background-image:url(../images/knob_temp.png);
+}
+#temp_container .output {
+	position:absolute;
+	top:-49px;
+	left:6px;
+	width:64px;
+	height:34px;
+	font-family:"Digital Display", Arial, Helvetica, sans-serif;
+	font-size:36px;
+	color:#F64031;
+	text-align:center;
+}
+#time_container {
+	position:absolute;
+	top:566px;
+	left:108px;
+}
+#time_container .knob .top {
+	background-image:url(../images/knob_time.png);
+}
+#time_container .output {
+	position:absolute;
+	top:-51px;
+	left:-1px;
+	width:78px;
+	height:33px;
+	font-family:"Digital Display", Arial, Helvetica, sans-serif;
+	font-size:34px;
+	color:#F64031;
+	text-align:center;
+}
+#humidity_container {
+	position:absolute;
+	top:780px;
+	left:123px;
+}
+#humidity_container .knob {
+	width:50px;
+	height:50px;
+}
+#humidity_container .knob .top {
+	background-image:url(../images/knob_humidity.png);
+	width:50px;
+	height:50px;
+}
+#humidity_container .output {
+	position:absolute;
+	top:-45px;
+	left:-8px;
+	width:62px;
+	height:34px;
+	font-family:"Digital Display", Arial, Helvetica, sans-serif;
+	font-size:36px;
+	color:#F64031;
+	text-align:center;
+}

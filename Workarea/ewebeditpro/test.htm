@@ -1,0 +1,178 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+	Ektron, Inc.
+	Revision Date: 2006-10-03
+-->
+<html>
+<head>
+<title>eWebEditPro</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+
+	Include ewebeditpro.js.
+	If it is in a different directory, specify the path.
+	
+-->
+<script language="JavaScript1.2" type="text/javascript" src="ewebeditpro.js"></script>
+<script language="JavaScript1.2" type="text/javascript" src="testpagefn.js"></script>
+
+<style type="text/css">
+p { margin-top:0; margin-bottom:.0001pt; }
+h1 { font-size: 14pt }
+h2 { font-size: 12pt; margin-bottom: 6 }
+h3 { font-size: 10pt; margin-top: 6; margin-bottom: 0 }
+.errmsg { color: red }
+.value { font-weight: bold }
+</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt">
+
+<h1>eWebEditPro Test Page</h1>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+with (document)
+{
+if (typeof eWebEditProPath == "undefined")
+{
+	write("<span class=\"errmsg\">");
+	write("The path to the eWebEditPro directory is missing.<br />");
+	write("Most likely, the ewebeditpro.js file could not be found.<br />");
+	write("This file, ewebeditpro.js, and related files should all be in the same directory.<br />");
+	write("</span>");
+	writeln("<br />");
+}
+else
+{
+	write("<h3>License Keys</h3>");
+	write("<p>License keys (LicenseKeys in <i>ewebeditprolicensekey.txt</i>): <span class=\"value\">" + LicenseKeys + "</span></p>");
+	write("<h3>Installation Path</h3>");
+	write("<p>Path to eWebEditPro files (eWebEditProPath in <i>ewebeditpro.js</i>): <span class=\"value\">" + eWebEditProPath + "</span></p>");
+	if (typeof eWebEditProPath != "string")
+	{
+		write("<p class=\"errmsg\">");
+		write("eWebEditProPath MUST be a string.");
+		write("</p>");
+	}
+	else if (eWebEditProPath.length > 0)
+	{
+		if (eWebEditProPath.substring(0, 1) != "/")
+		{
+			write("<p>eWebEditProPath may need a leading '/', click on 'Open ewebeditpro.js' below to test the path.</p>");
+		}
+		var len = eWebEditProPath.length;
+		if (eWebEditProPath.substring(len - 1, len) != "/")
+		{
+			write("<p>eWebEditProPath MUST end with a '/'.</p>");
+		}
+	}
+	
+	if (typeof eWebEditPro != "object")
+	{
+		write("<p class=\"errmsg\">");
+		write("Failed to create the eWebEditPro JavaScript object.<br />");
+		write("Most likely the path (eWebEditProPath) in file ewebeditpro.js is not correct.<br />");
+		write("All the eWebEditPro JavaScript (*.js) files should be in the same directory.<br />");
+		write("The directory must be specified in the eWebEditProPath variable defined in ewebeditpro.js.<br />");
+		write("</p>");
+	}
+	else
+	{
+		write("<h3>Version Installed on Server</h3>");
+		write("<p>Minimum version required on client: <span class=\"value\">" + eWebEditPro.versionsRequired + "</span></p><br />");
+	}
+}
+}
+//-->
+</script> 
+
+<form method="post" action="#">
+<input type="hidden" name="MyContent1" value="&lt;p&gt;This is initial content.&lt;/p&gt;" /> 
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+if (typeof eWebEditPro == "object")
+{
+	eWebEditPro.create("MyContent1", "100%", 400);
+}
+//-->
+</script> 
+</form>
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+with (document)
+{
+write("<h2>Links To Files</h2>");
+write("<p>Click on the link to test the path to the file.<br /><br />");
+var files = ["readme.htm", "ewebeditpro.js", "ewebeditprolicensekey.txt", 
+				"ewebeditprodefaults.js", "ewebeditpromessages.js", 
+				"ewep.js", "designformentry.js", "ewebeditpromedia.js",
+				"ektfilter.xslt", "ektfiltercustom.xslt", "ektAccessEval.xslt",
+				"config.xml", "locale0000b.xml", "ektnormal.css", 
+				"ewebeditpro5.cab", "VBRun60.cab", 
+				"clientinstall/ewebeditproclient.exe", "clientinstall/ewebeditproclient.msi",
+				"wavyred.gif", "designmenu.gif", "ewebeditpro.lpk",
+				"testautoupload.htm"];
+for (var i = 0; i < files.length; i++)
+{
+	write("<a href=\"" + eWebEditProPath + files[i] + "\" target=\"_blank\">Open " + files[i] + "</a><br />");
+}
+writeln("</p>");
+}
+//-->
+</script> 
+
+<h1>Platform Information</h1>
+
+<form name="frmJS" action="#">
+<p>JavaScript must be enabled:&#160;&#160;
+<input style="border: none" type="text" name="txtJS" size="30" value="JavaScript is NOT enabled" />
+</p>
+</form>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var jsVersion = 1;
+//-->
+</script>
+<script language="JavaScript1.1" type="text/javascript">
+<!--
+var jsVersion = 1.1;
+//-->
+</script>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+var jsVersion = 1.2;
+//-->
+</script>
+<script language="JavaScript1.3" type="text/javascript">
+<!--
+var jsVersion = 1.3;
+//-->
+</script>
+<script language="JavaScript1.4" type="text/javascript">
+<!--
+var jsVersion = 1.4;
+//-->
+</script>
+<script language="JavaScript1.5" type="text/javascript">
+<!--
+var jsVersion = 1.5;
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+document.frmJS.txtJS.value = "JavaScript is enabled";
+document.write("JavaScript version: " + jsVersion + " (JavaScript 1.2 or later required)");
+//-->
+</script>
+<br />
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+clientEnv(eWebEditPro, "eWebEditPro", "ewebeditpro5.ocx");
+//-->
+</script> 
+</body>
+</html>

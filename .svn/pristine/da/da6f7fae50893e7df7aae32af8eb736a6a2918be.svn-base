@@ -1,0 +1,523 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Ektron.Cms;
+using Ektron.Cms.Framework;
+using Ektron.Cms.Content;
+using Ektron.Cms.Common;
+using Ektron.Cms.API.Content;
+using Ektron.Cms.API;
+using Ektron.Cms.WebSearch;
+using Ektron.Cms.WebSearch.SearchData;
+using Vulcan.Product.Lib;
+
+public partial class _Default : System.Web.UI.Page
+{
+	Ektron.Cms.API.Search.SearchManager searchapi = new Ektron.Cms.API.Search.SearchManager();
+    SearchResponseData[] data = null;
+    SearchResponseData[] data2 = null;
+    private List<Model> Models = new List<Model>();
+    private List<Tool> Tools = new List<Tool>();
+    string productType = "";
+    string bestInClass = "false";
+    string energyStar = "false";
+    string k12 = "false";
+    string Powerfry = "false";
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		getModels();
+		segment.Text = productType;
+		title.Text = product_details.EkItem.Title;
+		bestinclass.Text = bestInClass;
+		energystar.Text = energyStar;
+		k_twelve.Text = k12;
+		
+		if(product_details.EkItem.Title.IndexOf("PowerFry") != -1)
+		{
+			Powerfry = "true";
+		}
+		
+		powerfry.Text = Powerfry;
+    }
+    
+    private void getModels()
+    {
+		System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+		var capi = new Ektron.Cms.Framework.Core.Content.Content(Ektron.Cms.Framework.ApiAccessMode.Admin);
+        var content = capi.GetItem(long.Parse(Request["id"]));
+        string TaxonomyID = "";
+        
+        doc.LoadXml(content.Html);
+        
+        // load file path from xml
+        System.Xml.XmlNode node = doc.SelectSingleNode("/root/tax/node()");
+        if (node != null)
+        {
+            TaxonomyID = node.InnerText;
+        }
+        
+		Taxonomy api = new Taxonomy();
+        TaxonomyData tdata = new TaxonomyData();
+        TaxonomyRequest treq = new TaxonomyRequest();
+        treq.TaxonomyLanguage = 1033;
+
+        string searchtext = "";
+        string taxonomyPath = "";
+
+        treq.TaxonomyId = long.Parse(TaxonomyID);
+        tdata = api.LoadTaxonomy(ref treq);
+
+        taxonomyPath = tdata.TaxonomyPath;
+        
+        if(taxonomyPath.IndexOf(@"\Vulcan Products\Ranges") != -1)
+        {
+			productType = "Ranges";
+			Collection1.DefaultCollectionID = 10;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Fryers") != -1)
+        {
+			productType = "Fryers";
+			Collection1.DefaultCollectionID = 9;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Griddles and Charbroilers") != -1)
+        {
+			productType = "Griddles and Charbroilers";
+			Collection1.DefaultCollectionID = 12;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Ovens") != -1)
+        {
+			productType = "Ovens";
+			Collection1.DefaultCollectionID = 11;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Heated Holding") != -1)
+        {
+			productType = "Heated Holding";
+			Collection1.DefaultCollectionID = 16;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Steamers") != -1)
+        {
+			productType = "Steamers";
+			Collection1.DefaultCollectionID = 13;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Kettles") != -1)
+        {
+			productType = "Kettles";
+			Collection1.DefaultCollectionID = 14;
+			Collection1.Fill();
+        }
+        else if(taxonomyPath.IndexOf(@"\Vulcan Products\Braising Pans") != -1)
+        {
+			productType = "Braising Pans";
+			Collection1.DefaultCollectionID = 15;
+			Collection1.Fill();
+        }
+
+        data = GetSearchResults(searchtext, taxonomyPath, 78);
+
+        if (data == null || data.Length < 1)
+        {
+            // Show no results div
+
+        }
+        else
+        {
+			foreach (SearchResponseData productData in data)
+			{
+				if(taxonomyPath.IndexOf(@"KleenScreen") == -1 && productData.Title.IndexOf(@"F") != -1 && productType == "Fryers")
+				{
+					//If we are viewing a Freestanding non-kleanscreen product, do not show filteration models (indicated by an F in the model name).
+				}
+				else {
+					GetModelInformation(productData.ContentID, productData.Title);
+				}
+			}
+			
+            this.UXListView.DataSource = Models;
+            this.UXListView.DataBind();
+        }
+        
+        data2 = GetSearchResults(searchtext, taxonomyPath, 118);
+        if (data2 == null || data2.Length < 1)
+        {
+            // Show no results div
+            toolbox.Visible = false;
+        }
+        else
+        {
+			foreach (SearchResponseData productData in data2)
+			{
+				GetTools(productData.ContentID, productData.Title);
+			}
+
+            this.UXListView2.DataSource = Tools;
+            this.UXListView2.DataBind();
+        }
+        
+        ScriptManager.RegisterStartupScript( this, this.GetType(),"MyAction", "SizeModels();", true);
+    }
+    
+    public void GetModelInformation(long ContentId, string Title){
+		System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+		string Description = "";
+		string Image = "";
+		string Specs = "";
+		string Manual = "";
+		string PartsCatelog = "";
+		string ServiceManual = "";
+		string ToolboxTitle = "";
+		string url = "";
+		string thumbnail = "";
+		string AdditionalInfo = "";
+		string HighRes = "";
+		
+		
+		var capi = new Ektron.Cms.Framework.Core.Content.Content(Ektron.Cms.Framework.ApiAccessMode.Admin);
+        var content = capi.GetItem(ContentId);
+
+        if (content == null) 
+			return;
+			
+		//Get Taxonomy Data	
+		Ektron.Cms.API.Content.Taxonomy taxonomyApi = new Ektron.Cms.API.Content.Taxonomy();
+		TaxonomyBaseData[] taxBaseData = taxonomyApi.ReadAllAssignedCategory(ContentId);
+		 
+		if (taxBaseData.Length > 0)
+		{
+			long taxonomyid = taxBaseData[0].TaxonomyId;
+			
+			for(int i = 0; i < taxBaseData.Length; i++){
+				if(taxBaseData[i].TaxonomyName == "Best in Class")
+				{
+					bestInClass = "true";
+				}
+				else if(taxBaseData[i].TaxonomyName == "Energy Star")
+				{
+					energyStar = "true";
+				}
+				else
+				{
+					Taxonomy api2 = new Taxonomy();
+					TaxonomyData tdata2 = new TaxonomyData();
+					TaxonomyRequest treq2 = new TaxonomyRequest();
+					treq2.TaxonomyLanguage = 1033;
+
+					string searchtext = "";
+					string taxonomyPath = "";
+
+					treq2.TaxonomyId = taxBaseData[i].TaxonomyParentId;
+					tdata2 = api2.LoadTaxonomy(ref treq2);
+
+					if(tdata2.TaxonomyPath.IndexOf("Series") == -1)
+					{
+						if(taxBaseData[i].TaxonomyName == "Filtration")
+						{
+							AdditionalInfo += "<p><strong>Available with Filtration System</strong></p>";
+						}
+						else if(taxBaseData[i].TaxonomyName == "K-12")
+						{
+							AdditionalInfo += "<p><strong>Available with the Just 4 Schools program</strong></p>";
+							k12 = "True";
+						}
+						else if(taxBaseData[i].TaxonomyName == "Energy Efficient" || taxBaseData[i].TaxonomyName == "Insulated")
+						{
+							AdditionalInfo += "<p><strong>" + taxBaseData[i].TaxonomyName + "</strong></p>";
+						}
+						else
+						{
+							AdditionalInfo += "<p><strong>" + tdata2.TaxonomyName + ":</strong> " + taxBaseData[i].TaxonomyName + "</p>";
+						}
+					} 
+				}
+			}
+		}
+
+		try
+		{
+			doc.LoadXml(content.Html);
+		}
+		catch
+		{
+			doc = null;
+		}
+		if (doc == null) 
+			return;
+			
+		// load file path from xml
+		System.Xml.XmlNode node = doc.SelectSingleNode("/root/description");
+		if (node != null)
+		{
+			Description = node.InnerXml.ToString();
+		}
+        
+		node = doc.SelectSingleNode("/root/modelimage/node()");
+		if (node != null)
+		{
+			Image = "<div class='model_img'><img border='0' alt='' src='" + node.InnerText + "' /></div>";
+		}
+		
+		node = doc.SelectSingleNode("/root/high_res/node()");
+		if (node != null)
+		{
+			HighRes = "<a href='" + node.InnerText + "' class='specs'>High Resolution Images</a>";
+		}
+		
+		//Get Model Info from Resource Center Site
+		 DataTable dt;
+		DataRow dr;
+
+		dt = Vulcan.Product.Lib.SharepointHelper.GetGrid(Title);
+        
+		if (dt != null)
+		{
+			for(int i = 0; i < dt.Rows.Count; i++)
+			{
+				dr = dt.Rows[i];
+				string strTitle = dr["ows_Document Type"].ToString();
+				string strUrl = dr["ows_EncodedAbsUrl"].ToString();
+				
+				if(strTitle == "Spec Sheet")
+				{
+					Specs = "<a class='specs' href='" + strUrl + "' target='_blank'>Spec Sheets</a>";
+				}
+				else if(strTitle == "Installation Manual")
+				{
+					Manual = "<a class='specs' href='" + strUrl + "' target='_blank'>Owners Manual</a>";
+				}
+				else if(strTitle == "Parts Catalog")
+				{
+					PartsCatelog = "<a class='specs' href='" + strUrl + "' target='_blank'>Parts Catalog</a>";
+				}
+				else if(strTitle == "Service Manual")
+				{
+					ServiceManual = "<a class='specs' href='" + strUrl + "' target='_blank'>Service Manual</a>";
+				}
+			}
+		} 
+
+		Model newModel = new Model(ContentId, Title, Description, Image, Specs, Manual, PartsCatelog, ServiceManual, AdditionalInfo, HighRes);
+		Models.Add(newModel);
+    }
+    
+    public void GetTools(long ContentId, string Title){
+		System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+		string ToolboxTitle = "";
+		string url = "";
+		string link = "";
+		string thumbnail = "";
+		
+		
+		var capi = new Ektron.Cms.Framework.Core.Content.Content(Ektron.Cms.Framework.ApiAccessMode.Admin);
+        var content = capi.GetItem(ContentId);
+
+        if (content == null) 
+        {
+			toolbox.Visible = false;
+			return;
+		}
+		
+		try
+		{
+			doc.LoadXml(content.Html);
+		}
+		catch
+		{
+			doc = null;
+		}
+		if (doc == null)
+		{
+			toolbox.Visible = false;
+			return;
+		}
+			
+		// load file path from xml
+		System.Xml.XmlNode node = doc.SelectSingleNode("/root/title");
+		if (node != null)
+		{
+			ToolboxTitle = node.InnerXml.ToString();
+		}
+		
+		node = doc.SelectSingleNode("/root/link");
+		if (node != null)
+		{
+			url = node.InnerXml.ToString();
+		}
+		
+		
+		if(url != "") {
+			if(url.IndexOf("Savings_Calculator") != -1)
+			{
+				link = "<a href='" + url + "' class='alt floatbox;' data-fb-options='width:950 height:570 outsideClickCloses:true splitResize:false " +
+							"showNewWindow:false showPrint:false enableDragResize:true disableScroll:true'>" + ToolboxTitle + "</a>";
+			}
+			else
+			{
+				link = "<a href='" + url + "' target='_blank'>" + ToolboxTitle + "</a>";
+			}
+		}
+		
+		node = doc.SelectSingleNode("/root/thumbnail");
+		if (node != null)
+		{
+			thumbnail = "<a href='" + url + "' target='_blank'><img src='" + node.InnerXml.ToString() + "'/></a>";
+		}
+		
+		Tool newTool = new Tool(ToolboxTitle, link, thumbnail);
+		Tools.Add(newTool);
+    }
+    
+    private SearchResponseData[] GetSearchResults(string searchtxt, string taxonomysearchtext, long folderId)
+    {
+        int resultCount = 0;
+        var searchData = new Ektron.Cms.WebSearch.SearchData.SearchRequestData();
+
+        searchData.EnablePaging = false;
+        searchData.SearchFor = Ektron.Cms.WebSearch.SearchDocumentType.html;
+        //searchData.SearchType = WebSearchType.none;
+        searchData.OrderDirection = Ektron.Cms.WebSearch.SearchData.WebSearchOrderByDirection.Descending;
+        searchData.LanguageID = 1033;
+        searchData.Recursive = false;  //This means no sub folders
+        searchData.FolderID = folderId;
+        //searchData.SearchText = searchtxt;
+        searchData.Category = taxonomysearchtext;
+        searchData.OrderBy = WebSearchOrder.Title;
+        searchData.OrderDirection = WebSearchOrderByDirection.Ascending;
+        searchData.TaxOperator = TaxonomyOperator.and;
+
+        return this.searchapi.Search(searchData, HttpContext.Current, ref resultCount);
+    }
+}
+
+public class Model {
+	private long _ID; 
+	private string _Title; 
+	private string _Description; 
+	private string _Image;
+	private string _SpecSheet;
+	private string _Manual;
+	private string _PartsCatelog;
+	private string _ServiceManual;
+	private string _AdditionalInfo;
+	private string _HighRes;
+	
+	public long ID
+    {
+        set { this._ID = value; }
+        get { return this._ID; }
+    }
+	
+	public string Title
+    {
+        set { this._Title = value; }
+        get { return this._Title; }
+    } 
+    
+    public string Description
+    {
+        set { this._Description = value; }
+        get { return this._Description; }
+    } 
+    
+    public string Image
+    {
+        set { this._Image = value; }
+        get { return this._Image; }
+    }
+    
+    public string SpecSheet
+    {
+        set { this._SpecSheet = value; }
+        get { return this._SpecSheet; }
+    }
+    
+    public string Manual
+    {
+        set { this._Manual = value; }
+        get { return this._Manual; }
+    }
+    
+    public string PartsCatelog
+    {
+        set { this._PartsCatelog = value; }
+        get { return this._PartsCatelog; }
+    }
+    
+    public string ServiceManual
+    {
+        set { this._ServiceManual = value; }
+        get { return this._ServiceManual; }
+    }
+    
+    public string AdditionalInfo
+    {
+        set { this._AdditionalInfo = value; }
+        get { return this._AdditionalInfo; }
+    }
+    
+    public string HighRes
+    {
+        set { this._HighRes = value; }
+        get { return this._HighRes; }
+    }
+	
+	public Model(){
+	}
+	
+	public Model(long lID, string sTitle, string sDescription, string sImage, string sSpecSheet, string sManual, string sPartsCatelog, string sServiceManual, string sAdditionalInfo, string sHighRes){
+		
+		_ID = lID;
+		_Title = sTitle;
+		_Description = sDescription;
+		_Image = sImage;
+		_SpecSheet = sSpecSheet;
+		_Manual = sManual;
+		_PartsCatelog = sPartsCatelog;
+		_ServiceManual = sServiceManual;
+		_AdditionalInfo = sAdditionalInfo;
+		_HighRes = sHighRes;
+	}
+}
+
+public class Tool {
+	private string _Title; 
+	private string _URL; 
+	private string _Thumbnail;
+	
+	
+	public string Title
+    {
+        set { this._Title = value; }
+        get { return this._Title; }
+    } 
+    
+    public string URL
+    {
+        set { this._URL = value; }
+        get { return this._URL; }
+    } 
+    
+    public string Thumbnail
+    {
+        set { this._Thumbnail = value; }
+        get { return this._Thumbnail; }
+    }
+	public Tool(){
+	}
+	
+	public Tool(string sTitle, string sURL, string sThumbnail){
+		
+		_Title = sTitle;
+		_URL = sURL;
+		_Thumbnail = sThumbnail;
+	}
+}

@@ -1,0 +1,97 @@
+/*************************
+/* 
+/* rule set editor styles
+/* 
+ */ 
+
+.ruleset
+{
+	border: solid 1px #79b7e7;
+	background: #fff;
+	padding: .5em;
+}
+
+.ruleEditorItem, .ruleEditorItemSelected
+{
+	padding: 3px;
+	cursor: default;
+	background: #fff;
+	color: #000;
+}
+
+.ruleEditorItemSelected
+{
+	background: #FFD492;
+	color: #363636;
+	border: 1px solid #EB9855
+}
+
+.ruleEditorItemName
+{
+	margin-left: 5px;
+}
+
+.rulesetButtonBar
+{
+	margin-bottom: 10px;
+}
+
+.rulesetButtonItem
+{
+	margin: 5px;
+}
+
+/*************************
+/* 
+/* rule editor styles
+/* 
+ */ 
+
+.stepLabel
+{
+	margin-bottom: 5px; 
+	font-weight:bold;
+}
+
+.matchLabel
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#conditionContainer, #actiontrueContainer, #actionfalseContainer
+{
+	height: 110px;
+	overflow:auto;
+	background: #fff;
+	border: solid 1px #BBDDF6;
+	padding: .25em;
+	margin: .25em;
+}
+
+.wizardStep .conditionTemplate {display:block;}
+
+.dataInputText, .dataInputTextSelected
+{
+	color: #0000ff;
+	text-decoration: underline;
+	cursor: default;
+}
+
+.dataInputTextSelected
+{
+	background: #eee;
+}
+
+#dataBox
+{
+	display  : none;
+	position: fixed;
+	z-index: 200;
+	border: solid 1px #84B6DE;
+	background: #BED5EB;
+	padding: 1em;
+	margin: .5em;
+}
+
+#dataBox input {margin-bottom: .5em;}

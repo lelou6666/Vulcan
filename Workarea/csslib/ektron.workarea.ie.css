@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------- 
+	ektron.workarea.css ie fixes
+-------------------------------------------------------------- */
+
+/* implements border-collapse rule (fixes firefox table border weirdness) */
+.ektronForm {border-collapse:collapse;}
+
+/* Fixes incorrect styling of legend in IE6. */
+* html legend { margin:-18px -8px 16px 0; padding:0; }
+
+/* Fixes incorrect placement of ol numbers in IE6/7. */
+ol { margin-left:2em; }
+
+/* Fixes wrong line-height on sup/sub in IE. */
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+
+/* Fixes IE7 missing wrapping of code elements. */
+html>body p code { *white-space: normal; } 
+
+/* IE 6&7 has problems with setting proper <hr> margins. */
+hr  { margin: -8px auto 11px; }
+
+/* Toolbar
+----------------------------------*/
+/* fixes the toolbar select font size */
+.ektronToolbar select
+{
+	font-size: .8em;
+}
+
+.ektronToolbar input[type=text]
+{
+	font-size: .8em;
+}
+
+/* Search Text inputLabel Default Look/Feel */
+.ektronWorkareaSearch, .ektronWorkareaSearch:active,  .ektronWorkareaSearch:focus 
+{
+	float: left; /* fixes IE's disappearing element problem */
+	/* the following lines are fixes for IE7 not obeying the text-indent */
+	font-size: 0;
+	line-height: 0;
+}
+
+/* themeroller */
+.ui-state-disabled, .ui-widget-content .ui-state-disabled { filter:Alpha(Opacity=35);  }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary { filter:Alpha(Opacity=70);}
+.ui-widget-overlay { filter:Alpha(Opacity=30); }
+.ui-widget-shadow { filter:Alpha(Opacity=30); }
+
+/* clearfix */ 
+.clearfix, .container {display: inline-block;}
+* html .clearfix,
+* html .container {height: 1%;}

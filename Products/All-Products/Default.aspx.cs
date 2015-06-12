@@ -1,0 +1,367 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using Ektron.Cms;
+using Ektron.Cms.Framework;
+using Ektron.Cms.Content;
+using Ektron.Cms.Common;
+using Ektron.Cms.API.Content;
+using Ektron.Cms.API;
+using Ektron.Cms.WebSearch;
+using Ektron.Cms.WebSearch.SearchData;
+
+public partial class _Default : System.Web.UI.Page
+{
+	Ektron.Cms.API.Search.SearchManager searchapi = new Ektron.Cms.API.Search.SearchManager();
+    SearchResponseData[] data = null;
+	SearchResponseData[] ImageData = null;
+    public List<Series> RangeSeriesList = new List<Series>();
+	public List<Series> FryersSeriesList = new List<Series>();
+	public List<Series> OvensSeriesList = new List<Series>();
+	public List<Series> GriddlesSeriesList = new List<Series>();
+	public List<Series> CharbroilersSeriesList = new List<Series>();
+	public List<Series> SteamersSeriesList = new List<Series>();
+	public List<Series> KettlesSeriesList = new List<Series>();
+	public List<Series> BraisingSeriesList = new List<Series>();
+	public List<Series> HeatedSeriesList = new List<Series>();
+	public List<Series> CombiSeriesList = new List<Series>();
+	
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		string photoUrl = "";
+		string view = "list";
+		full_list.Controls.Clear();
+		full_list2.Controls.Clear();
+		full_list3.Controls.Clear();
+		full_list4.Controls.Clear();
+		full_list5.Controls.Clear();
+		full_list6.Controls.Clear();
+		full_list7.Controls.Clear();
+		full_list8.Controls.Clear();
+		full_list9.Controls.Clear();
+		full_list10.Controls.Clear();
+		
+		LoadSeries(370); //Range Series
+		LoadSeries(336); //Fryers Series
+		LoadSeries(358); //Ovens Series
+		LoadSeries(348); //Griddles Series
+		LoadSeries(947); //Charbroilers Series
+		LoadSeries(485); //Steamers Series
+		LoadSeries(493); //Kettles Series
+		LoadSeries(503); //Braising Series
+		LoadSeries(361); //Heated Holding Series
+		LoadSeries(802); //Combi Series
+    }
+	
+	public void LoadSeries(int SeriesID)
+    {
+        Taxonomy api = new Taxonomy();
+        TaxonomyData tdata = new TaxonomyData();
+        TaxonomyRequest treq = new TaxonomyRequest();
+        EkContent tapi = new EkContent();
+        TaxonomyBaseData[] tbases;
+
+        treq.TaxonomyId = SeriesID; 
+        treq.TaxonomyLanguage = 1033;
+        tdata = api.LoadTaxonomy(ref treq);
+        tbases = api.EkContentRef.ReadAllSubCategories(treq);
+
+        foreach (TaxonomyBaseData tbase in tbases)
+        {
+            Series newSeries = new Series(tbase.TaxonomyName, tbase.TaxonomyPath, tbase.TaxonomyId.ToString());
+			
+			if(SeriesID == 370){
+				RangeSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 336){
+				FryersSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 358){
+				OvensSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 348){
+				GriddlesSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 947){
+				CharbroilersSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 485){
+				SteamersSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 493){
+				KettlesSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 503){
+				BraisingSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 361){
+				HeatedSeriesList.Add(newSeries);
+			}
+			else if(SeriesID == 802){
+				CombiSeriesList.Add(newSeries);
+			}
+        }
+		
+		if(SeriesID == 370){
+			foreach (Series series in RangeSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Ranges");
+			}
+		}
+		else if(SeriesID == 336){
+			foreach (Series series in FryersSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Fryers");
+			}
+		}
+		else if(SeriesID == 358){
+			foreach (Series series in OvensSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Ovens");
+			}
+		}
+		else if(SeriesID == 348){
+			foreach (Series series in GriddlesSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Griddles");
+			}
+		}
+		else if(SeriesID == 947){
+			foreach (Series series in CharbroilersSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Charbroilers");
+			}
+		}
+		else if(SeriesID == 485){
+			foreach (Series series in SteamersSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Steamers");
+			}
+		}
+		else if(SeriesID == 493){
+			foreach (Series series in KettlesSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Kettles");
+			}
+		}
+		else if(SeriesID == 503){
+			foreach (Series series in BraisingSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Braising");
+			}
+		}
+		else if(SeriesID == 361){
+			foreach (Series series in HeatedSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Heated");
+			}
+        }
+		else if(SeriesID == 802){
+			foreach (Series series in CombiSeriesList)
+			{
+				OutputProductData(series.Path, series.ID, series.Name, "Combi");
+			}
+        }
+    }
+	
+    private void OutputProductData(string taxonomyPath, string SeriesId, string SeriesName, string Segment)
+    {
+		string photoUrl = "";
+		Control control = LoadControl("~/products/productlist.ascx");
+		
+		if(Segment == "Fryers") {
+			ph.Controls.Add(control);
+		}
+		else if(Segment == "Ranges") {
+			ph2.Controls.Add(control);
+		}
+		else if(Segment == "Ovens") {
+			ph3.Controls.Add(control);
+		}
+		else if(Segment == "Griddles") {
+			ph4.Controls.Add(control);
+		}
+		else if(Segment == "Charbroilers") {
+			ph10.Controls.Add(control);
+		}
+		else if(Segment == "Steamers") {
+			ph5.Controls.Add(control);
+		}
+		else if(Segment == "Kettles") {
+			ph6.Controls.Add(control);
+		}
+		else if(Segment == "Braising") {
+			ph7.Controls.Add(control);
+		}
+		else if(Segment == "Heated") {
+			ph8.Controls.Add(control);
+		}
+		else if(Segment == "Combi") {
+			ph9.Controls.Add(control);
+		}
+				
+		//Array.Clear(ImageData);
+		
+		productlist uc = control as productlist;
+		if (uc == null)
+		{
+			PartialCachingControl pcc = control as PartialCachingControl;
+			if (pcc != null) uc = pcc.CachedControl as productlist;
+		}
+		
+		if (uc != null)
+		{ 
+			uc.ProductView = "list";
+			uc.TaxonomyPath = taxonomyPath;
+			
+			uc.loadContent();
+			
+			//Do not display Series that do not have content
+			if(uc.HasContent)
+			{
+				Literal newLiteral = new Literal();
+				Literal newLiteral2 = new Literal();
+				
+				newLiteral.Text = "<h2 class='blue_h2' id='" + SeriesId + "'>" + SeriesName + "<span> +</span></h2>"
+								+ "<div class='prod_listview' style='width:100%; background-color:#272727; border-top:1px solid #6b6a69; overflow:auto;'>";
+				
+				if(uc.ProductCount > 4) {
+					
+					ImageData = null;
+					ImageData = GetSeriesPhoto(taxonomyPath);
+
+					if (ImageData == null || ImageData.Length < 1)
+					{
+					}
+					else
+					{
+						foreach (SearchResponseData data1 in ImageData)
+						{
+							photoUrl = data1.QuickLink;
+						}
+					}
+					
+					if(photoUrl != "")
+					{
+						newLiteral2.Text = "<div class='series_photo_wrapper'><div class='series_photo_padding'><img class='series_photo' src='" + photoUrl + "' /></div></div></div>";
+					}
+					else
+					{
+						newLiteral2.Text = "</div>";
+					}
+				}
+				else  {
+					newLiteral2.Text = "</div>";
+				}
+				
+				if(Segment == "Fryers") {
+					full_list.Controls.Add(newLiteral);
+					full_list.Controls.Add(uc);
+					full_list.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Ranges") {
+					full_list2.Controls.Add(newLiteral);
+					full_list2.Controls.Add(uc);
+					full_list2.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Ovens") {
+					full_list3.Controls.Add(newLiteral);
+					full_list3.Controls.Add(uc);
+					full_list3.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Griddles") {
+					full_list4.Controls.Add(newLiteral);
+					full_list4.Controls.Add(uc);
+					full_list4.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Charbroilers") {
+					full_list10.Controls.Add(newLiteral);
+					full_list10.Controls.Add(uc);
+					full_list10.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Steamers") {
+					full_list5.Controls.Add(newLiteral);
+					full_list5.Controls.Add(uc);
+					full_list5.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Kettles") {
+					full_list6.Controls.Add(newLiteral);
+					full_list6.Controls.Add(uc);
+					full_list6.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Braising") {
+					full_list7.Controls.Add(newLiteral);
+					full_list7.Controls.Add(uc);
+					full_list7.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Heated") {
+					full_list8.Controls.Add(newLiteral);
+					full_list8.Controls.Add(uc);
+					full_list8.Controls.Add(newLiteral2);
+				}
+				else if(Segment == "Combi") {
+					full_list9.Controls.Add(newLiteral);
+					full_list9.Controls.Add(uc);
+					full_list9.Controls.Add(newLiteral2);
+				}
+			}
+		}
+    }
+	
+	//This method gets the series image
+    private SearchResponseData[] GetSeriesPhoto(string taxonomysearchtext)
+    {
+        var searchData = new Ektron.Cms.WebSearch.SearchData.SearchRequestData();
+        int resultCount = 0;
+
+        searchData.EnablePaging = false;
+        searchData.SearchFor = Ektron.Cms.WebSearch.SearchDocumentType.images;
+        searchData.OrderDirection = Ektron.Cms.WebSearch.SearchData.WebSearchOrderByDirection.Descending;
+        searchData.LanguageID = 1033;
+        searchData.Recursive = false;  //Search Subfolders
+        searchData.FolderID = 84; // Products Folder
+        searchData.Category = taxonomysearchtext;
+        searchData.OrderBy = WebSearchOrder.Title;
+        searchData.OrderDirection = WebSearchOrderByDirection.Ascending;
+        searchData.TaxOperator = TaxonomyOperator.and;
+
+        return this.searchapi.Search(searchData, HttpContext.Current, ref resultCount);
+    }
+}
+
+public class Series {
+	private string _Name; 
+	private string _Path;
+	private string _ID; 
+	
+	public string Name
+    {
+        set { this._Name = value; }
+        get { return this._Name; }
+    } 
+	
+	public string Path
+    {
+        set { this._Path = value; }
+        get { return this._Path; }
+    }
+	
+	public string ID
+    {
+        set { this._ID = value; }
+        get { return this._ID; }
+    }
+	
+	public Series(){
+	}
+	
+	public Series(string sName, string sPath, string sID){
+		_Name = sName;
+		_Path = sPath;
+		_ID = sID;
+	}
+}

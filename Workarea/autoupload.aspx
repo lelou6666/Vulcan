@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" Inherits="autoupload" validateRequest="false" CodeFile="autoupload.aspx.vb" %>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+	Ektron, Inc.
+	Copyright 2002-2003
+	Revision Date: 2003-05-22
+-->
+<html>
+<head>
+<title>Comment</title>
+<script language="JavaScript1.2" type="text/javascript" src="eweputil.js"></script>
+<script Language="JavaScript1.2" type="text/javascript">
+<!--
+//function commentTextFilename()
+//{
+//	return "commenttext" + eWebEditProUtil.languageCode + ".js";
+//}
+//document.writeln('<script type="text/javascript" language="JavaScript1.2" src="' + commentTextFilename() + '"></scr' + 'ipt>');
+var CommentText =
+{
+	Comment:		"Comment"
+,	OK: 			"OK"
+,	Cancel:			"Cancel"
+
+,	ErrPageClosed:	"Unable to save changes. The editor page has been closed."
+}
+//-->	
+</script>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+function isMyTag(objInstance, objXmlTag)
+{
+	var strTagName = "mycomment";
+	return (objXmlTag != null && objXmlTag.IsValid() && strTagName == objXmlTag.getPropertyString("TagName") && objInstance.editor.IsTagApplied(strTagName));
+}
+
+function readElement() 
+{
+	var strCommentText = "";
+	var objInstance = eWebEditProUtil.getOpenerInstance();
+	if (objInstance && objInstance.isEditor())
+	{
+		var objXmlDoc = objInstance.editor.XMLProcessor();
+		if (objXmlDoc != null)
+		{
+			var objXmlTag = objXmlDoc.ActiveTag();
+			if (isMyTag(objInstance, objXmlTag))
+			{
+				strCommentText = objXmlDoc.DecodeAttributeValue(objXmlTag.GetTagAttribute("comment"));
+			}
+		}
+	}
+	document.forms[0].elements["commenttext"].value = strCommentText;
+}
+
+function insertElement() 
+{
+	if (!eWebEditProUtil.isOpenerAvailable())
+	{
+		alert(CommentText["ErrPageClosed"]);
+	}
+	else
+	{
+		var strCommentText = document.forms[0].elements["commenttext"].value;
+		var objInstance = eWebEditProUtil.getOpenerInstance();
+		var objXmlDoc = objInstance.editor.XMLProcessor();
+		var objXmlTag = null;
+		if (objXmlDoc != null)
+		{
+			objXmlTag = objXmlDoc.ActiveTag();
+		}
+		if (objXmlDoc != null && isMyTag(objInstance, objXmlTag))
+		{
+			objXmlTag.SetTagAttribute("comment", objXmlDoc.EncodeAttributeValue(strCommentText));
+			objXmlDoc.ApplyTag(objXmlTag);
+		}
+		else
+		{
+			var strHTML = '<mycomment comment="' + objXmlDoc.EncodeAttributeValue(eWebEditProUtil.HTMLEncode(strCommentText)) + '" />';
+			objInstance.editor.pasteHTML(strHTML);
+		}
+		top.close();
+	}
+}
+//-->
+</script>
+</head>
+<body onload="JavaScript:self.focus()" bgcolor="Silver">
+
+<form> 
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td>
+	<script language="JavaScript1.2" type="text/javascript">
+	<!--
+	document.writeln(CommentText["Comment"]);
+	// -->
+	</script>
+	</td>
+    <td><textarea cols="60" rows="12" name="commenttext"></textarea></td>
+</tr>
+<tr>
+    <td colspan="2" align="center">
+	<script language="JavaScript1.2" type="text/javascript">
+	<!--
+	document.write('<input type="button" value="' + CommentText["OK"] + '" onclick="insertElement();">&nbsp;&nbsp;&nbsp;');
+	document.writeln('<input type="button" value="' + CommentText["Cancel"] + '" onclick="top.close()">');
+	// -->
+	</script>
+	</td>
+</tr>
+</table>
+</form> 
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+readElement();
+//-->
+</script>
+</body>
+</html>

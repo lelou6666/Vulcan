@@ -1,0 +1,17 @@
+<?xml version="1.0"?> 
+<whitelist> 
+    <xslt>xsl\affiliations.xsl</xslt> 
+	<xslt>xsl\also_view.xsl</xslt> 
+	<xslt>xsl\articles-extended.xsl</xslt> 
+	<xslt>xsl\articles.xsl</xslt> 
+	<xslt>xsl\events.xsl</xslt> 
+	<xslt>xsl\feat_testimonials.xsl</xslt> 
+	<xslt>xsl\k12_video.xsl</xslt> 
+	<xslt>xsl\main_menu.xsl</xslt> 
+	<xslt>xsl\press_releases.xsl</xslt> 
+	<xslt>xsl\press_releases_extended.xsl</xslt> 
+	<xslt>xsl\product_details.xsl</xslt> 
+	<xslt>xsl\testimonial_article.xsl</xslt> 
+	<xslt>xsl\testimonials.xsl</xslt> 
+	<xslt>xsl\testimonials_extended.xsl</xslt> 
+</whitelist>

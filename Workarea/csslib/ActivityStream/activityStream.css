@@ -1,0 +1,223 @@
+
+ul.EkActivityList {list-style-type: none;font-style:italic;font-size:13px;font-family: Arial, sans-serif;}
+ul.EkActivityList li.EkActivityMessage { clear: both; display:block; margin: 0em 0em .75em 0em; padding: .55em;}
+
+li.EkActivityMessage div.message p {margin: .25em 0 .25em 4.5em ; overflow: auto;}
+li.EkActivityMessage div.message p a.EkForceWrap{word-break: break-all; -moz-binding: url('../xml/moz_wordwrap.xml#wordwrap');}
+ul.EkActivityList li.EkActivityMessage div.message p a.EkForceWrap:active,ul.EkActivityList li.EkActivityMessage div.message p a.EkForceWrap:focus{outline: none;} /* fixes scrollbars appearing when focus and active status is brought to link in mozilla */
+
+
+ul.EkActivityList li div.avatar{width: 48px; text-align: center; float: left;}
+ul.EkActivityList li div.avatar img.avatar {width: 40px; height: 40px; border:none;}
+ul.EkActivityList li div.avatar {width: 40px; text-align: center; float: left;}
+ul.EkActivityList li div.avatar {width: 40px; height: 40px; border:none;}
+
+
+ul.EkActivityList li span.EkActivityLogin {color:red;font-family:Arial,sans-serif;}
+ul.EkActivityList li.EkActivityMessage ul.activityStreamCommands { font-size: .75em;margin: 0em; padding: 0em; list-style-type: none; text-align: right;}
+ul.EkActivityList li.EkActivityMessage ul.activityStreamCommands li{display:inline;margin-right:0.5em;font-style:normal;} 
+ul.EkActivityList li.EkActivityMessage ul.activityStreamCommands li.shareMessage {float:left;clear:left;margin-left:5em;}
+ul.EkActivityList li.EkActivityMessage span.EkActivityTimeSpan { white-space: nowrap; font-size: .75em; color:#666696;float:right;font-style:normal;}
+ul.EkActivityList li.EkActivityMessage div.message div.shareSuccess {color:#529214 ; font-size: 1em;background-color:#E6EFC2; padding: .25em .5em;clear:both;}  
+ul.EkActivityList li.EkActivityMessage div.message p span {width: 20px; height: 20px; vertical-align:middle;}
+
+/* Paging */
+div.ekActivityFeedPaging {margin: 0em; width:100%; position: relative; overflow: hidden; height: 20px;}
+div.ekActivityFeedPaging h4 {margin: 0em 0em 0em .25em; font-size: 1em; margin-top: .25em; text-align: left;}
+div.ekActivityFeedPaging div.ekPageControl {position: absolute; top: -.25em; right: 0em; text-align: right; width: 80px;}
+div.ekActivityFeedPaging div.ekPageControl span {display: block; width: 20px; height: 20px; overflow: hidden; background-repeat: no-repeat; float: left;}
+div.ekActivityFeedPaging div.ekPageControl span a {background-image: none;}
+
+div.ekActivityFeedPaging div.ekPageControl span.but_first_disable {text-indent: 100px; background-image:url('../../images/application/but_first_d.gif'); background-position: -9px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_first{background-image:url('../../images/application/but_first.gif'); background-position: -9px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_first a{display: block; text-indent: 100px; height: 20px;}
+
+div.ekActivityFeedPaging div.ekPageControl span.but_previous_disable{text-indent: 100px; background-image:url('../../images/application/but_prev_d.gif'); background-position: -6px 0px; }
+div.ekActivityFeedPaging div.ekPageControl span.but_previous{background-image:url('../../images/application/but_prev.gif'); background-position: -6px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_previous a{display: block; text-indent: 100px; height: 20px;}
+
+div.ekActivityFeedPaging div.ekPageControl span.but_next_disable {text-indent: 100px; background-image:url('../../images/application/but_next_d.gif'); background-position: 0px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_next{background-image:url('../../images/application/but_next.gif'); background-position: 0px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_next a{display: block; text-indent: 100px; height: 20px;}
+
+div.ekActivityFeedPaging div.ekPageControl span.but_last_disable {text-indent: 100px; background-image:url('../../images/application/but_last_d.gif'); background-position: 0px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_last{background-image:url('../../images/application/but_last.gif'); background-position: 0px 0px;}
+div.ekActivityFeedPaging div.ekPageControl span.but_last a{display: block; text-indent: 100px; height: 20px;}
+
+/*Membership*/
+
+div.EkMembershipTab
+{
+    font-size: 1em;
+}
+
+div.membershipControlActivityTab
+{
+    font-size: 12px;
+}
+
+div.EkMembershipActivityTab table.ektronGrid
+{
+	border-spacing:0;
+	border-collapse:separate;
+	width: 100%;
+	font-size: 1em;
+}
+
+div.EkMembershipActivityTab table.ektronGrid
+{
+	border-top:1px solid #79b7e7;
+	border-left:1px solid #79b7e7;
+}
+
+div.EkMembershipActivityTab a:active
+{
+  outline: none;
+}
+
+div.EkMembershipActivityTab a:focus
+{
+  -moz-outline-style: none;
+}
+
+
+
+div.EkMembershipActivityTab .ektronGrid tr.title-header
+{
+	color: #235478;
+	line-height: 19px;
+	white-space: nowrap;
+	background: #eaf4fd url('../../Images/UI/Grid/headerBackground_30.gif') repeat-x;
+}
+
+div.EkMembershipActivityTab .ektronGrid td, .ektronGrid td.title-header, .ektronGrid th, .ektronGrid th.title-header
+{
+	padding: .25em .5em;
+	vertical-align: top;
+	text-align:left;
+}
+
+div.EkMembershipActivityTab .ektronGrid td, div.EkMembershipActivityTab .ektronGrid td.title-header, div.EkMembershipActivityTab .ektronGrid th, div.EkMembershipActivityTab .ektronGrid th.title-header
+{
+    border-right:1px solid #79b7e7;
+	border-bottom:1px solid #79b7e7;
+}
+
+div.EkMembershipActivityTab .ektronGrid td.title-header, .ektronGrid th, .ektronGrid th.title-header
+{
+	text-align:center;
+	white-space:nowrap;
+}
+
+div.EkMembershipActivityTab .ektronGrid tr.stripe {background-color:#d0e5f5;}
+div.EkMembershipActivityTab .ektronGrid tr.title-header td a, .ektronGrid tr.title-header td a:active, .ektronGrid tr.title-header td a:visited, .ektronGrid tr.title-header td a:focus
+
+{
+	color: #235478;
+	text-decoration: none;
+}
+
+div.EkMembershipActivityTab  .ektronGrid tr.title-header td a:hover
+{
+	text-decoration: underline;
+}
+
+div.EkMembershipActivityTab  .ektronGrid tr.ektronSubjectHeader
+{			
+	background-color: #e6f3ff;  
+	border-top: solid 1px #84b6de; 	
+	border-bottom: solid 1px #84b6de; 	
+}
+
+div.EkMembershipActivityTab .ektronGrid .label
+{
+    color:#1d5987;
+    width:10%;
+    white-space:nowrap;
+	font-weight:bold;
+	text-align:right;
+	font-size: .87em;
+}
+
+div.membershipControlActivityTab .ektronGrid .label
+{
+    /* override for membership control */
+    font-size: .9em;
+}
+
+div.EkMembershipActivityTab  .ektronGrid th.left {text-align:left !important;}
+div.EkMembershipActivityTab  .ektronGrid td.center {text-align:center !important;}
+div.EkMembershipActivityTab ul.activities_tab_subTabs 
+{
+	list-style-type: none;
+	margin: 0;
+	padding: .5em 0;
+	position: relative;
+	left: 1px;
+}
+
+div.EkMembershipActivityTab span.EkActivityNotifyText
+{
+	color:#27537A;
+	margin-left:6em;
+	font-weight:bold; 
+}
+div.EkMembershipActivityTab>table tr td {vertical-align: top; margin: 0;padding:0;}
+div.EkMembershipActivityTab>table tr td.label {padding: .25em .5em;}
+div.EkMembershipActivityTab>table {width: 100%; border-collapse: collapse; margin: 0; padding: 0;}
+div.EkMembershipActivityTab>table tr td.subTabsWrapper {width: 10em;}
+div.EkMembershipActivityTab table td div.dvCollGrid
+{
+	padding: .50em; 
+	border:solid 1px #84b6de;
+}
+div.EkMembershipActivityTab table td div.dvGroupGrid
+{
+	padding: .50em; 
+	border:solid 1px #84b6de;
+}
+div.EkMembershipActivityTab table td div.dvPrivacyGrid
+{
+	padding: .50em; 
+	border:solid 1px #84b6de;
+}
+
+div.EkMembershipActivityTab ul.activities_tab_subTabs li
+{
+	text-align: center; 
+	margin: .25em 0;
+	padding: .25em; 
+	border: solid 1px #84b6de;
+}
+div.EkMembershipActivityTab div.dvCollGrid,div.EkMembershipActivityTab div.dvGroupGrid
+{
+	padding: .50em; 
+	border:solid 1px #84b6de;
+}
+div.EkMembershipActivityTab ul.activities_tab_subTabs li.SelectedTab 
+{
+	display:block;
+	border-right: solid 1px #fff;
+}
+div.EkMembershipActivityTab ul.activities_tab_subTabs li.UnSelectedTab
+{
+	background-image:url('../../Images/UI/Grid/headerBackground_30.gif');
+	display:block ;
+}
+div.EkMembershipActivityTab ul.activities_tab_subTabs li.SelectedTab a, div.EkMembershipActivityTab ul.activities_tab_subTabs li.UnSelectedTab a 
+{
+    color:#27537A;
+    font-weight:bold;
+    line-height:1.2;
+    text-align:center;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+

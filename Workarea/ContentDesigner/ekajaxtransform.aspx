@@ -1,0 +1,2 @@
+<%@ Page Language="VB" ResponseEncoding="utf-8" AutoEventWireup="false" CodeFile="ekajaxtransform.aspx.vb" Inherits="ektransform" ValidateRequest="false" Theme="" %>
+<asp:Literal id="litContent" runat="server"></asp:Literal>

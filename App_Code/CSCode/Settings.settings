@@ -1,0 +1,25 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vulcan.Product.Lib.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Vulcan_Product_DatabaseConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=ANUBIS\SQLENTERPRISE;Database=Vulcan_Product_Database;Persist Security Info=True;Integrated Security=SSPI;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=ANUBIS\SQLENTERPRISE;Database=Vulcan_Product_Database;Persist Security Info=True;Integrated Security=SSPI;</Value>
+    </Setting>
+    <Setting Name="Product_Lib_Hobart_Sharepoint_Lists" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://my.hobartcorp.com/_vti_bin/lists.asmx</Value>
+    </Setting>
+    <Setting Name="Vulcan_Product_DatabaseConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=PCTH130\SQLEXPRESS;Initial Catalog=Vulcan_Product_Database;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=PCTH130\SQLEXPRESS;Initial Catalog=Vulcan_Product_Database;User ID=sa</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

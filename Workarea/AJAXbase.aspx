@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" Inherits="AJAXbase" validateRequest="false" CodeFile="AJAXbase.aspx.vb" %>
