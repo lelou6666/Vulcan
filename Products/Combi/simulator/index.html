@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=772, user-scalable=no" />
+	<title>Combi Simulator</title>
+	
+	<link rel="stylesheet" href="css/knobKnob.css" type="text/css" />
+	<link rel="stylesheet" href="css/simulator.css" type="text/css" />
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="js/transform.js" type="text/javascript"></script>
+	<script src="js/knobKnob.jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.animate-transform.js" type="text/javascript"></script>
+	<script src="js/simulator.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<a href="http://www.vulcanequipment.com"><div id="logo"></div></a>
+			<div id="callout">
+				<img src="images/callout.png" width="205" height="51" border="0" />
+			</div>
+			<div class="clearer"></div>
+		</div>
+		<div id="door"></div>
+		<div id="door_open"></div>
+		<div id="door_button"></div>
+		<div id="another_batch_popup"></div>
+		<div id="controls">
+			<div id="power_switch"></div>
+			<div id="power_switch_popup"></div>
+			<div id="temp_container">
+				<div class="container">
+					<div class="control"></div>
+				</div>
+				<input type="range" class="slider" min="0" max="370" value="0" step="5" />
+				<div class="output"></div>
+			</div>
+			<div id="temp_popup"></div>
+			<div id="time_container">
+				<div class="container">
+					<div class="control"></div>
+				</div>
+				<input type="range" class="slider" min="0" max="599" value="0" />
+				<div class="output"></div>
+			</div>
+			<div id="time_popup"></div>
+			<div id="humidity_container">
+				<div class="container">
+					<div class="control"></div>
+				</div>
+				<input type="range" class="slider" min="0" max="100" value="0" step="10" />
+				<div class="output"></div>
+			</div>
+			<div id="humidity_popup"></div>
+		</div>
+		<div id="intro_1">
+			<div class="content"></div>
+		</div>
+		<div id="intro_2">
+			<div class="closed"></div>
+			<div class="open"></div>
+		</div>
+		<div id="directions">
+			<div class="power"></div>
+			<div class="temp"></div>
+			<div class="time"></div>
+			<div class="humidity"></div>
+			<div class="cta">
+				<p><img src="images/cta.png" width="203" height="52" border="0" /></p>
+				<p><a href="official_rules.pdf" target="_blank">Giveaway rules</a></p>
+			</div>
+		</div>
+		<div id="form">
+			<form action="?" method="post">
+				<table cellpadding="2" cellspacing="1">
+					<tr>
+						<th><label for="first">First Name:</label></th>
+						<td><input type="text" name="first" id="first" /></td>
+					</tr>
+					<tr>
+						<th><label for="last">Last Name:</label></th>
+						<td><input type="text" name="last" id="last" /></td>
+					</tr>
+					<tr>
+						<th><label for="email">Email:</label></th>
+						<td><input type="text" name="email" id="email" /></td>
+					</tr>
+					<tr>
+						<th><label for="phone">Phone:</label></th>
+						<td><input type="text" name="phone" id="phone" /></td>
+					</tr>
+					<tr>
+						<th><label for="title">Title:</label></th>
+						<td><input type="text" name="title" id="title" /></td>
+					</tr>
+					<tr>
+						<th><label for="district">School District:</label></th>
+						<td><input type="text" name="district" id="district" /></td>
+					</tr>
+					<tr>
+						<th><label for="question">Question(s):</label></th>
+						<td><textarea name="question" id="question" wrap="virtual"></textarea></td>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<td style="text-align:right;"><input type="image" id="form_cta" src="images/cta_enter.png" width="178" height="52" border="0" /><br />
+						<a href="official_rules.pdf" target="_blank">Giveaway rules</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

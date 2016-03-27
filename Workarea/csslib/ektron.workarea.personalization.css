@@ -1,0 +1,85 @@
+.clearfix:after { /* FF, IE8, O, S, etc. */
+	content: ".";
+	display: block !important;
+	clear: both;
+	visibility: hidden;
+}
+/* wrapper */
+div.workareaPersonalizationWrapper {top:40px !important;padding:7px 10px 10px;}
+div.workareaPersonalizationWrapper div.EktronPersonalization {border:none !important;font-family:inherit !important;}
+
+/* tab menu - ui styles*/
+
+/* .ui-widget-header */
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs {border: 1px solid #EB9855; background: #e6a168 url(ektronTheme/images/ui-bg-highlight-soft-orange-1x34.png) repeat-x; color: #ffffff; font-weight: bold; padding: 0px !important;}
+/* .ui-state-default */
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.tab {border: 1px solid #E6A168; background: #dfeffc url(redmond/images/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #2e6e9e; outline: none;}
+/* .ui-state-hover*/
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.hover {border: 1px solid #E6A168; background: #d0e5f5 url(redmond/images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #1d5987; outline: none;}
+
+/* .ui-state-default a */
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.tab a { color: #2e6e9e; text-decoration: none; outline: none; }
+/* .ui-state-active */
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected {border: 1px solid #E6A168 !important; background: #f5f8f9 url(redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #e17009 !important; outline: none !important; }
+/* ui-state-active a */
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected a, 
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected a:link, 
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected a:visited { color: #e17009 !important; outline: none !important; text-decoration: none !important; }
+
+/* tab menu - overrides */
+div.EktronPersonalization div.tabWrapper {background-image:none !important;background:none !important;border:none !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs {border:none !important;padding:0 !important;margin:0 !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.tab {margin:0 !important;padding:6px 30px 7px 30px !important;border-bottom:none !important;border-right:none !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.hover a.remove {margin-top:2px !important;background-image:url('../personalization/css/images/tabDeleteSelectedHover.gif') !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.hover a.remove:hover {background-color:#8677ff !important;background-image:url('../personalization/css/images/tabDeleteHoverWorkarea.gif') !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected a.remove {border:1px solid #8677ff;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.selected a.remove:hover {border:1px solid #e17009;background-color:#E17009 !important;background-image:url('../personalization/css/images/tabDeleteHoverWorkarea.gif') !important;}
+div.EktronPersonalization div.tabWrapper div.innerWrapper ul.tabs li.tabOptions {padding:8px 10px !important;background:none !important;border-top:1px solid transparent !important;border-left:1px solid white !important;margin:0 !important;}
+
+/* tab options menu - overrides */
+div.EktronPersonalization div.tabWrapper ul.tabOptions {margin:0 1em 0 0;}
+
+/* widget tray - overrides */
+div.EktronPersonalization div.widgetTray {background-image:url('../personalization/css/images/widgetTrayWorkareaBackground_small.png');}
+li.widgetToken {list-style:none !important;width:150px !important;border:1px solid #e9ac7a !important;background:White !important;}
+li.widgetToken img {margin:5px auto !important;display:block !important;height:48px !important;width:48px !important;}
+ul.widgetList li.hover {border:1px solid #E17009 !important;}
+
+/* widget header - widget token label - ui styles*/
+li.widgetToken span {text-align:center !important;display:block !important;border: 1px solid #e9ac7a !important;background: #e9ac7a url(ektronTheme/images/ui-bg-highlight-soft-orange-1x34.png) 50% 50% repeat-x; color: #555555; font-weight: bold; padding: 0px !important;}
+
+/* widget tray handle - overrides */
+div.EktronPersonalization p.widgetTrayHandle {background-image:none !important;margin-top:-5px !important;border:0 !important;}
+div.EktronPersonalization img.widgetHandle {border:none !important;background-image: url('ektronTheme/images/widgetHandleWorkarea.png') !important;height:11px !important;}
+div.EktronPersonalization p.widgetTrayHandle a.widgetTrayToggle span.direction {top:5px !important;}
+
+/* widget page - table - overrides */
+div.EktronPersonalization table.ektronWidgetPage td.column {border:1px solid #E6A168 !important;height:100% !important;}
+div.EktronPersonalization table.ektronWidgetPage td.column div.columnRemove p {margin:0 !important;padding:0 !important;}
+
+/* widget */
+div.widget {border:1px solid #E6A168 !important;}
+
+/* widget header - ui styles*/
+div.widget > div.header div.buttons {background: #dfeffc url(ektronTheme/images/ui-bg-highlight-soft-orange-1x34.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; padding: 0px !important;}
+
+/* widget header - overrides */
+div.widget > div.header {background-image:none !important;line-height:26px !important;}
+div.widget > div.header div.buttons {padding:3px 2px 3px 0px !important;}
+div.widget > div.header div.buttons h4 span {color: #555555 !important;}
+div.widget > div.header div.buttons a {top:0px !important;}
+
+/* widget content - overrides */
+div.EktronPersonalization div.widget div.content {overflow:auto;}
+
+/* sortable - overrides */
+.placeholder {width:auto!important;display:block !important;list-style:none !important;margin:0 !important;padding:0 !important;background-image:url(../personalization/css/images/dropzonepattern.png);border:1px solid #E17009 !important;margin:10px !important;}
+ul.widgetList .placeholder {visibility:hidden !important;position:absolute !important;margin-left:-10000px !important;}
+div.ui-sortable-helper div.content {overflow:hidden !important;padding:1em !important;}
+
+/* modal - overrides */
+#ektronPersonalizationTabModal div.wrapper .addTab p.last {display:none !important;}
+
+/* blockUi - overrides */
+h1.loading {background-color:Transparent !important;height:66px !important;width:66px !important;background-image:url('../images/ui/loading.gif');background-position:50% 50%;background-repeat:no-repeat;}
+h1.loading span {visibility:hidden;}

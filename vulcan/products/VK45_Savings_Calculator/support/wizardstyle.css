@@ -1,0 +1,54 @@
+/* WEBSEARCH */
+.highlighted
+{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+}
+.dimmed
+{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#848284;
+}
+
+.buttonsFinish{color:#848284 !important;}
+
+.buttonsRed, .buttonsGreen, .buttonsBlue, .buttonsFinish, .buttonsLink{
+	background:url(bg.gif) repeat-x;
+	cursor:pointer;
+	font:bold 11px "tahoma";
+	color:#fff;
+	width:90px;
+	}
+	
+	.buttonsRed{
+	background-position:left top;
+	border:1px solid;
+	border-color:#b3b0a7 #29271a #29271a #b3b0a7;
+	}
+	
+	.buttonsGreen{
+	background-position:left -19px;
+	border:1px solid;
+	border-color:#a3c0a2 #201c11 #201c11 #a3c0a2;
+	}
+	
+	.buttonsBlue, .buttonsLink{
+	background-position:left -38px;
+	border:1px solid;
+	border-color:#b4b9bf #23262f #23262f #b4b9bf;
+	}
+	
+	.buttonsLink
+	{
+		width:140px;
+	}
+		
+	.buttonsFinish{
+	background-position:left -57px;
+	border:1px solid;
+	border-color:#dae1da #b2b2b2 #b2b2b2 #dae1da;
+	}

@@ -1,0 +1,1795 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ektron.Cms.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Ektron.Cms.Framework.CmsApi">
+            <summary>
+            Base API class for all Ektron CMS APIs.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.CmsApi.#ctor">
+            <summary>
+            Default API constructor.  By defualt the API, runs as the currently logged in user.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.CmsApi.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.CmsApi.Initialize">
+            <summary>
+            Initializes the base class for use.
+            </summary>
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.RequestInformation">
+            <summary>
+            Gets the current Request Information.
+            </summary>
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.ApiMode">
+            <summary>
+            Gets or sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.
+            </summary>
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.InPreviewMode">
+            <summary> 
+            Gets or sets the current Preview Mode.  Returns true if the site is in site preview mode.
+            </summary> 
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.ContentLanguage">
+            <summary> 
+            Gets or sets the current content language. 
+            </summary> 
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.UserId">
+            <summary> 
+            Gets or sets the currently logged in user ID. 
+            </summary> 
+            <value></value> 
+            <returns>Long</returns> 
+            <remarks></remarks> 
+        </member>
+        <member name="P:Ektron.Cms.Framework.CmsApi.SitePath">
+            <summary> 
+            Gets the site path. 
+            </summary> 
+            <example> 
+            An example of using this property can be found in the 
+            Workarea source file <c>CMS400Demo\\Workarea\\isearch.aspx.vb</c>. 
+            </example> 
+            <remarks></remarks> 
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.Add(Ektron.Cms.Activity.ActivityData)">
+            <summary>
+            Adds a new activity to the general feed.
+            </summary>
+            <param name="activity">Activity data to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.Update(Ektron.Cms.Activity.ActivityData)">
+            <summary>
+            Updates an activity in the general feed.
+            </summary>
+            <param name="activity">Activity data to update.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.Delete(System.Int64)">
+            <summary>
+            Delete's an activity from the general feed.
+            </summary>
+            <param name="id">The ID of activity to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.AddActivityMessage(System.Int64,System.Int32,System.String)">
+            <summary>
+            Adds a language specific message for an activity in the general feed.
+            </summary>
+            <param name="activityId">Id of activity to add message for.</param>
+            <param name="languageId">Id of language to add message for.</param>
+            <param name="message">Activity message to be added.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.UpdateActivityMessage(System.Int64,System.Int32,System.String)">
+            <summary>
+            Updates an existing message for an activity in the general feed.
+            </summary>
+            <param name="activityId">Id of activity to add message for.</param>
+            <param name="languageId">Id of language to add message for.</param>
+            <param name="message">Activity message to be added.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetItem(System.Int64)">
+            <summary>
+            Returns a single ActivityStream Item by ID.
+            </summary>
+            <param name="id">ID of Activtiy to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Activity.ActivityProperty})">
+            <summary>
+            Returns  a list of all activities based upon criteria supplied.
+            </summary>
+            <param name="criteria">Criteria used to filter results.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetList(Ektron.Cms.Activity.ActivityCriteria)">
+            <summary>
+            Returns  a list of all activities based upon criteria supplied.
+            </summary>
+            <param name="criteria">Criteria used to filter results.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetListForUser(System.Int64,Ektron.Cms.PagingInfo)">
+            <summary>
+            Returns a list of activities associated with a user.  These will be activities where the user is the subject or the Actor.
+            </summary> 
+            <param name="pagingInfo">Paging information for retrieval.</param>
+            <param name="userId">ID of user to retrieve feed for.</param>
+            <param name="returnCommentCount">Number of comments to return with each activity. 0 = no comments, -1 = all</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetListForUser(System.Int64,Ektron.Cms.PagingInfo,System.Int32)">
+            <summary>
+            Returns a list of activities associated with a user.  These will be activities where the user is the subject or the Actor.
+            </summary> 
+            <param name="pagingInfo">Paging information for retrieval.</param>
+            <param name="userId">ID of user to retrieve feed for.</param>
+            <param name="returnCommentCount">Number of comments to return with each activity. 0 = no comments, -1 = all</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Activity.ActivityProperty},Ektron.Cms.Common.EkEnumeration.ActivityFeedType,System.Int64)">
+            <summary>
+            Gets an Activity Feed based upon the feedtype and the Id.
+            </summary>
+            <param name="criteria">criteria for further filtering the feed, sorting, and paging.</param>
+            <param name="feedType">The type of feed to retrieve.  For example, User or CommunityGroup.</param>
+            <param name="feedTypeId">The id corresponding to the feed type.  For example, if FeedType = User, FeedTypeId would be the user Id to retrieve feed for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.GetList(Ektron.Cms.Activity.ActivityCriteria,Ektron.Cms.Common.EkEnumeration.ActivityFeedType,System.Int64)">
+            <summary>
+            Gets an Activity Feed based upon the feedtype and the Id.
+            </summary>
+            <param name="criteria">criteria for further filtering the feed, sorting, and paging.</param>
+            <param name="feedType">The type of feed to retrieve.  For example, User or CommunityGroup.</param>
+            <param name="feedTypeId">The id corresponding to the feed type.  For example, if FeedType = User, FeedTypeId would be the user Id to retrieve feed for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.EnableActivityPublishing">
+            <summary>
+            Enables activity publishing for the site.  This will also stup defualt notification preferences for any existin users.  
+            Warning, depending on the number of users, this call could be time consuming.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.DisableActivityPublishing">
+            <summary>
+            Disables activity publishing for the site.  
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.Activity.Publish(Ektron.Cms.Activity.ActivityData)">
+            <summary>
+            Publishes an activity to all subscribers.
+            </summary>
+            <param name="activity">activity that has occured.</param>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Activity.Activity.ActivityService">
+            <summary>
+            Gets instance to IActivityStream.
+            </summary>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Activity.Activity.ActivityStreamService">
+            <summary>
+            Gets instance to IActivityStream.
+            </summary>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Activity.Activity.IsActivityPublishingEnabled">
+            <summary>
+            Gets setting indicating if Activity Publishing is enabled.  Read Only - use EnableActivityPublishing and DisableActivityPublishing 
+            to set property.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Activity.ActivityQueue">
+            <summary>
+            Api class for Queuing activities.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Activity.ActivityStream">
+            <summary>
+            Api class for managing activities in ActivityStreams.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.GetUserActivityStream(System.Int64,Ektron.Cms.PagingInfo)">
+            <summary>
+            Returns a list of activities in a user's ActivityStream.
+            </summary> 
+            <param name="paging">Pagign Information for retrieval.</param>
+            <param name="userId">ID of user to retrieve feed for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.GetUserActivityStream(Ektron.Cms.Common.Criteria{Ektron.Cms.Activity.ActivityProperty},System.Int64)">
+            <summary>
+            Returns a list of activities in a user's ActivityStream based upon supplied criteria.
+            </summary> 
+            <param name="criteria">Criteira by which to filter the stream.  UserId filter is ignored.</param>
+            <param name="userId">ID of user to retrieve feed for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.SendActivityToUsersStream(System.Int64,System.Int64)">
+            <summary>
+            Adds an activity existing in the general feed to a user's feed.
+            </summary>
+            <param name="activityId">Id of activity to add to users feed.</param>
+            <param name="userid">Id of user.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.SendActivityToStreams(System.Int64)">
+            <summary>
+            Sends the activity to all applicable streams based upon the activity and users preferences.
+            </summary>
+            <param name="activityId">Id of activity to send to streams.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityStream.SendActivityToAllStreams(System.Int64)">
+            <summary>
+            Sends the activity directly to all user's streams.
+            </summary>
+            <param name="activityId">Id of activity to send to streams.</param>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Activity.ActivityStream.ActivityStreamService">
+            <summary>
+            Gets instance to IActivityStream.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Activity.ActivityType">
+            <summary>
+            Api class for managing builtin activity types and creating custom activity types in ActivityStreams.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityType.Add(Ektron.Cms.Activity.ActivityTypeData)">
+            <summary>
+            Adds a new ActivityType to Cms. The ActivityType.Id property will be populated with the new ActivityType's Id.
+            </summary>
+            <param name="ActivityTypeData">ActivityTypeData object to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityType.Update(Ektron.Cms.Activity.ActivityTypeData)">
+            <summary>
+            Updates an existing ActivityType in Cms.
+            </summary>
+            <param name="ActivityTypeData">ActivityTypeData object to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityType.Delete(System.Int64)">
+            <summary>
+            Deletes a ActivityType from the Cms.
+            </summary>
+            <param name="id">Id of ActivityType to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityType.GetItem(System.Int64)">
+            <summary>
+            Retrieves a ActivityType by Id.
+            </summary>
+            <param name="id">Id of ActivityType to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityType.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Activity.ActivityTypeProperty})">
+            <summary>
+            Retrieves a list.
+            </summary>
+            <param name="criteria">Criteria by which to filter ActivityType being retrieved.</param>
+            <returns>List of ActivityType data objects.</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.Add(Ektron.Cms.Activity.ActivityCommentData)">
+            <summary>
+            Adds a new activity comment.
+            </summary>
+            <param name="comment">Activity comment to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.Update(Ektron.Cms.Activity.ActivityCommentData)">
+            <summary>
+            Updates an activity comment.
+            </summary>
+            <param name="activity">Activity comment to update.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.Delete(System.Int64)">
+            <summary>
+            Delete's an activity comment.
+            </summary>
+            <param name="id">The ID of activity comment to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.GetItem(System.Int64)">
+            <summary>
+            Returns a single Activity comment by ID.
+            </summary>
+            <param name="id">ID of Activtiy comment to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Activity.ActivityComment.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Activity.ActivityCommentProperty})">
+            <summary>
+            Returns  a list of all activity comments based upon criteria supplied.
+            </summary>
+            <param name="criteria">Criteria used to filter results.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Activity.ActivityComment.ActivityCommentService">
+            <summary>
+            Gets instance to IActivityStream.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger">
+            <summary>
+            Provides an API (of static methods) to store Business-Analytics events.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger.CreateAnalyticsEventData">
+            <summary>
+            Creates an event-object with predifined defaults. Used with Log() to save information about an event.
+            </summary>
+            <returns>A pre-populated event object</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger.Log(Ektron.Cms.Framework.Analytics.BusinessAnalytics.IAnalyticsEventData)">
+            <summary>
+            Stores an event to the system for later reporting, using details from the supplied event-object.
+            </summary>
+            <param name="eventObject">An event-object, with information detailing the current event</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger.Log(System.String)">
+            <summary>
+            Stores an event to the system for later reporting.
+            </summary>
+            <param name="eventName">the registered name of the event</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger.Log(System.String,System.String)">
+            <summary>
+            Stores an event to the system for later reporting.
+            </summary>
+            <param name="eventName">the registered name of the event</param>
+            <param name="xml">a container for custom information, is passed 
+            all the way to the handling db stored procedure</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventLogger.Log(System.String,System.String,System.Int32)">
+            <summary>
+            Stores an event to the system for later reporting.
+            </summary>
+            <param name="eventName">the registered name of the event</param>
+            <param name="xml">a container for custom information, is passed 
+            all the way to the handling db stored procedure</param>
+            <param name="count">the number of events to record</param>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter">
+            <summary>
+            Provides an API (of static methods) to report on logged Business-Analytics events.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.GetReportNameList">
+            <summary>
+            Used to obtain recognized report names. This is extensible by adding stored 
+            procedures to handle new reports and registering them in the proper table.
+            </summary>
+            <returns>a list of supported report names</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.CreateQueryRequest">
+            <summary>
+            Used to obtain a prepulated object, that helps specify the desired report type and criteria.
+            </summary>
+            <returns>the base request object, common to all query requests</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.CreateContentQueryRequest">
+            <summary>
+            Used to obtain a prepulated object, that helps specify the desired report type and criteria.
+            </summary>
+            <returns>a request object tailored for content type query requests</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.GetList(Ektron.Cms.Framework.Analytics.BusinessAnalytics.IAnalyticsQueryRequest)">
+            <summary>
+            Used to run a report and obtain the results.
+            </summary>
+            <param name="queryRequest">specifies the desired report type and criteria</param>
+            <returns>a list of report objects, of the base business analytics report type</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.GetList(Ektron.Cms.Framework.Analytics.BusinessAnalytics.IContentQueryRequest)">
+            <summary>
+            Used to run a report and obtain the results.
+            </summary>
+            <param name="queryRequest">specifies the desired report type and criteria</param>
+            <returns>a list of report objects for content related information</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.BusinessAnalytics.EventReporter.UpdateReportData(System.String,System.DateTime)">
+            <summary>
+            Updates the designated report aggregation data from the event details.
+            </summary>
+            <param name="eventName">the name of the event data to update</param>
+            <param name="eventDate">the date to use for processing</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetLocations(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an user geographic location report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetLocations(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an user geographic location report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetNewVsReturningVisitors(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a report on new visitor vs. returning visitor by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetNewVsReturningVisitors(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a report on new visitor vs. returning visitor by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetLanguages(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a report on different languages used by the visitor by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetLanguages(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a report on different languages used by the visitor by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetVisitsTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetVisitsTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAbsoluteUniqueVisitorsTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an absolute unique visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAbsoluteUniqueVisitorsTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an absolute unique visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetPageViewsTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a pageviews for all visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetPageViewsTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a pageviews for all visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAveragePageViewsTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an average pageviews for all visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAveragePageViewsTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an average pageviews for all visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTimeOnSiteTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a time on site for all visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTimeOnSiteTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a time on site for all visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetBounceRateTrend(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a bounce rate for all visitors trend report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetBounceRateTrend(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a bounce rate for all visitors trend report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.TrendReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetBrowsers(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a browser report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetBrowsers(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a browser report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetOperatingSystems(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an operating systems report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetOperatingSystems(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an operating systems report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetPlatforms(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a platforms report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetPlatforms(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a platforms report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetScreenColors(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a screen colors report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetScreenColors(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a screen colors report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetScreenResolutions(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a screen resolutions report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetScreenResolutions(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a screen resolutions report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetFlashVersions(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a flash versions report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetFlashVersions(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a flash versions report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetJavaSupport(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a java support report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetJavaSupport(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a java support report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetNetworkLocations(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a network location report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetNetworkLocations(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a network location report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetHostnames(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a hostnames report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetHostnames(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a hostnames report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetConnectionSpeeds(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a connection speeds report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetConnectionSpeeds(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an user defined value report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetUserDefinedValue(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an user defined value report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetUserDefinedValue(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an user defined value report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetDirectTraffic(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a direct traffic report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetDirectTraffic(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a direct traffic report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetReferringSites(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a referring sites report by the specified provider 
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetReferringSites(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a referring sites report by the default provider 
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetSearchEngines(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a search engines report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetSearchEngines(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            "a search engines report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAllTrafficSources(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an all traffic sources report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAllTrafficSources(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an all traffic sources report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetKeywords(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a keywords report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetKeywords(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a keywords report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetCampaigns(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a campaigns report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetCampaigns(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a campaigns report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAdVersions(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an ad versions report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetAdVersions(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            an ad versions report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopContent(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top content report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopContent(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top content report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetContentbyTitle(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a content by title report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetContentbyTitle(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a content by title report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopLandingPages(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top landing pages report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopLandingPages(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top landing pages report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopExitPages(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top exit pages report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetTopExitPages(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top exit pages report by the default provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetCmsSearchTerms(System.DateTime,System.DateTime)">
+            <summary>
+            a Cms Search terms report
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetContentDetail(System.String,System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top exit pages report by the specified provider
+            </summary>
+            <param name="provider">the provider to carry out the report</param>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.ReportAnalytics.GetContentDetail(System.DateTime,System.DateTime,Ektron.Cms.Interfaces.Analytics.Provider.AnalyticsCriteria)">
+            <summary>
+            a top exit pages report by the specified provider
+            </summary>
+            <param name="startDate">start date of the report</param>
+            <param name="endDate">end date of the report</param>
+            <param name="criteria">the conditions for the report query</param>
+            <returns>Ektron.Cms.Analytics.Reporting.AnalyticsReportData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Analytics.SearchAnalytics.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="T:Ektron.Cms.Framework.ApiAccessMode">
+            <summary>
+            Enumeration used to indicate the access mode when using an API class.
+            </summary>
+        </member>
+        <member name="F:Ektron.Cms.Framework.ApiAccessMode.LoggedInUser">
+            <summary>
+            Indicates that the API should run as the logged in user.
+            This is the default setting.
+            </summary>
+        </member>
+        <member name="F:Ektron.Cms.Framework.ApiAccessMode.Admin">
+            <summary>
+            Indicates that the API should run as an administrator. When running as internal admin, 
+            all CMS actions will be recorded as being performed by the Internal Administrator.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.Add(Ektron.Cms.ContentData)">
+            <summary>
+            Add's new content
+            </summary>
+            <param name="contentData"> The contentData object</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.Update(Ektron.Cms.ContentData)">
+            <summary>
+            Update content
+            </summary>
+            <param name="contentData"> The contentData object</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.Delete(System.Int64)">
+            <summary>
+            Delete content
+            </summary>
+            <param name="id"> The ID of the content to be deleted</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.GetItem(System.Int64)">
+            <summary>
+            Get the content item
+            </summary>
+            <param name="id">The ID of the content to Get.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Content.Content.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Common.ContentProperty})">
+            <summary>
+            Retrieves a list based on the criteria
+            </summary>
+            <param name="criteria">Criteria used to retrieve content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.Add(Ektron.Cms.FolderData)">
+            <summary>
+            Adds a new folder based on information in an FolderData object. 
+            message.Id will be populated with the newly created ID.
+            </summary>
+            <param name="folderData">The FolderData object to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.Update(Ektron.Cms.FolderData)">
+            <summary>
+            Updates an existing folder in the CMS.
+            </summary>
+            <param name="folderData">The FolderData object to update.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.Delete(System.Int64)">
+            <summary>
+            Deletes a folder in the CMS.
+            </summary>
+            <param name="id">The ID of the folder to delete</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.GetItem(System.Int64)">
+            <summary>
+            Retrieves a single FolderData object from the CMS.
+            </summary>
+            <param name="id">The ID of the folder to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Core.Folder.Folder.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Common.FolderProperty})">
+            <summary>
+            Retrieves a list of FolderData objects based upon the supplied criteria.
+            </summary>
+            <param name="criteria">Criteria used to retrieve folders.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Core.Folder.Folder.FolderService">
+            <summary>
+            Gets instance to IFolder.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Messaging.CmsMessage">
+            <summary>
+            Api class for managing Messages in the CMS.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.Add(Ektron.Cms.Messaging.CmsMessageData)">
+            <summary>
+            Adds a new message based on information in an CmsMessageData object. 
+            message.Id will be populated with the newly created ID.
+            </summary>
+            <param name="message">The CmsMessageData object to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.Update(Ektron.Cms.Messaging.CmsMessageData)">
+            <summary>
+            Updates an existing message in the CMS.
+            </summary>
+            <param name="message">The CmsMessageData object to update.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.Delete(System.Int64)">
+            <summary>
+            Deletes a message in the CMS.
+            </summary>
+            <param name="id">The ID of the message to delete</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.GetItem(System.Int64)">
+            <summary>
+            Retrieves a single CmsMessageData object from the CMS in the current language.
+            </summary>
+            <param name="id">The ID of the message to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.GetItemCollection(System.Int64)">
+            <summary>
+            Gets a single message from the CMS in all available languages.
+            </summary>
+            <param name="id">The ID of the message to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.GetDefaultItemByType(System.Int64)">
+            <summary>
+            Gets the default message for a given message type in the CMS.  
+            All available languages of the message are returned as part of the CmsMessageDataCollection.
+            </summary>
+            <param name="messageTypeId">The ID of the message type to retrieve the default message for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessage.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Messaging.CmsMessageProperty})">
+            <summary>
+            Retrieves a list of CmsMessageData objects based upon the supplied criteria.
+            </summary>
+            <param name="criteria">Criteria used to retrieve messages.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Messaging.CmsMessage.MessageService">
+            <summary>
+            Gets instance to ICmsMessage.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Messaging.CmsMessageType">
+            <summary>
+            Api class for managing MessageTypes in the Cms.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.Add(Ektron.Cms.Messaging.CmsMessageTypeData)">
+            <summary>
+            Adds a new message type based on information in an CmsMessageTypeData object. 
+            messageType.Id will be populated with the newly created ID.
+            </summary>
+            <param name="message">The CmsMessageData object to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.Update(Ektron.Cms.Messaging.CmsMessageTypeData)">
+            <summary>
+            Updates an existing message type in the CMS.
+            </summary>
+            <param name="message">The CmsMessageTypeData object to update.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.Delete(System.Int64)">
+            <summary>
+            Deletes a message type in the CMS.
+            </summary>
+            <param name="id">The ID of the message to delete</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.GetItem(System.Int64)">
+            <summary>
+            Retrieves a single CmsMessageTypeData object from the CMS.
+            </summary>
+            <param name="id">The ID of the message type to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Messaging.CmsMessageTypeProperty})">
+            <summary>
+            Retrieves a list of CmsMessageTypeData objects based upon the supplied criteria.
+            </summary>
+            <param name="criteria">Criteria used to retrieve message types.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Messaging.CmsMessageType.GetTokenList(System.Int64)">
+            <summary>
+            Returns the list of applicable replacement tokens for a given MessageTypeId.
+            </summary>
+            <param name="messageTypeId">ID of Message Type to retrieve tokens for.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Messaging.CmsMessageType.MessageTypeService">
+            <summary>
+            Gets instance to ICmsMessageType.
+            </summary>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Notifications.NotificationAgentSetting">
+            <summary>
+            Api class for managing settings for Notification Agent settings.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.Add(Ektron.Cms.Notifications.NotificationAgentData)">
+            <summary>
+            Adds a new notification agent to the system.
+            </summary>
+            <param name="agentData">Agent settings to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.Update(Ektron.Cms.Notifications.NotificationAgentData)">
+            <summary>
+            Updates an existing notification agent settings.
+            </summary>
+            <param name="agentData">Agent settings to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.Delete(System.Int64)">
+            <summary>
+            Deletes a notification agent settings from the CMS.
+            </summary>
+            <param name="id">Id of agent to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.GetItem(System.Int64)">
+            <summary>
+            Retrieves a notifcation agent setting object.
+            </summary>
+            <param name="id">Id of agent ot retrieve settings for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Notifications.NotificationAgentProperty})">
+            <summary>
+            Retrieves a list of Notification Agent settings in the CMS based upon the supplied criteria.
+            </summary>
+            <param name="criteria">criteira by which to retrieve agent settings.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.GetAgent(System.Int64)">
+            <summary>
+            Returns actuual NotificationAgent based upon Agent Id.
+            </summary>
+            <param name="id">Id of agent to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationAgentSetting.GetRegisteredAgentList">
+            <summary>
+            Retrieves a list of the Notification Agents registered in the web.config.
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Notifications.Notification">
+            <summary>
+            Api class for sending out notifications in the CMS.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.Notification.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.Notification.Send(Ektron.Cms.Activity.ActivityData)">
+            <summary>
+            Sends notifications based upon the supplied activity.
+            </summary>
+            <param name="activity">The activity that has occured and will result in notifications being sent.  The Activity.Message property is ignored and will be retrieved based upon CMS message settings.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.Notification.Send(Ektron.Cms.Notifications.NotificationMessageData)">
+            <summary>
+            Sends notifications based upon supplie dnotification message data.
+            </summary>
+            <param name="notificationMessage">data object defining message to send and the user to send it to.</param>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Notifications.NotificationPreference">
+            <summary>
+            Api class for managing user notification preferences in the CMS.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.Add(Ektron.Cms.Notifications.NotificationPreferenceData)">
+            <summary>
+            Saves a new notification preference.
+            </summary>
+            <param name="preferenceData">preference data to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.SaveUserPreferences(System.Collections.Generic.List{Ektron.Cms.Notifications.NotificationPreferenceData})">
+            <summary>
+            Saves a set of notification preferences for a given user. 
+            Preferences marked as added will be added and those marked as deleted will be removed.
+            </summary>
+            <param name="preferenceData">preference data to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.Update(Ektron.Cms.Notifications.NotificationPreferenceData)">
+            <summary>
+            Updates an existing notification preference.
+            </summary>
+            <param name="preferenceData">preference data to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.Delete(System.Int64)">
+            <summary>
+            Deletes a notification preference.
+            </summary>
+            <param name="id">Id of NotificationPreference to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.GetItem(System.Int64)">
+            <summary>
+            Returns a single notification preference by Id.
+            </summary>
+            <param name="id">Id of NotificationPreference to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Notifications.NotificationPreferenceProperty})">
+            <summary>
+            Returns a list of user notification preferences based upon the supplied criteira.
+            </summary>
+            <param name="criteria">criteria used to determine which preferences to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.GetDefaultPreferenceList(Ektron.Cms.Common.Criteria{Ektron.Cms.Notifications.NotificationPreferenceProperty})">
+            <summary>
+            Returns a list of default notification preferences based upon the supplied criteira.
+            </summary>
+            <param name="criteria">criteria used to determine which default preferences to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.NotificationPreference.GetUserNotificationListForActivity(Ektron.Cms.Activity.ActivityData,Ektron.Cms.PagingInfo)">
+            <summary>
+            Returns a list of users and their nortfication settings for a given activity ocurrence.
+            </summary>
+            <param name="activity">Activity defintion to retrieve notifications for.</param>
+            <param name="paging">paging information for the retrieval.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ektron.Cms.Framework.Notifications.UserNotificationSetting">
+            <summary>
+            Api class for managing user notification settings in the CMS.  UserNotificationSettigns are user settings per notification agent.  
+            For example, to recieve notifications via Email, the user would need to provide his\her email address, etc.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.Add(Ektron.Cms.Notifications.UserNotificationSettingData)">
+            <summary>
+            Adds a new user notification setting.
+            </summary>
+            <param name="userSettingData">user setting data to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.Update(Ektron.Cms.Notifications.UserNotificationSettingData)">
+            <summary>
+            Updates an existing user notification setting.
+            </summary>
+            <param name="userSettingData">user setting data to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.Delete(System.Int64)">
+            <summary>
+            Deletes a User Notification Setting.
+            </summary>
+            <param name="id">Id of User Notification Setting to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.GetItem(System.Int64)">
+            <summary>
+            Returns a single UserNotificationSettingData by Id.
+            </summary>
+            <param name="id">Id of UserNotificationSettingData to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Notifications.UserNotificationSettingProperty})">
+            <summary>
+            Returns a list of UserNotificationSettingData based upon the supplied criteira.
+            </summary>
+            <param name="criteria">criteria used to determine which UserNotificationSettingData to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Notifications.UserNotificationSetting.VerifyValidationCode(System.Int64,System.String)">
+            <summary>
+            Verifies that the validation code is correct and enables users notfication settings.
+            </summary>
+            <param name="userSettingId">Id of user notification setting.</param>
+            <param name="verificationCode">Verification code to validate.</param>
+            <returns>true if the verification code is correct.</returns>
+        </member>
+        <member name="T:Ektron.Cms.WebServices.NotificationService">
+            <summary>
+            Summary description for NotificationService
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.MicroMessageProperty})">
+            <summary>
+            Gets data from the database using the criteria object.
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetUserMessageList(Ektron.Cms.PagingInfo,System.Int64)">
+            <summary>
+            Gets a list of messages that the user has sent.
+            </summary>
+            <param name="paging"></param>
+            <param name="callerUserId"></param>
+            <returns>Returns a list of for the user messages.</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetTimeLineMessageList(Ektron.Cms.PagingInfo)">
+            <summary>
+            Gets a filtered list of messages that the requesting user can see. The list includes public and colleagues messages.
+            </summary>
+            <param name="paging"></param>
+            <returns>Returns a list of for the user messages.</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetTimeLineMessageList(Ektron.Cms.PagingInfo,System.Int64)">
+            <summary>
+            Gets a filtered list of messages that the requesting user can see. The list includes public and colleagues messages.
+            </summary>
+            <param name="paging"></param>
+            <param name="callerUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetColleagueMessageList(Ektron.Cms.PagingInfo)">
+            <summary>
+            Gets a list of only colleagues Messages.
+            </summary>
+            <param name="paging"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetColleagueMessageList(Ektron.Cms.PagingInfo,System.Int64)">
+            <summary>
+            Gets a list of only colleagues Messages.
+            </summary>
+            <param name="paging"></param>
+            <param name="callerUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetItem(System.Int64)">
+            <summary>
+            Gets a single record from the database.
+            </summary>
+            <param name="id">The id of the message.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetSearchList(Ektron.Cms.PagingInfo,System.String)">
+            <summary>
+            Gets the search results for test search.
+            </summary>
+            <param name="paging"></param>
+            <param name="searchText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.IsFullTextSearchInstalled">
+            <summary>
+            Checks if full text search is installed on the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.Add(Ektron.Cms.MicroMessageData)">
+            <summary>
+            Adds a new message.
+            </summary>
+            <param name="data">The micro message data.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.Delete(System.Int64)">
+            <summary>
+            Deletes a record from the database.
+            </summary>
+            <param name="Id">The id of the message to be deleted.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.GetReplyList(System.Int64)">
+            <summary>
+            Gets a list of replies for a Message.
+            </summary>
+            <param name="parentMessageId">The id of the message that has replies.</param>
+            <returns>Returns a list of replies for the message. </returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.SocialNetworking.MicroMessage.AddReply(System.Int64,System.String)">
+            <summary>
+            Adds a new reply. 
+            </summary>
+            <param name="parentMessageId">The id of the message to add a reply to.</param>
+            <param name="messageText">The text of the reply</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            constructor
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.Add(Ektron.Cms.UserData)">
+            <summary>
+            Adds a new user, with details from the supplied UserData object.
+            </summary>
+            <param name="userData"></param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.Update(Ektron.Cms.UserData)">
+            <summary>
+            Updates a user, with details from the supplied UserData object.
+            </summary>
+            <param name="userData"></param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.Delete(System.Int64)">
+            <summary>
+            Deletes an existing user.
+            </summary>
+            <param name="id">the identifier of the user to delete</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.GetItem(System.Int64)">
+            <summary>
+            Returns details of a user.
+            </summary>
+            <param name="id">the identifier of the user to get</param>
+            <returns>user details in a UserData object</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.GetItem(System.Int64,System.String)">
+            <summary>
+            Returns details of a user based upon an authentication type and authentication user id.
+            </summary>
+            <param name="authenticationTypeId">ID of authentication type user is associated with</param>
+            <param name="authenticationUserId">ID of user based on authentication type.</param>
+            <returns>user details in a UserData object</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Common.UserProperty})">
+            <summary>
+            Returns a list of users that fit the supplied criteria.
+            </summary>
+            <param name="criteria">used to specify, or filter, the users to return</param>
+            <returns>a list of users</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.Login(System.String,System.String,System.String)">
+            <summary>
+            Logs in a user.
+            </summary>
+            <param name="userName">username of user to login.</param>
+            <param name="password">user's password</param>
+            <param name="serverName">Name of server or site the user is logging in to.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Users.User.Login(System.Int64,System.String,System.String)">
+            <summary>
+            Logs in a user based upon an authentication type and authentication user id.  This will logthe user in automatically, and assumes the user has already been authenticated.
+            </summary>
+            <param name="authenticationTypeId">ID of authentication type user is associated with</param>
+            <param name="authenticationUserId">ID of user based on authentication type.</param>\
+            <param name="serverName">Name of server user is logging into.</param>
+        </member>
+        <member name="P:Ektron.Cms.Framework.Users.User.UserService">
+            <summary>
+            returns an instance of the business objects user service.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            constructor
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.Add(Ektron.Cms.Common.Calendar.WebCalendarData)">
+            <summary>
+             Saves the current calendar as a new calendar.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.Update(Ektron.Cms.Common.Calendar.WebCalendarData)">
+            <summary>
+            Saves this calendar.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.Delete(System.Int64)">
+            <summary>
+            Deletes the current calendar.
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.GetCalendar(System.Int64)">
+            <summary>
+            Retrieves a calendar.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve.</param>
+            <returns>WebCalendarData</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.GetPublicCalendar(System.Int64)">
+            <summary>
+            Retrieves a calendar with only public fields populated.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve.</param>
+            <returns>WebCalendarData with only public fields populated.</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebCalendar.GetICalendarFeed(System.Int64)">
+            <summary>
+            Returns the ICalendar representation of the supplied calendar Id.
+            </summary>
+            <param name="calendar">Id of calendar to retrieve ICalendar feed for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.#ctor(Ektron.Cms.Framework.ApiAccessMode)">
+            <summary>
+            constructor
+            </summary>
+            <param name="mode">Sets the current API access mode.  If set to Admin, the API runs with the permissions of an administrator.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.Add(Ektron.Cms.Common.Calendar.WebEventData)">
+            <summary>
+            Adds a new WebEvent object to Cms. The WebEvent.Id property will be populated with the new WebEvent's Id.
+            </summary>
+            <param name="eventData">WebEventData obejct to add.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.Update(Ektron.Cms.Common.Calendar.WebEventData)">
+            <summary>
+            Updates an existing WebEventData object in Cms.
+            </summary>
+            <param name="eventData">WebEventData obejct to save.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.Delete(System.Int64)">
+            <summary>
+            Deletes a WebEvent from the Cms.
+            </summary>
+            <param name="id">Id of WebEvent to delete.</param>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.CreateVariance(System.Int64,System.DateTime)">
+            <summary>
+            Creates a variance event for the supplied recurring event id.
+            </summary>
+            <param name="eventId">Id of the recurring event to create variance for.</param>
+            <param name="occurrenceStartUtc">The event occurance date for which to create a variance.</param>
+            <returns>An unsaved WebEvent representing the event variance/</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.CreateVariance(System.Int64,System.DateTime,System.DateTime)">
+            <summary>
+            Creates a variance event for the supplied recurring event id.
+            </summary>
+            <param name="eventId">Id of the recurring event to create variance for.</param>
+            <param name="occurrenceStartUtc">The event occurance date for which to create a variance.</param>
+            <param name="newStartUtc">The new occureance start date (UTC).</param>
+            <returns>An unsaved WebEvent representing the event variance/</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.CancelOccurrence(System.Int64,System.DateTime)">
+            <summary>
+            Cancels an occurence of a recurring event.
+            </summary>
+            <param name="eventId">Id of the recurring event to cancel an occurrence for.</param>
+            <param name="occurrenceStartUtc">The event occurance date to cancel.</param>
+            <returns>Id of the event variance created for the cancellation.</returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetItem(System.Int64)">
+            <summary>
+            Gets the fully populated EventData object for the supplied eventId.
+            </summary>
+            <param name="eventId">Id of the event to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetList(System.Int64)">
+            <summary>
+            Returns list of eventdata items for the calendar.  This will only return the actual event items and not the occurrences of the event.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <returns></returns>
+            <remarks>EventData objects are not fully populated.  Only contains enough data to display event information and retrieve full EventData object when neccesary.</remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetList(System.Int64,System.DateTime,System.DateTime)">
+            <summary>
+            Returns list of eventdata items for the calendar.  This will only return the actual event items and not the occurrences of the event.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <param name="startUtc">start of time period to retrieve.</param>
+            <param name="endUtc">end of time period to retrieve.</param>
+            <returns></returns>
+            <remarks>EventData objects are not fully populated.  Only contains enough data to display event information and retrieve full EventData object when neccesary.</remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetList(Ektron.Cms.Common.Criteria{Ektron.Cms.Common.EventProperty})">
+            <summary>
+             Returns a list of WebEvents based upon the supplied criteria.
+             </summary>
+             <param name="criteria">criteria used to restrict WebEvent retrieval.</param>
+             <returns></returns>
+             <remarks></remarks>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetNonVariantEventList(System.Int64)">
+            <summary>
+            Returns list of original eventdata items for the calendar.  For recurring events, this will only return the actual event items and not the occurrences or variants of recurring events.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Ektron.Cms.Framework.Calendar.WebEvent.GetNonVariantEventList(System.Int64,System.DateTime,System.DateTime)" -->
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetVarianceEventList(System.Int64)">
+            <summary>
+            Returns an EventVarianceDictionary containing all the variances for the supplied claendar in the given time frame.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetVarianceEventList(System.Int64,System.DateTime,System.DateTime)">
+            <summary>
+            Returns an EventVarianceDictionary containing all the variances for the supplied claendar in the given time frame.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <param name="startUtc">start of time period to retrieve.</param>
+            <param name="endUtc">end of time period to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ektron.Cms.Framework.Calendar.WebEvent.GetEventOccurrenceList(System.Int64,System.DateTime,System.DateTime)">
+            <summary>
+            Returns a list of events for the calendar that occur during the supplied time period.  This will return all event occurrences 
+            including individual occurrences for recurring events.
+            </summary>
+            <param name="calendarId">Id of the calendar to retrieve events for.</param>
+            <param name="startUtc">start of search span</param>
+            <param name="endUtc">end of search span</param>
+            <param name="languageId">Id of of content language to retrieve.</param>
+            <returns></returns>
+            <remarks>
+            EventData objects are not fully populated.  Only contains enough data to display event information and retrieve full EventData object when neccesary.
+            </remarks>
+        </member>
+    </members>
+</doc>

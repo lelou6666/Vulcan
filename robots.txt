@@ -1,0 +1,13 @@
+User-Agent: *
+Disallow: /CAPTCHAimage/
+Disallow: /widgets/
+Disallow: /workarea/
+Disallow: /Documentation/
+Disallow: /LatestChanges/
+Disallow: /PrivateAssets/
+Disallow: /uploadedfiles/
+Disallow: /products/*/?series=
+Disallow: /video-library/?video=*
+Disallow: /News-and-Events/?page=
+Disallow: /About-Vulcan/?page=
+Sitemap: http://www.vulcanequipment.com/sitemap.xml

@@ -1,0 +1,12 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DoWork.aspx.cs" Inherits="_DoWork" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
+ <h2>Do Work</h2>
+ 
+ <asp:TextBox runat="server" id="blah" />
+ <asp:Button runat="server" id="process" Text="Process" OnClick="processWork" />
+ 
+ <asp:DataGrid id="DataGrid1" runat="server"></asp:DataGrid>
+ <asp:GridView id="GridView1" runat="server"></asp:GridView>
+</asp:Content>

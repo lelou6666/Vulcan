@@ -1,0 +1,252 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+
+public partial class Result : System.Web.UI.Page
+{
+    //SqlConnection conn = new SqlConnection("Server=FSTROYSQL1; Initial Catalog=Vulcan_Product_Database;Persist Security Info=True;User ID=vulcancms;Password=Vulcan123");
+    SqlConnection conn = new SqlConnection("Data Source=fstroysql1;Initial Catalog=Vulcan_Product_Database;Persist Security Info=True;User ID=marriner;Password=Vulcan123");
+			
+	protected void Page_Load(object sender, EventArgs e)
+    {
+        string strName = "";
+		int size = Convert.ToInt32(Request.QueryString["Size"]);
+		switch (size) {
+			case 24:
+				strName = "24&quot; Endurance Range";
+			break;
+			case 36:
+				strName = "36&quot; Endurance Range";
+			break;
+			case 48:
+				strName = "48&quot; Endurance Range";
+			break;
+			case 60:
+				strName = "60&quot; Endurance Range";
+			break;
+			case 72:
+				strName = "72&quot; Endurance Range";
+			break;
+		}
+
+		//Populate product name
+		ProductName.Text = strName;
+		
+		//Populate configuration selections
+		string oven = Request.QueryString["oven"].ToString();
+        Oven.Text = oven;
+		string gas = Request.QueryString["gas"].ToString();
+        Gas.Text = gas;
+		string burners = Request.QueryString["burners"].ToString();
+        Burner.Text = burners;
+		string pan = Request.QueryString["pan"].ToString();
+        Sheet.Text = pan;
+		string panSQL = " ";
+		switch (pan) {
+			case "Front to Back":
+				panSQL = " AND panFTB=1";
+			break;
+			case "Front to Back & Side to Side":
+				panSQL = " AND panFTB=1 AND panSTS=1";
+			break;
+		}
+		string griddle = Request.QueryString["griddle"].ToString().Replace("-quot;","\"");
+        Griddle.Text = griddle;
+		string griddleSQL = " ";
+		switch (griddle) {
+			case "No Griddle":
+				griddleSQL = " AND griddle IS NULL";
+			break;
+			default:
+				griddleSQL = " AND griddle='" + griddle + "'";
+			break;
+		}
+        
+		string model1 = "";
+		string model2 = "";
+        
+		if (!IsPostBack)
+        {
+			try
+			{
+				SqlCommand cmd = new SqlCommand("SELECT modelNumber,modelNumber2,image FROM Configurator WHERE size=" + size + " AND oven LIKE '%" + oven + "%' AND gas='" + gas + "' AND burners=" + burners + panSQL + griddleSQL,conn);
+				SqlDataAdapter sda = new SqlDataAdapter(cmd);
+				DataTable dt = new DataTable();
+				sda.Fill(dt);
+				StringBuilder sb = new StringBuilder();
+				for (int i = 0; i < dt.Rows.Count; i++)
+				{
+					sb.Append("<div class='rc_model'>");
+					sb.Append(dt.Rows[i]["modelNumber"].ToString());
+					
+					if (dt.Rows[i]["modelNumber2"].ToString().Length > 0) {
+						sb.Append("/");
+						sb.Append(dt.Rows[i]["modelNumber2"].ToString());
+					}
+					
+					sb.Append("</div>");
+					sb.Append("<div class='modelExp'>");
+					sb.Append(Get_Resources(dt.Rows[i]["modelNumber"].ToString()));
+					sb.Append("<div class='specs_div'><a href='http://vulcanhart.kclcad.com/?search=" + dt.Rows[i]["modelNumber"].ToString() + "' target='_blank' class='specs'>CAD and Revit</a></div>");
+					sb.Append("<div class='specs_div'><a href='accessories.pdf' target='_blank' class='specs'>Accessories</a></div>");
+					sb.Append("</div>");
+
+					
+					
+					/*if (i > 0) {
+						sb.Append(", ");
+					}
+					sb.Append(dt.Rows[i]["modelNumber"].ToString());
+					if (dt.Rows[i]["modelNumber2"].ToString().Length > 0) {
+						sb.Append("/");
+						sb.Append(dt.Rows[i]["modelNumber2"].ToString());
+					}
+					
+					model1 = dt.Rows[i]["modelNumber"].ToString();
+					model2 = dt.Rows[i]["modelNumber2"].ToString(); */
+				}
+				ProductModel.Text = Convert.ToString(sb.ToString());
+				ProductImage.ImageUrl = dt.Rows[0]["image"].ToString(); 
+			}
+			catch (Exception ex)
+			{
+			}
+			
+			
+        }
+    }
+	
+	protected string Get_Resources(string ModelNum)
+    {
+        //Get Model Info from Resource Center Site
+		DataTable dt;
+		DataRow dr;
+		String Specs = "";
+
+		dt = Vulcan.Product.Lib.SharepointHelper.GetGrid(ModelNum);
+		
+		if (dt != null)
+		{
+			for(int i = 0; i < dt.Rows.Count; i++)
+			{
+				dr = dt.Rows[i];
+				string strTitle = dr["ows_Document Type"].ToString();
+				string strUrl = dr["ows_EncodedAbsUrl"].ToString();
+				
+				if(strTitle == "Spec Sheet")
+				{
+					Specs = "<div class='specs_div'><a class='specs' href='" + strUrl + "' target='_blank'>Spec Sheet</a></div>";
+				}
+				/*else if(strTitle == "Installation and Operation Manual" || strTitle == "Installation Manual" || strTitle == "Operation Manual")
+				{
+					Manual = "<a class='specs' href='" + strUrl + "' target='_blank'>Owners Manual</a>";
+				}
+				else if(strTitle == "Parts Catalog")
+				{
+					PartsCatelog = "<a class='specs' href='" + strUrl + "' target='_blank'>Parts Catalog</a>";
+				}
+				else if(strTitle == "Service Manual")
+				{
+					ServiceManual = "<a class='specs' href='" + strUrl + "' target='_blank'>Service Manual</a>";
+				} */
+			}
+		} 
+		return Specs;
+    }
+	
+    protected void btnSendMail_Click(object sender, EventArgs e)
+    {
+        string from = txtFromAddress.Text;
+        string to = txtToAddress.Text;
+        try
+        {
+            SmtpClient Client = new SmtpClient("smtp.1and1.com");
+            MailMessage MMessage = new MailMessage();
+            if (from != null && from != "" && to != null && to != "")
+            {
+                MailAddress FromAddress = new MailAddress(from, from);
+                MailAddress ToAddress = new MailAddress(to, to);
+                Client.Port = Convert.ToInt32("25");
+                MMessage.From = FromAddress;
+                MMessage.To.Add(ToAddress);
+                MMessage.Subject = "Endurance Range Configuration Results";
+                MMessage.IsBodyHtml = true;
+                MMessage.Body = EmailTemplate();
+                Client.Credentials = new NetworkCredential("karthik@thylaksoft.com", "mai$thyl@ksoft");
+                Client.Send(MMessage);
+            }
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+    public string EmailTemplate()
+    {
+        string OvenOption = Request.QueryString["oven"].ToString();
+        string GasOption = Request.QueryString["gas"].ToString();
+        string BurnerOption = Request.QueryString["burners"].ToString();
+        string SheetOption = Request.QueryString["pan"].ToString();
+        string GriddleOption = Request.QueryString["griddle"].ToString();
+        StringBuilder sb = new StringBuilder();
+        sb.Append("<table border='0'cellpadding='0' cellspacing='0' width='90%'>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Endurance Range Configuration</strong>");
+        sb.Append("</td></tr>");
+
+        sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Product Name:</strong> " + ProductName.Text);
+        sb.Append("</td></tr>");
+		
+		sb.Append("<tr><td>");
+        sb.Append("<strong>Model Number(s):</strong> " + ProductModel.Text);
+        sb.Append("</td></tr>");
+
+        sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Oven Options:</strong> " + OvenOption);
+        sb.Append("</td></tr>");
+
+        sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Gas Option:</strong> " + GasOption);
+        sb.Append("</td></tr>");
+
+        sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Burner Option:</strong> " + BurnerOption);
+        sb.Append("</td></tr>");
+
+        sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Sheet Option:</strong> " + SheetOption);
+        sb.Append("</td></tr>");
+
+		sb.Append("<tr><td style='height:10px;'></td></tr>");
+
+        sb.Append("<tr><td>");
+        sb.Append("<strong>Griddle Option:</strong> " + GriddleOption);
+        sb.Append("</td></tr>");
+
+        sb.Append("</table>");
+        string message = Convert.ToString(sb.ToString());
+        return message;
+    }
+}

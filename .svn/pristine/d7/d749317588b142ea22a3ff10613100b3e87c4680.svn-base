@@ -1,0 +1,149 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="Vulcan_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<title>Vulcan Equipment - Restaurant Ranges, Fryers, Griddles, Ovens</title>
+<meta name="description" content="Vulcan Equipment- For over 130 years, Vulcan has been recognized by chefs and operators throughout the world for top-quality, energy efficient commercial cooking equipment. ">
+
+<meta name="keywords" content="Range, Commercial range, Steel range, stainless steel range, stove, commercial stove, gas stove, gas range, oven, ovens, electric range, electric stove, commercial stove production, stove production, lp stove, lp gas stove, American range, open burner, griddle, burner, restaurant equipment, southbend, Blodgett, town, Vulcan, restaurant stove, restaurant range, restaurant gas range, restaurant equipment">
+    
+<link rel='stylesheet' type='text/css' href='/css/main.css'>
+<link rel='stylesheet' type='text/css' href='/Vulcan/css/site.css'>
+<script type="text/javascript" src="/floatbox/floatbox.js"></script>
+<link type="text/css" rel="stylesheet" href="/floatbox/floatbox.css" />
+<script type="text/javascript">    var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">    stLight.options({ publisher: "89b30a0a-0581-4ac6-97e1-cf1215d15a10" });</script>
+<script type="text/javascript">
+<!--
+    function MM_swapImgRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+        }
+    }
+
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+//-->
+</script>
+    <style type="text/css">
+		.bodytxt {
+			font-family:verdana, helvetica, arial, sans-serif;
+			font-size:11px;
+			color:#666666; 
+		}
+	</style>
+</head>
+<body onload="MM_preloadImages('/Vulcan/imgs/btn_aboutus_on.jpg','/Vulcan/imgs/btn_contactus_on.jpg','/Vulcan/imgs/btn_mediacenter_on.jpg')" class="page-blend-bak">
+    <form id="form1" runat="server" class="mainform">
+
+        
+
+<div align="center">
+<div align="center">
+	<table border="0" width="870" id="table1" cellspacing="0" cellpadding="0" height="20" >
+    	<TR>
+        	<TD align="left"><!--<img src="/imgs/canadian_flag.jpg"> <a href="http://www.hobart.ca/vulcan/"  target="_blank" class="small_links_red">Canada</a>--></TD>
+            <TD align="right"><a href="https://vulcan.itwfeg.com/VulcanFEGSales/redirect.aspx" class="small_links_blk" target="blank">Sign In</a>  | <a href="https://my.vulcanfeg.com/resourcecenter/vulcanwolfberkel/default.aspx" target="_new" class="small_links_blk">Resource Center</a> | <a href="http://kclcutsheets.com/vulcanhart/" target="_blank" class="small_links_blk">CAD Library</a> |  <a href="http://casportswearstore-vulcan.com/" target="_blank" class="small_links_blk">Apparel Store</a> |  <a href="http://www.vulcanequipment.com/k12/" target="_blank" class="small_links_blk">Vulcan K-12</a></TD>
+            <TD> </TD>
+        </TR>
+    </table>
+
+	<table border="0" width="870" id="table1" cellspacing="0" cellpadding="0" height="93" class="siteTop">
+		<tr>
+			<td valign="top">
+			<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td width="229" rowspan="3" align="center"><a href="http://www.vulcanequipment.com/Vulcan/"><img src="/imgs/spacer.gif" width="181" height="45" longdesc="/Vulcan/" alt="Vulcan Home" /></a></td>
+				  <td height="32" width="159"><a href="http://www.wolfequipment.com/Wolf/"><img border="0" src="/imgs/tab_wolf.gif" width="159" height="33"></a></td>
+					<td height="32" align="left" ><a href="http://www.berkelequipment.com/Berkel/"><img border="0" src="/imgs/tab_berkel.gif" width="147" height="32" /></a></td>
+					<td width="121" height="32">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="159">&nbsp;</td>
+					<td width="361">&nbsp;</td>
+					<td valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="159">&nbsp;</td>
+					<td width="361" align="right"><a href="/Vulcan/About_Us/?ekmensel=c580fa7b_90_0_1036_1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('aboutus','','/Vulcan/imgs/btn_aboutus_on.jpg',1)"><img src="/Vulcan/imgs/btn_aboutus.jpg" name="aboutus" width="96" height="23" border="0" id="aboutus" /></a> <a href="/Contact_Us/index.asp" rel="iframe" rev="width:475 height:585 scrolling:yes" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('contactus','','/Vulcan/imgs/btn_contactus_on.jpg',1)"><img src="/Vulcan/imgs/btn_contactus.jpg" name="contactus" width="96" height="23" border="0" id="contactus" /></a> <a href="/Vulcan/Media_Center/?ekmensel=c580fa7b_91_0_1063_1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('MediaCenter','','/Vulcan/imgs/btn_mediacenter_on.jpg',1)"><img src="/Vulcan/imgs/btn_mediacenter.jpg" name="MediaCenter" width="96" height="23" border="0" id="MediaCenter" alt="Press Releases, Articles and Upcoming Events"/></a> <a href="/Vulcan/Contact_Us/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('contactus','','/Vulcan/imgs/btn_contactus_on.jpg',1)"></a></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		  </td>
+		</tr>
+		
+	</table>
+
+
+	<table border="0" width="870" id="table6" cellspacing="0" cellpadding="0" height="26" class="btn_bak">
+		<tr>
+			<td align="center"><a href="/Vulcan/Products/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('products','','/imgs/btn_products_on.jpg',1)"><img src="/imgs/btn_products.jpg" name="products" width="116" height="26" border="0" id="products" /></a><a href="/Vulcan/Dealers/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('dealers','','/imgs/btn_dealers_on.jpg',1)"><img src="/imgs/btn_dealers.jpg" name="dealers" width="104" height="26" border="0" id="dealers" /></a><a href="/Vulcan/Service/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Service','','/imgs/btn_services_on.jpg',1)"><img src="/imgs/btn_services.jpg" name="Service" width="100" height="26" border="0" id="Service" /></a><a href="/Vulcan/Sales/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Sales','','/imgs/btn_sales_on.jpg',1)"><img src="/imgs/btn_sales.jpg" name="Sales" width="70" height="26" border="0" id="Sales" /></a><!--<a href="/Vulcan/Parts/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Parts','','/imgs/btn_parts_on.jpg',1)"><img src="/imgs/btn_parts.jpg" name="Parts" border="0" id="Parts" /></a> --></td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+<div align="center">		
+	<table border="0" width="870" style="border:1px solid #D8D8D8;border-top:none;border-bottom:none;">
+	    <tr>
+			<td width="705" style="padding-left:15px;border-right:thin dotted #CCCCCC;">
+				<table>
+					<tr>
+						<td width="651"><a href="/Vulcan/Products/Configuration/"><strong>Endurance Range Customizer</strong></a> | <asp:contentplaceholder id="PageTitlePlaceHolder" runat="server"></asp:contentplaceholder></td>
+						<td width="24" style="text-align:right;">
+							<span class='st_sharethis' displayText=''></span>
+						</td>
+						<td width="30">
+                        	<img src="Images/Print.jpg" width="28" height="23" alt="Print" onclick="javascript:window.print();" />
+						</td>
+					</tr>
+				</table>
+				<p><img src="Images/Heading.jpg" alt="Endurance Range Customizer - Build the product that best fits the needs of your organization." /></p>
+				<asp:contentplaceholder id="ContentPlaceHolder1" runat="server"></asp:contentplaceholder>
+			</td>
+			<td valign="top" width="150" style="text-align:center;">
+				<a href="ProductList.aspx"><img src="Images/callout_customizer.jpg" alt="Customize Now" height="208" width="136" border="0" /></a>
+				<a href="Questionnaire.aspx"><img src="Images/callout_questionnaire.png" alt="Take Questionnaire" height="236" width="136" border="0" style="margin-top:8px;" /></a>
+			</td>
+		</tr>
+	</table>
+	<table border="0" width="870" id="table5" cellspacing="0" cellpadding="0" class="siteEnd" height="29">
+		<tr>
+			<td align="left">
+				<div style="padding:10px; align:left;" class="footercopy">©2013. Vulcan is a division of the <a href="http://www.itw.com/" class="footercopy" target="_blank">ITW Food Equipment Group LLC</a></span><p>Notice  to all users: Carefully read the  <a href="/Notices/" rel="iframe" rev="width:525 height:550 scrolling:yes" class="footercopy"><strong>Terms of Use, Privacy Policy, International and Other Notices</strong></a> before using the website. By using this website, you signify you assent to all terms of these notices.&nbsp; If you do not agree, please disconnect from and do not use this website.</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</form>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-516396-39");
+		pageTracker._trackPageview();
+	} catch (err) {}
+</script>
+</body>
+</html>

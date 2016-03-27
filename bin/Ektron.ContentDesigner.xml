@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ektron.ContentDesigner</name>
+    </assembly>
+    <members>
+        <member name="T:Ektron.ContentDesigner.ContentDesigner">
+            <summary>
+            This class does the interfacing into the Telerik editor.
+            A derived server control class is required.
+            </summary>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.#ctor">
+            <summary>
+            Constructor for ContentDesigner.
+            </summary>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.ConfigureBaseEditor">
+            <summary>
+            This initializes the Telerik editor.
+            </summary>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.OnInit(System.EventArgs)">
+            <summary>
+            OnInit
+            </summary>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.RenderScriptFiles(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Outputs JavaScript files
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.OnLoad(System.EventArgs)">
+            <summary>
+            Handles onload
+            </summary>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="M:Ektron.ContentDesigner.ContentDesigner.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            The render method is used for rendering the Telerik editor.
+            RenderContents is the default placed in by the wizard,
+            but it is not called if derived from the Telerik editor.
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.DesignTime">
+            <summary>
+            Determins if the control is being rendered in VisualStudio.NET
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.CanModifyImg">
+            <summary>
+            Boolean Flag to indicate if current user can add images to the Ektron CMS Library
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.LibraryAllowed">
+            <summary>
+            Boolean Flag to indicate if current user can access Ektron CMS Library
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ToolsFile">
+            <summary>
+            String File Path to the configuration ToolsFile used in the editor
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.FolderId">
+            <summary>
+            Identification Number for the folder of the current content in the editor
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.Language">
+            <summary>
+            Language code for locale
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.UserLanguage">
+            <summary>
+            Locale ID for user interface
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ContentLanguage">
+            <summary>
+            Language code for content
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.SpellDictionaryLanguage">
+            <summary>
+            Spell checker Dictionary Language
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.NonPhoneticSpellCheckerLanguage">
+            <summary>
+            Non-Phonetic Spell checker Language
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.AccessChecks">
+            <summary>
+            Accessibility Enforcement check options
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.SchemaFiles">
+            <summary>
+            Schema Validation options
+            </summary>
+            <remarks>
+            For examples, "http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd" for XHTML 1.0 Transitional, 
+            "http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd" for XHTML 1.0 Strict and 
+            "http://www.w3.org/TR/2006/PR-xhtml-modularization-20060213/SCHEMA/xhtml11.xsd" for XHTML 1.1
+            </remarks>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.SchemaNamespaces">
+            <summary>
+            Namespaces used for the Schema Validation
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.EditorRenderingMode">
+            <summary>
+            Editor Rendering Mode
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.DataDocumentXml">
+            <summary>
+            XML for Data document
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.DataEntryXslt">
+            <summary>
+            Data entry XSLT for smartform
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.DataSchema">
+            <summary>
+            Data schema for smart form
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ScriptLocation">
+            <summary>
+            Location of script
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ScriptResourceLocation">
+            <summary>
+            Location of script resource
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ToolbarView">
+            <summary>
+            View of toolbar
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ToolbarMode">
+            <summary>
+            Toolbar mode
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.Content">
+            <summary>
+            	Gets or sets the content including the tags.
+            </summary>
+            <value>
+            	The text content including the tags. The default is
+            	<strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    The text returned by this property contains tags. If only the text is
+                    needed use the Text property.
+                </para>
+            	<para>
+                    The property is the same as the deprecated Html property.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.Html">
+            <summary>
+            Obsolete, please use Content
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.Xhtml">
+            <summary>
+            Obsolete, please use Content
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.RadControlsDir">
+            <summary>
+            Rad Controls directory
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.InternalParameters">
+            <summary>
+            Internal parameters for Rad Control
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientInit">
+            <summary>
+            Javascript to run for Rad Control init
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientLoad">
+            <summary>
+            Javascript to run after Rad Control is loaded
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientCommandExecuting">
+            <summary>
+            Javascript to run before command is executed
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientCommandExecuted">
+            <summary>
+            Javascript to run after command is executed
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientModeChange">
+            <summary>
+            Javascript to execute when client changes mode
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientSubmit">
+            <summary>
+            Javascript to run after a submit is done
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.OnClientCancel">
+            <summary>
+            Javascript to run when cancel is selected
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.EktronInitScript">
+            <summary>
+            JavaScript for initialization
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ConvertTagsToLower">
+            <summary>
+            Always 'true' to produce XHTML compliant content.
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ConvertToXhtml">
+            <summary>
+            Always 'true' to produce XHTML compliant content.
+            </summary>
+        </member>
+        <member name="P:Ektron.ContentDesigner.ContentDesigner.ContentIframeSrc">
+            <summary>
+            Generates URL for Content IFrame
+            </summary>
+        </member>
+        <member name="T:Ektron.ContentDesigner.ContentDesigner.AccessibilityCheck">
+            <summary>
+            The different levels of Accessibility Check for the Content created.
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.AccessibilityCheck.Enforce">
+            <summary>
+            Accessibility is required.
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.AccessibilityCheck.Warn">
+            <summary>
+            Accessibility is encouraged but not required.
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.AccessibilityCheck.None">
+            <summary>
+            Accessibility is not required.
+            </summary>
+        </member>
+        <member name="T:Ektron.ContentDesigner.ContentDesigner.EditorMode">
+            <summary>
+            The different modes of Editor that used for different type of content.
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.EditorMode.Design">
+            <summary>
+            for HTML content, smart form design and HTML form design.
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.EditorMode.DataEntry">
+            <summary>
+            for smart form data entry.
+            </summary>
+        </member>
+        <member name="T:Ektron.ContentDesigner.ContentDesigner.ToolbarVisibility">
+            <summary>
+            Visibility of toolbar
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.ToolbarVisibility.Hidden">
+            <summary>
+            toolbar is hidden
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.ToolbarVisibility.Default">
+            <summary>
+            default toolbar state
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.ToolbarVisibility.Floating">
+            <summary>
+            toolbar is floating
+            </summary>
+        </member>
+        <member name="F:Ektron.ContentDesigner.ContentDesigner.ToolbarVisibility.ShowOnFocus">
+            <summary>
+            show toolbar when it has focus
+            </summary>
+        </member>
+    </members>
+</doc>

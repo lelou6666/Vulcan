@@ -1,0 +1,76 @@
+@font-face {
+	font-family:"helvetica";
+	src:url('/fonts/helvitica.eot');
+	src:url('/fonts/helvitica.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/helvitica.woff') format('woff'),
+		url('/fonts/helvitica.ttf') format('truetype'),
+		url('/fonts/helvitica.svg#helveticaregular') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"helvetica bold";
+	src:url('/fonts/helvetica_bold.eot');
+	src:url('/fonts/helvetica_bold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/helvetica_bold.woff') format('woff'),
+		url('/fonts/helvetica_bold.ttf') format('truetype'),
+		url('/fonts/helvetica_bold.svg#helveticabold') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face {
+	font-family:"futura light condensed";
+	src:url('/fonts/futura_light_condensed.eot');
+	src:url('/fonts/futura_light_condensed.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_light_condensed.woff') format('woff'),
+		url('/fonts/futura_light_condensed.ttf') format('truetype'),
+		url('/fonts/futura_light_condensed.svg') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"futura medium condensed";
+	src:url('/fonts/futura_medium_condensed.eot');
+	src:url('/fonts/futura_medium_condensed.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_medium_condensed.woff') format('woff'),
+		url('/fonts/futura_medium_condensed.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"futura extra black condensed";
+	src:url('/fonts/futura_extra_black_condensed.eot');
+	src:url('/fonts/futura_extra_black_condensed.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_extra_black_condensed.woff') format('woff'),
+		url('/fonts/futura_extra_black_condensed.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"futura bold condensed";
+	src:url('/fonts/futura_bold_condensed.eot');
+	src:url('/fonts/futura_bold_condensed.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_bold_condensed.woff') format('woff'),
+		url('/fonts/futura_bold_condensed.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"futura light";
+	src:url('/fonts/futura_light.eot');
+	src:url('/fonts/futura_light.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_light.woff') format('woff'),
+		url('/fonts/futura_light.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"futura medium";
+	src:url('/fonts/futura_medium.eot');
+	src:url('/fonts/futura_medium.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/futura_medium.woff') format('woff'),
+		url('/fonts/futura_medium.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}

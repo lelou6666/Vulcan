@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CatapultAliasFile>
+    <Map Name="AddMembershipGroup" href="/Community_Management/Memberships_member_groups.htm#AddMembershipGroup" />
+    <Map Name="viewmembershipusers" href="/Community_Management/Memberships_member_groups.htm#viewmembershipusers" />
+    <Map Name="EditUserGroupToolBar" href="/Community_Management/Memberships_member_groups.htm#EditUserGroupToolBar" />
+    <Map Name="AddUserMemberToSystem" href="/Community_Management/Memberships_work_membership_users.htm#AddUserMemberToSystem" />
+    <Map Name="ViewMembershipGroups" href="/Community_Management/Memberships_member_groups.htm" />
+    <Map Name="viewmembershipuser" href="/Community_Management/Memberships_work_membership_users.htm#viewmembershipuser" />
+    <Map Name="EditMembershipUser" href="/Community_Management/Memberships_work_membership_users.htm#EditMembershipUser" />
+    <Map Name="vieweditcommunitytemplates" href="/Community_Management/Community_Management_assign_templates_groups_members.htm#vieweditcommunitytemplates" />
+    <Map Name="editcommunitygroup" href="/Community_Management/Community_Management_Comm_Groups.htm#editcommunitygroup" />
+    <Map Name="AddEditFlags" href="/Community_Management/Community_Management_flagging.htm#AddEditFlags" />
+    <Map Name="EditNotificationSettings" href="/Community_Management/Community_Management_Notifications_Managing Notification System.htm#EditNotificationSettings" />
+    <Map Name="ViewNotificationSettings" href="/Community_Management/Community_Management_Notifications_Managing Notification System.htm#ViewNotificationSettings" />
+    <Map Name="ViewAllActivityTypes" href="/Community_Management/Community_Management_Notifications_Activities that Trigger a Notification Message.htm" />
+    <Map Name="ViewActivityTypeMsg" href="/Community_Management/Community_Management_Notifications_Activities that Trigger a Notification Message.htm" />
+    <Map Name="ViewAllNotificationMsg" href="/Community_Management/Community_Management_Notifications_Notification Messages.htm" />
+    <Map Name="ViewNotificationMsg" href="/Community_Management/Community_Management_Notifications_Notification Messages.htm" />
+    <Map Name="EditNotificationMsg" href="/Community_Management/Community_Management_Notifications_Notification Messages.htm#EditNotificationMsg" />
+    <Map Name="AddNotificationMsg" href="/Community_Management/Community_Management_Notifications_Notification Messages.htm#AddNotificationMsg" />
+    <Map Name="ViewColleaguesSettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#ViewColleaguesSettings" />
+    <Map Name="EditColleaguesSettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#EditColleaguesSettings" />
+    <Map Name="ViewGroupsSettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#ViewGroupsSettings" />
+    <Map Name="EditGroupSettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#EditGroupSettings" />
+    <Map Name="ViewPrivacySettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#ViewPrivacySettings" />
+    <Map Name="EditPrivacySettings" href="/Community_Management/Community_Management_Notifications_Setting Default Notification Preferences.htm#EditPrivacySettings" />
+    <Map Name="default_group_tags" href="/Community_Management/Community_Management_tags.htm#default_group_tags" />
+    <Map Name="default_user_tags" href="/Community_Management/Community_Management_tags.htm#default_user_tags" />
+    <Map Name="default_content_tags" href="/Community_Management/Community_Management_tags.htm#default_content_tags" />
+    <Map Name="default_library_tags" href="/Community_Management/Community_Management_tags.htm#default_library_tags" />
+    <Map Name="ViewAllTags_ascx" href="/Community_Management/Community_Management_tags.htm#ViewAllTags_ascx" />
+    <Map Name="view_tag" href="/Community_Management/Community_Management_tags.htm#view_tag" />
+    <Map Name="unapprovedmessages" href="/Community_Management/Community_Management_sc_MessageBoard.htm#unapprovedmessages" />
+    <Map Name="CommunityAliasPageMaint" href="/Main_Import_file/URL_aliasing_community.htm#SettingupaCommunityAlias" />
+    <Map Name="view_msg" href="/Community_Management/Community_Management_sc_messaging.htm#view_sent_msg" />
+    <Map Name="Messaging_inbox" href="/Community_Management/Community_Management_sc_messaging.htm#messaging_inbox" />
+    <Map Name="composecommunitymsg" href="/Community_Management/Community_Management_sc_messaging.htm#composecommunitymsg" />
+    <Map Name="userpropviewallmessages" href="/Community_Management/Community_Management_email_invites.htm" />
+    <Map Name="viewallcommunitygroups" href="/Community_Management/Community_Management_Comm_Groups.htm" />
+    <Map Name="addcommunitygroup" href="/Community_Management/Community_Management_Comm_Groups.htm#addcommunitygroup" />
+    <Map Name="viewcommunitygroup" href="/Community_Management/Community_Management_Comm_Groups.htm#viewcommunitygroup" />
+    <Map Name="viewcommunitygroupmembers" href="/Community_Management/Community_Management_Comm_Groups.htm#viewcommunitygroupmembers" />
+    <Map Name="addcommunitygroupmembers" href="/Community_Management/Community_Management_Comm_Groups.htm#addcommunitygroupmembers" />
+    <Map Name="AddActivityTypeMsg" href="/Community_Management/Community_Management_Notifications_custom_activity_types.htm#addactivitytypemsg" />
+    <Map Name="EditActivityTypeMsg" href="/Community_Management/Community_Management_Notifications_custom_activity_types.htm#EditActivityTypeMsg" />
+    <Map Name="userpropViewSubscriptionEmailMessage" href="/Community_Management/Community_Management_email_invites.htm" />
+    <Map Name="userpropEditEmailMessage" href="/Community_Management/Community_Management_email_invites.htm" />
+    <Map Name="add_flagdef" href="/Community_Management/Community_Management_flagging.htm#add_flagdef" />
+    <Map Name="entryanalytics" href="/eCommerce/eCommerce Analytics.htm#entryanalytics" />
+    <Map Name="commerceaudit" href="/eCommerce/eCommerce audit screen.htm#commerceaudit" />
+    <Map Name="view" href="/eCommerce/eCommerce catalog entries.htm#view" />
+    <Map Name="addcatentry" href="/eCommerce/eCommerce catalog entries.htm#addcatentry" />
+    <Map Name="editcatentry" href="/eCommerce/eCommerce catalog entries.htm#editcatentry" />
+    <Map Name="addcatalog" href="/eCommerce/eCommerce catalog folder.htm#addcatalog" />
+    <Map Name="catalogedit" href="/eCommerce/eCommerce catalog folder.htm#catalogedit" />
+    <Map Name="country" href="/eCommerce/eCommerce countries.htm#country" />
+    <Map Name="viewcountry" href="/eCommerce/eCommerce countries.htm#viewcountry" />
+    <Map Name="addcountry" href="/eCommerce/eCommerce countries.htm#addcountry" />
+    <Map Name="editcountry" href="/eCommerce/eCommerce countries.htm#editcountry" />
+    <Map Name="countrytaxtable" href="/eCommerce/eCommerce country tax tables.htm#countrytaxtable" />
+    <Map Name="viewcountrytaxrate" href="/eCommerce/eCommerce country tax tables.htm#viewcountrytaxrate" />
+    <Map Name="editcountrytaxrate" href="/eCommerce/eCommerce country tax tables.htm#editcountrytaxrate" />
+    <Map Name="coupons_props" href="/eCommerce/eCommerce coupon create.htm#coupons_props" />
+    <Map Name="coupons_main" href="/eCommerce/eCommerce coupons intro.htm#coupons_main" />
+    <Map Name="cctype" href="/eCommerce/eCommerce credit cards.htm#cctype" />
+    <Map Name="viewcreditcardtype" href="/eCommerce/eCommerce credit cards.htm#viewcreditcardtype" />
+    <Map Name="AddCreditCardType" href="/eCommerce/eCommerce credit cards.htm#AddCreditCardType" />
+    <Map Name="editcreditcardtype" href="/eCommerce/eCommerce credit cards.htm#editcreditcardtype" />
+    <Map Name="currency" href="/eCommerce/eCommerce currencies.htm#currency" />
+    <Map Name="editexchangerates" href="/eCommerce/eCommerce currencies.htm#editexchangerates" />
+    <Map Name="editcurrency" href="/eCommerce/eCommerce currencies.htm#editcurrency" />
+    <Map Name="customers" href="/eCommerce/eCommerce customer info.htm#customers" />
+    <Map Name="viewcustomer" href="/eCommerce/eCommerce customer info.htm#viewcustomer" />
+    <Map Name="addaddress" href="/eCommerce/eCommerce customer info.htm#addaddress" />
+    <Map Name="editaddress" href="/eCommerce/eCommerce customer info.htm#editaddress" />
+    <Map Name="viewaddress" href="/eCommerce/eCommerce customer info.htm#viewaddress" />
+    <Map Name="viewcart" href="/eCommerce/eCommerce customer info.htm#viewcart" />
+    <Map Name="commerceviewallmessages" href="/eCommerce/eCommerce messages.htm#commerceviewallmessages" />
+    <Map Name="commerceviewsubscriptionemailmessage" href="/eCommerce/eCommerce messages.htm#commerceviewsubscriptionemailmessage" />
+    <Map Name="commerceeditemailmessage" href="/eCommerce/eCommerce messages.htm#commerceeditemailmessage" />
+    <Map Name="orders" href="/eCommerce/eCommerce orders.htm#orders" />
+    <Map Name="ordersmostrecent" href="/eCommerce/eCommerce orders.htm#ordersmostrecent" />
+    <Map Name="ordersbycustomer" href="/eCommerce/eCommerce orders.htm#ordersbycustomer" />
+    <Map Name="ordersbyproduct" href="/eCommerce/eCommerce orders.htm#ordersbyproduct" />
+    <Map Name="ordersbydates" href="/eCommerce/eCommerce orders.htm#ordersbydates" />
+    <Map Name="ordersvieworder" href="/eCommerce/eCommerce orders.htm#ordersvieworder" />
+    <Map Name="ordersshowpayment" href="/eCommerce/eCommerce orders.htm#ordersshowpayment" />
+    <Map Name="orderstrackingnumber" href="/eCommerce/eCommerce orders.htm#orderstrackingnumber" />
+    <Map Name="orderworkflow" href="/eCommerce/eCommerce orders.htm#orderworkflow" />
+    <Map Name="packages" href="/eCommerce/eCommerce packages.htm#packages" />
+    <Map Name="Viewpackage" href="/eCommerce/eCommerce packages.htm#Viewpackage" />
+    <Map Name="Addpackage" href="/eCommerce/eCommerce packages.htm#Addpackage" />
+    <Map Name="EditPackages" href="/eCommerce/eCommerce packages.htm#EditPackages" />
+    <Map Name="paymentgateway" href="/eCommerce/eCommerce payment options.htm#paymentgateway" />
+    <Map Name="viewpaymentgateway" href="/eCommerce/eCommerce payment options.htm#viewpaymentgateway" />
+    <Map Name="addpaymentgateway" href="/eCommerce/eCommerce payment options.htm#addpaymentgateway" />
+    <Map Name="editpaymentgateway" href="/eCommerce/eCommerce payment options.htm#editpaymentgateway" />
+    <Map Name="postalcodetaxrate" href="/eCommerce/eCommerce Postal Tax Tables.htm#postalcodetaxrate" />
+    <Map Name="viewpostalcodetaxrate" href="/eCommerce/eCommerce Postal Tax Tables.htm#viewpostalcodetaxrate" />
+    <Map Name="addpostalcodetaxrate" href="/eCommerce/eCommerce Postal Tax Tables.htm#addpostalcodetaxrate" />
+    <Map Name="editpostalcodetaxrate" href="/eCommerce/eCommerce Postal Tax Tables.htm#editpostalcodetaxrate" />
+    <Map Name="viewproducttypes" href="/eCommerce/eCommerce product types.htm#viewproducttypes" />
+    <Map Name="viewproducttype" href="/eCommerce/eCommerce product types.htm#viewproducttype" />
+    <Map Name="addproducttype" href="/eCommerce/eCommerce product types.htm#addproducttype" />
+    <Map Name="editproducttype" href="/eCommerce/eCommerce product types.htm#editproducttype" />
+    <Map Name="crosssell" href="/eCommerce/eCommerce Recommendations.htm#crosssell" />
+    <Map Name="upsell" href="/eCommerce/eCommerce Recommendations.htm#upsell" />
+    <Map Name="regionstaxtables" href="/eCommerce/eCommerce Regional Tax Tables.htm#regionstaxtables" />
+    <Map Name="viewregiontaxrate" href="/eCommerce/eCommerce Regional Tax Tables.htm#viewregiontaxrate" />
+    <Map Name="editregiontaxrate" href="/eCommerce/eCommerce Regional Tax Tables.htm#editregiontaxrate" />
+    <Map Name="region" href="/eCommerce/eCommerce regions.htm#region" />
+    <Map Name="viewregion" href="/eCommerce/eCommerce regions.htm#viewregion" />
+    <Map Name="addregion" href="/eCommerce/eCommerce regions.htm#addregion" />
+    <Map Name="editregion" href="/eCommerce/eCommerce regions.htm#editregion" />
+    <Map Name="customerreports" href="/eCommerce/Customer_Reports.htm#customerreports" />
+    <Map Name="keyperformanceindicators" href="/eCommerce/Key_Performance_Indicato.htm#keyperformanceindicators" />
+    <Map Name="paymentreports" href="/eCommerce/Payment_Reports.htm#paymentreports" />
+    <Map Name="salestrend" href="/eCommerce/Sales_Trends_Report.htm#salestrend" />
+    <Map Name="topproducts" href="/eCommerce/Top_Products_Report.htm#topproducts" />
+    <Map Name="ShippingMethods" href="/eCommerce/eCommerce shipping methods.htm#ShippingMethods" />
+    <Map Name="viewshippingmethod" href="/eCommerce/eCommerce shipping methods.htm#viewshippingmethod" />
+    <Map Name="addshippingmethod" href="/eCommerce/eCommerce shipping methods.htm#addshippingmethod" />
+    <Map Name="editshippingmethod_" href="/eCommerce/eCommerce shipping methods.htm#editshippingmethod_" />
+    <Map Name="reordershippingmethods" href="/eCommerce/eCommerce shipping methods.htm#reordershippingmethods" />
+    <Map Name="taxclass" href="/eCommerce/eCommerce tax class screens.htm#taxclass" />
+    <Map Name="viewtaxclass" href="/eCommerce/eCommerce tax class screens.htm#viewtaxclass" />
+    <Map Name="addtaxclass" href="/eCommerce/eCommerce tax class screens.htm#addtaxclass" />
+    <Map Name="edittaxclass" href="/eCommerce/eCommerce tax class screens.htm#edittaxclass" />
+    <Map Name="warehouses" href="/eCommerce/eCommerce warehouse.htm#warehouses" />
+    <Map Name="Viewwarehouse" href="/eCommerce/eCommerce warehouse.htm#Viewwarehouse" />
+    <Map Name="Addwarehouse" href="/eCommerce/eCommerce warehouse.htm#Addwarehouse" />
+    <Map Name="Editwarehouse" href="/eCommerce/eCommerce warehouse.htm#Editwarehouse" />
+    <Map Name="searchcatalogfolder" href="/eCommerce/eCommerce catalog folder.htm#searchcatalogfolder" />
+    <Map Name="addsync_ascx" href="/eSync/Setting_up_eSync_Pro.htm#addsync_ascx" />
+    <Map Name="syncfiles_ascx" href="/eSync/Setting_up_eSync_Pro.htm#syncfiles_ascx" />
+    <Map Name="viewallsync" href="/eSync/Synchronization_Scre.htm#viewallsync" />
+    <Map Name="esync_sec_cert" href="/eSync/Managing_eSync_Secur.htm" />
+    <Map Name="ViewAllSync" href="/eSync/Running_a_Sync.htm" />
+    <Map Name="viewsync_ascx" href="/eSync/Synchronization_Scre.htm" />
+    <Map Name="loginwebsite" href="/Main_Import_file/loginandout_login.htm#loginwebsite" />
+    <Map Name="navtoolbar_aspx" href="/Main_Import_file/workarea intro.htm#navtoolbar_aspx" />
+    <Map Name="dashboard_aspx" href="/Main_Import_file/workarea understand smart desktop.htm#dashboard.aspx" />
+    <Map Name="viewcontentbycategory" href="/Main_Import_file/Folder_view.htm#viewcontentbycategory" />
+    <Map Name="viewfolder" href="/Main_Import_file/Accessing_the_Folder_Pro.htm#viewfolder" />
+    <Map Name="editfolder" href="/Main_Import_file/Editing_Folder_Propertie.htm#editfolder" />
+    <Map Name="addsubfolder" href="/Main_Import_file/Folder_add_subfolders.htm#addsubfolder" />
+    <Map Name="purghistory" href="/Main_Import_file/Folder_Purge History.htm#purghistory" />
+    <Map Name="ViewApprovals" href="/Main_Import_file/Approvals_chain_creating_for_content_folder.htm#ViewApprovals" />
+    <Map Name="AddApproval" href="/Main_Import_file/Approvals_chain_creating_for_content_folder.htm#AddApproval" />
+    <Map Name="EditApprovalOrder" href="/Main_Import_file/Approvals_chain_creating_for_content_folder.htm#EditApprovalOrder" />
+    <Map Name="DeleteApproval" href="/Main_Import_file/Approvals_chain_creating_for_content_folder.htm#DeleteApproval" />
+    <Map Name="EditApprovalMethod" href="/Main_Import_file/Approvals_method.htm#EditApprovalMethod" />
+    <Map Name="ViewPermissions" href="/Main_Import_file/Permissions_setting_for_folder.htm#ViewPermissions" />
+    <Map Name="AddPermissions" href="/Main_Import_file/Permissions_setting_for_folder.htm#AddPermissions" />
+    <Map Name="SelectPermissions" href="/Main_Import_file/Permissions_setting_for_folder.htm#SelectPermissions" />
+    <Map Name="EditPermissions" href="/Main_Import_file/Permissions_setting_for_folder.htm#EditPermissions" />
+    <Map Name="DeletePermissions" href="/Main_Import_file/Permissions_setting_for_folder.htm#DeletePermissions" />
+    <Map Name="Viewcontent" href="/Main_Import_file/Viewing_Content_from_the.htm#Viewcontent" />
+    <Map Name="edittoolbar" href="/Main_Import_file/Steps_in_Editing_HTML_Co.htm#edittoolbar" />
+    <Map Name="MoveContentByCategory" href="/Main_Import_file/Content_move_copy.htm#MoveContentByCategory" />
+    <Map Name="MoveContent" href="/Main_Import_file/Moving_Or_Copying_One_Co.htm#MoveContent" />
+    <Map Name="ViewContentHistory" href="/Main_Import_file/The_Content_History_Wind.htm#ViewContentHistory" />
+    <Map Name="DeleteContentByCategory" href="/Main_Import_file/Deleting_Several_Content.htm#DeleteContentByCategory" />
+    <Map Name="LinkSearch" href="/Main_Import_file/Link_Checking.htm#LinkSearch" />
+    <Map Name="Viewstaged" href="/Main_Import_file/Staged_Content.htm#Viewstaged" />
+    <Map Name="ViewAllMetaDefinitions" href="/Main_Import_file/content_MetaData_metadata_definitions.htm" />
+    <Map Name="AddMetaDefinition" href="/Main_Import_file/content_MetaData_metadata_definitions.htm#Metadata_Definition_Fields" />
+    <Map Name="ViewMetaDefinition" href="/Main_Import_file/content_MetaData_metadata_definitions.htm#ViewMetaDefinition" />
+    <Map Name="EditMetaDefinition" href="/Main_Import_file/content_MetaData_metadata_definitions.htm#EditMetaDefinition" />
+    <Map Name="template_viewlist" href="/Main_Import_file/Declaring_Templates.htm#template_viewlist" />
+    <Map Name="template_add" href="/Main_Import_file/Declaring_Templates.htm#template_add" />
+    <Map Name="template_delete" href="/Main_Import_file/Declaring_Templates.htm#template_delete" />
+    <Map Name="template_update" href="/Main_Import_file/Declaring_Templates.htm#template_update" />
+    <Map Name="blog_viewarchivecontentbycategory" href="/Main_Import_file/scheduling_set_archive_options.htm#blog_viewarchivecontentbycategory" />
+    <Map Name="ViewArchiveContentByCategory" href="/Main_Import_file/scheduling_view_archive_content.htm#ViewArchiveContentByCategory" />
+    <Map Name="FormWizardStep1" href="/Main_Import_file/ewe400 forms creating new.htm#FormWizardStep1" />
+    <Map Name="FormWizardStep2" href="/Main_Import_file/ewe400 forms creating new.htm#FormWizardStep2" />
+    <Map Name="FormWizardStep3" href="/Main_Import_file/ewe400 forms creating new.htm#FormWizardStep3" />
+    <Map Name="FormWizardStep4" href="/Main_Import_file/ewe400 forms creating new.htm#FormWizardStep4" />
+    <Map Name="FormWizardStep5" href="/Main_Import_file/ewe400 forms create content.htm#FormWizardStep5" />
+    <Map Name="formreport" href="/Main_Import_file/Forms_view_reports.htm#formreport" />
+    <Map Name="ViewForm" href="/Main_Import_file/Forms_view_information.htm#ViewForm" />
+    <Map Name="editform" href="/Main_Import_file/Forms_editing.htm#editform" />
+    <Map Name="ViewAllXmlConfigurations" href="/Main_Import_file/smart_forms_before _you_manage.htm#ViewAllXmlConfigurations" />
+    <Map Name="AddXmlConfigurationV4" href="/Main_Import_file/smart_forms_add_new.htm#AddXmlConfigurationV4" />
+    <Map Name="EditPackage" href="/Main_Import_file/smart_forms_add_new.htm#EditPackage" />
+    <Map Name="ViewXMLConfiguration" href="/Main_Import_file/smart_forms_viewing.htm#ViewXMLConfiguration" />
+    <Map Name="EditXMLConfiguration" href="/Main_Import_file/smart_forms_editing.htm#EditXMLConfiguration" />
+    <Map Name="NewInheritConfiguration" href="/Main_Import_file/smart_forms_create_existing_configurations.htm#NewInheritConfiguration" />
+    <Map Name="DisplayXSLT" href="/Main_Import_file/smart_forms_view_DD_XSLTs.htm#DisplayXSLT" />
+    <Map Name="addmetadataforfiles" href="/Main_Import_file/asset_management_import_Office_docs.htm#addmetadataforfiles" />
+    <Map Name="assetserverconfig" href="/Main_Import_file/asset_management_doc_management_config.htm#assetserverconfig" />
+    <Map Name="AddBlogs" href="/Main_Import_file/Blogs_adding.htm#AddBlogs" />
+    <Map Name="blog_viewfolder" href="/Main_Import_file/Blogs_properties.htm#blog_viewfolder" />
+    <Map Name="blog_viewcontentbycategory" href="/Main_Import_file/Blogs_posts.htm#blog_viewcontentbycategory" />
+    <Map Name="blog_edittoolbar" href="/Main_Import_file/Blogs_posts.htm#blog_edittoolbar" />
+    <Map Name="blog_deletecontentbycategory" href="/Main_Import_file/Blogs_posts.htm#blog_deletecontentbycategory" />
+    <Map Name="blog_viewcontentbycategory_item" href="/Main_Import_file/Blogs_comments.htm#blog_viewcontentbycategory_item" />
+    <Map Name="AddComment" href="/Main_Import_file/Blogs_comments.htm#AddComment" />
+    <Map Name="EditComment" href="/Main_Import_file/Blogs_comments.htm#EditComment" />
+    <Map Name="AddDiscussionBoard" href="/Main_Import_file/Working_with_Discussion.htm#AddDiscussionBoard" />
+    <Map Name="ViewBoardProp" href="/Main_Import_file/Working_with_Discussion.htm#ViewBoardProp" />
+    <Map Name="discussionboard_viewcontentbycategory" href="/Main_Import_file/Working_with_Discussion.htm#discussionboard_viewcontentbycategory" />
+    <Map Name="EditBoard" href="/Main_Import_file/Working_with_Discussion.htm#EditBoard" />
+    <Map Name="AddBoardCategories" href="/Main_Import_file/Working_with_Discussion.htm#AddBoardCategories" />
+    <Map Name="discussionforum_viewcontentbycategory" href="/Main_Import_file/discussionforum_forums.htm#discussionforum_viewcontentbycategory" />
+    <Map Name="AddDiscussionForum" href="/Main_Import_file/discussionforum_forums.htm#AddDiscussionForum" />
+    <Map Name="ViewForumProp" href="/Main_Import_file/discussionforum_forums.htm#ViewForumProp" />
+    <Map Name="EditForum" href="/Main_Import_file/discussionforum_forums.htm#EditForum" />
+    <Map Name="discussionforum_deletecontentbycategory" href="/Main_Import_file/discussionforum_forums.htm#discussionforum_deletecontentbycategory" />
+    <Map Name="userranks" href="/Main_Import_file/discussionforum_forums.htm#userranks" />
+    <Map Name="AddTopic" href="/Main_Import_file/discussionforum_topics.htm#AddTopic" />
+    <Map Name="discussionforum_topics_viewcontentbycategory" href="/Main_Import_file/discussionforum_topics.htm#discussionforum_topics_viewcontentbycategory" />
+    <Map Name="EditTopic" href="/Main_Import_file/discussionforum_topics.htm#EditTopic" />
+    <Map Name="AddReply" href="/Main_Import_file/discussionforum_posts.htm#AddReply" />
+    <Map Name="EditReply" href="/Main_Import_file/discussionforum_posts.htm#EditReply" />
+    <Map Name="replaceword" href="/Main_Import_file/discussionforum_posts.htm#replaceword" />
+    <Map Name="emoticons" href="/Main_Import_file/discussionforum_posts.htm#emoticons" />
+    <Map Name="restrictip" href="/Main_Import_file/discussionforum_rest_IPAddress.htm#restrictip" />
+    <Map Name="viewboardperms" href="/Main_Import_file/discussionforum_permissions.htm#viewboardperms" />
+    <Map Name="selectboardperms" href="/Main_Import_file/discussionforum_permissions.htm#selectboardperms" />
+    <Map Name="addboardperms" href="/Main_Import_file/discussionforum_permissions.htm#addboardperms" />
+    <Map Name="deleteboardperms" href="/Main_Import_file/discussionforum_permissions.htm#deleteboardperms" />
+    <Map Name="editboardperms" href="/Main_Import_file/discussionforum_permissions.htm#editboardperms" />
+    <Map Name="forumViewAllMessages" href="/Main_Import_file/discussionforum_notifications.htm#forumViewAllMessages" />
+    <Map Name="SelFolder" href="/Main_Import_file/ContentReports_common_topics.htm#SelFolder" />
+    <Map Name="Selectemail" href="/Main_Import_file/ContentReports_common_topics.htm#Selectemail" />
+    <Map Name="Searchemail" href="/Main_Import_file/ContentReports_common_topics.htm#Searchemail" />
+    <Map Name="viewApprovalList" href="/Main_Import_file/ContentReports_approvals_report.htm#viewApprovalList" />
+    <Map Name="ViewCheckedIn" href="/Main_Import_file/ContentReports_checkedIn_report.htm#ViewCheckedIn" />
+    <Map Name="ViewCheckedOut" href="/Main_Import_file/ContentReports_checked_out.htm#ViewCheckedOut" />
+    <Map Name="ViewNewContent" href="/Main_Import_file/ContentReports_new_content_report.htm#ViewNewContent" />
+    <Map Name="ViewSubmitted" href="/Main_Import_file/ContentReports_submitted.htm#ViewSubmitted" />
+    <Map Name="ViewPending" href="/Main_Import_file/ContentReports_pending_start_date.htm#ViewPending" />
+    <Map Name="ViewRefreshReport" href="/Main_Import_file/ContentReports_refresh_reminder.htm#ViewRefreshReport" />
+    <Map Name="ViewExpired" href="/Main_Import_file/ContentReports_expired_content.htm#ViewExpired" />
+    <Map Name="ViewToExpire" href="/Main_Import_file/ContentReports_content_2_expire.htm#ViewToExpire" />
+    <Map Name="SiteUpdateActivity" href="/Main_Import_file/ContentReports_site update activity.htm#SiteUpdateActivity" />
+    <Map Name="viewsearchphrasereport" href="/Main_Import_file/ContentReports_search_phrase.htm#viewsearchphrasereport" />
+    <Map Name="badlinkcheck" href="/Main_Import_file/ContentReports_bad_links.htm#badlinkcheck" />
+    <Map Name="ContentStatistics" href="/Main_Import_file/Content_Review.htm#ContentStatistics" />
+    <Map Name="contentreviews" href="/Main_Import_file/Content_Review.htm#contentreviews" />
+    <Map Name="AddEditReviews" href="/Main_Import_file/Content_Review.htm#AddEditReviews" />
+    <Map Name="overview" href="/Main_Import_file/Viewing_Analytics_Data.htm#overview" />
+    <Map Name="CmsSearchTerm" href="/Main_Import_file/Viewing_Analytics_Data.htm#CmsSearchTerm" />
+    <Map Name="locations" href="/Main_Import_file/Viewing_Analytics_Data.htm#locations" />
+    <Map Name="newvsreturning" href="/Main_Import_file/Viewing_Analytics_Data.htm#newvsreturning" />
+    <Map Name="languages" href="/Main_Import_file/Viewing_Analytics_Data.htm#languages" />
+    <Map Name="userdefined" href="/Main_Import_file/Viewing_Analytics_Data.htm#userdefined" />
+    <Map Name="visits" href="/Main_Import_file/Viewing_Analytics_Data.htm#visits" />
+    <Map Name="absoluteuniquevisitors" href="/Main_Import_file/Viewing_Analytics_Data.htm#absoluteuniquevisitors" />
+    <Map Name="_pageviews" href="/Main_Import_file/Viewing_Analytics_Data.htm#_pageviews" />
+    <Map Name="averagepageviews" href="/Main_Import_file/Viewing_Analytics_Data.htm#averagepageviews" />
+    <Map Name="timeonsite" href="/Main_Import_file/Viewing_Analytics_Data.htm#timeonsite" />
+    <Map Name="bouncerate" href="/Main_Import_file/Viewing_Analytics_Data.htm#bouncerate" />
+    <Map Name="browsers" href="/Main_Import_file/Viewing_Analytics_Data.htm#browsers" />
+    <Map Name="os" href="/Main_Import_file/Viewing_Analytics_Data.htm#os" />
+    <Map Name="platforms" href="/Main_Import_file/Viewing_Analytics_Data.htm#platforms" />
+    <Map Name="colors" href="/Main_Import_file/Viewing_Analytics_Data.htm#colors" />
+    <Map Name="resolutions" href="/Main_Import_file/Viewing_Analytics_Data.htm#resolutions" />
+    <Map Name="flash" href="/Main_Import_file/Viewing_Analytics_Data.htm#flash" />
+    <Map Name="_java" href="/Main_Import_file/Viewing_Analytics_Data.htm#_java" />
+    <Map Name="networklocations" href="/Main_Import_file/Viewing_Analytics_Data.htm#networklocations" />
+    <Map Name="hostnames" href="/Main_Import_file/Viewing_Analytics_Data.htm#hostnames" />
+    <Map Name="connectionspeeds" href="/Main_Import_file/Viewing_Analytics_Data.htm#connectionspeeds" />
+    <Map Name="direct" href="/Main_Import_file/Viewing_Analytics_Data.htm#direct" />
+    <Map Name="referring" href="/Main_Import_file/Viewing_Analytics_Data.htm#referring" />
+    <Map Name="searchengines" href="/Main_Import_file/Viewing_Analytics_Data.htm#searchengines" />
+    <Map Name="trafficsources" href="/Main_Import_file/Viewing_Analytics_Data.htm#trafficsources" />
+    <Map Name="keywords" href="/Main_Import_file/Viewing_Analytics_Data.htm#keywords" />
+    <Map Name="campaigns" href="/Main_Import_file/Viewing_Analytics_Data.htm#campaigns" />
+    <Map Name="adversions" href="/Main_Import_file/Viewing_Analytics_Data.htm#adversions" />
+    <Map Name="topcontent" href="/Main_Import_file/Viewing_Analytics_Data.htm#topcontent" />
+    <Map Name="contentbytitle" href="/Main_Import_file/Viewing_Analytics_Data.htm#contentbytitle" />
+    <Map Name="toplanding" href="/Main_Import_file/Viewing_Analytics_Data.htm#toplanding" />
+    <Map Name="topexit" href="/Main_Import_file/Viewing_Analytics_Data.htm#topexit" />
+    <Map Name="ViewLibrarybyCategory" href="/Main_Import_file/library intro Terms.htm#ViewLibrarybyCategory" />
+    <Map Name="ViewLibrarySettings" href="/Main_Import_file/library folder props.htm#ViewLibrarySettings" />
+    <Map Name="editlibrarysettings" href="/Main_Import_file/library folder props.htm#editlibrarysettings" />
+    <Map Name="SearchLibraryFolder" href="/Main_Import_file/search library.htm#SearchLibraryFolder" />
+    <Map Name="addlibraryitem" href="/Main_Import_file/library files.htm#addlibraryitem" />
+    <Map Name="ViewLibraryItem" href="/Main_Import_file/library files.htm#ViewLibraryItem" />
+    <Map Name="EditLibraryItem" href="/Main_Import_file/library files.htm#EditLibraryItem" />
+    <Map Name="addlibraryitemoverwrite" href="/Main_Import_file/library files.htm#addlibraryitemoverwrite" />
+    <Map Name="dofindcontent" href="/Main_Import_file/library files.htm#dofindcontent" />
+    <Map Name="DeleteLibraryItem" href="/Main_Import_file/library files.htm#DeleteLibraryItem" />
+    <Map Name="UpdateQlinkTemplateByCategory" href="/Main_Import_file/library quicklinks and forms.htm#UpdateQlinkTemplateByCategory" />
+    <Map Name="ViewLoadBalance" href="/Main_Import_file/Library loadbalance.htm#ViewLoadBalance" />
+    <Map Name="SearchDataConfig" href="/Main_Import_file/The_Catalog_and_Index_Fi.htm#SearchDataConfig" />
+    <Map Name="Indexing_Services" href="/Main_Import_file/The_Catalog_and_Index_Fi.htm#IndexingService" />
+    <Map Name="synonymsets" href="/Main_Import_file/Synonym_Sets.htm#synonymsets" />
+    <Map Name="viewsynonymset" href="/Main_Import_file/Synonym_Sets.htm#viewsynonymset" />
+    <Map Name="addsynonymset" href="/Main_Import_file/Synonym_Sets.htm#addsynonymset" />
+    <Map Name="editsynonymset" href="/Main_Import_file/Synonym_Sets.htm#editsynonymset" />
+    <Map Name="suggestedresults" href="/Main_Import_file/Suggested_Results.htm#suggestedresults" />
+    <Map Name="addsuggestedresults" href="/Main_Import_file/Suggested_Results.htm#addsuggestedresults" />
+    <Map Name="addeditsuggestedresult" href="/Main_Import_file/Suggested_Results.htm#addeditsuggestedresult" />
+    <Map Name="editsuggestedresults" href="/Main_Import_file/Suggested_Results.htm#editsuggestedresults" />
+    <Map Name="AddIntegratedFolder" href="/Main_Import_file/integrated_search.htm#AddIntegratedFolder" />
+    <Map Name="ViewAllIntegratedFolders" href="/Main_Import_file/integrated_search.htm#ViewAllIntegratedFolders" />
+    <Map Name="ViewIntegratedFolder" href="/Main_Import_file/integrated_search.htm#ViewIntegratedFolder" />
+    <Map Name="EditIntegratedFolder" href="/Main_Import_file/integrated_search.htm#EditIntegratedFolder" />
+    <Map Name="showdlg" href="/Main_Import_file/search_workarea_intro_Accessing.htm#showdlg" />
+    <Map Name="SearchContentFolder" href="/Main_Import_file/search_workarea_intro_Accessing.htm#SearchContentFolder" />
+    <Map Name="ViewCollectionReport" href="/Main_Import_file/finding Collections.htm#ViewCollectionReport" />
+    <Map Name="view_collections_in_folder" href="/Main_Import_file/finding Collections.htm#view_collections_in_folder" />
+    <Map Name="ViewCollectionItems" href="/Main_Import_file/viewing Collections.htm#ViewCollectionItems" />
+    <Map Name="mainPage" href="/Main_Import_file/viewing Collections.htm#mainPage" />
+    <Map Name="addcollection" href="/Main_Import_file/creating collection.htm#addcollection" />
+    <Map Name="Add" href="/Main_Import_file/creating collection.htm#Add" />
+    <Map Name="addcollectionitems" href="/Main_Import_file/creating collection.htm#addcollectionitems" />
+    <Map Name="deletecollectionitems" href="/Main_Import_file/editing deleting Collections.htm#deletecollectionitems" />
+    <Map Name="ReOrderLinks" href="/Main_Import_file/reordering Collections.htm#ReOrderLinks" />
+    <Map Name="Edit" href="/Main_Import_file/editing Collections information.htm#Edit" />
+    <Map Name="AddMenu" href="/Main_Import_file/Menu_Managing.htm#AddMenu" />
+    <Map Name="EditMenu" href="/Main_Import_file/Menu_Managing.htm#EditMenu" />
+    <Map Name="AddMenuItem" href="/Main_Import_file/Menu_Managing.htm#AddMenuItem" />
+    <Map Name="AddLink" href="/Main_Import_file/Menu_Managing.htm#AddLink" />
+    <Map Name="AddMenuItems" href="/Main_Import_file/Menu_Managing.htm#AddMenuItems" />
+    <Map Name="pAddMenuItem" href="/Main_Import_file/Menu_Managing.htm#pAddMenuItem" />
+    <Map Name="AddSubMenu" href="/Main_Import_file/Menu_Managing.htm#AddSubMenu" />
+    <Map Name="EditMenuItem" href="/Main_Import_file/Menu_Managing.htm#EditMenuItem" />
+    <Map Name="ViewallMenus" href="/Main_Import_file/Menu_Managing.htm#ViewallMenus" />
+    <Map Name="ViewMenuReport" href="/Main_Import_file/Menu_Managing.htm#ViewMenuReport" />
+    <Map Name="ViewMenu" href="/Main_Import_file/Menu_Managing.htm#ViewMenu" />
+    <Map Name="ReorderMenuItems" href="/Main_Import_file/Menu_Managing.htm#ReorderMenuItems" />
+    <Map Name="DeleteMenuItem" href="/Main_Import_file/Menu_Managing.htm#DeleteMenuItem" />
+    <Map Name="Select_folder_menu" href="/Main_Import_file/Menu_assign_folder_template.htm#Select_folder_menu" />
+    <Map Name="AddTaxonomy" href="/Main_Import_file/taxonomy_intro.htm#AddTaxonomy" />
+    <Map Name="AddTaxonomyOrCategory" href="/Main_Import_file/taxonomy_creating.htm#AddTaxonomyOrCategory" />
+    <Map Name="AddTaxonomyOrCategoryItem" href="/Main_Import_file/taxonomy_assign_users_content.htm#Assigning_Content_to_a_Taxonomy_Category" />
+    <Map Name="AddTaxonomyOrCategoryFolder" href="/Main_Import_file/taxonomy_assign_users_content.htm#AddTaxonomyOrCategoryFolder" />
+    <Map Name="ViewAllTaxonomy" href="/Main_Import_file/taxonomy_addl_tasks.htm#ViewAllTaxonomy" />
+    <Map Name="ViewTaxonomyTree" href="/Main_Import_file/taxonomy_addl_tasks.htm#ViewTaxonomyTree" />
+    <Map Name="viewtaxonomyorcategory" href="/Main_Import_file/taxonomy_addl_tasks.htm#viewtaxonomyorcategory" />
+    <Map Name="EditTaxonomyOrCategory" href="/Main_Import_file/taxonomy_addl_tasks.htm#EditTaxonomyOrCategory" />
+    <Map Name="ReOrderTaxonomyOrCategoryItem" href="/Main_Import_file/taxonomy_addl_tasks.htm#ReOrderTaxonomyOrCategoryItem" />
+    <Map Name="ImportTaxonomy" href="/Main_Import_file/taxonomy_addl_tasks.htm#ImportTaxonomy" />
+    <Map Name="widgetsspace" href="/Main_Import_file/personalization_create_ind_personal_page.htm#widgetsspace" />
+    <Map Name="syncwidgets" href="/Main_Import_file/personalization_create_ind_personal_page.htm#syncwidgets" />
+    <Map Name="ViewAliasSettings" href="/Main_Import_file/URL_aliasing_configuring.htm#ViewAliasSettings" />
+    <Map Name="EditAliasSettings" href="/Main_Import_file/URL_aliasing_configuring.htm#EditAliasSettings" />
+    <Map Name="AutoAliasPageMaint" href="/Main_Import_file/URL_aliasing_automatic.htm" />
+    <Map Name="AddAutoAlias" href="/Main_Import_file/URL_aliasing_automatic.htm#AddAutoAlias" />
+    <Map Name="ViewAutoAlias" href="/Main_Import_file/URL_aliasing_automatic.htm#ViewAutoAlias" />
+    <Map Name="EditAutoAlias" href="/Main_Import_file/URL_aliasing_automatic.htm#EditAutoAlias" />
+    <Map Name="RemoveAutoAlias" href="/Main_Import_file/URL_aliasing_automatic.htm#RemoveAutoAlias" />
+    <Map Name="ManAliasPageMaint" href="/Main_Import_file/URL_aliasing_manual.htm#ManAliasPageMaint" />
+    <Map Name="AddManualAlias" href="/Main_Import_file/URL_aliasing_manual.htm#AddManualAlias" />
+    <Map Name="AddManAlias" href="/Main_Import_file/URL_aliasing_manual.htm#AddManAlias" />
+    <Map Name="ViewManAlias" href="/Main_Import_file/URL_aliasing_manual.htm#ViewManAlias" />
+    <Map Name="EditManAlias" href="/Main_Import_file/URL_aliasing_manual.htm#EditManAlias" />
+    <Map Name="url_alias_maintenance_remove" href="/Main_Import_file/URL_aliasing_manual.htm#url_alias_maintenance_remove" />
+    <Map Name="RemoveManAlias" href="/Main_Import_file/URL_aliasing_manual.htm#RemoveManAlias" />
+    <Map Name="RegExMaint" href="/Main_Import_file/URL_aliasing_regex.htm#RegExMaint" />
+    <Map Name="AddRegEx" href="/Main_Import_file/URL_aliasing_regex.htm#AddRegEx" />
+    <Map Name="ViewRegex" href="/Main_Import_file/URL_aliasing_regex.htm#ViewRegex" />
+    <Map Name="EditRegex" href="/Main_Import_file/URL_aliasing_regex.htm#EditRegex" />
+    <Map Name="RemoveRegEx" href="/Main_Import_file/URL_aliasing_regex.htm#RemoveRegEx" />
+    <Map Name="ViewTaskType" href="/Main_Import_file/Tasks_categories_types.htm#ViewTaskType" />
+    <Map Name="AddTaskType" href="/Main_Import_file/Tasks_categories_types.htm#AddTaskType" />
+    <Map Name="addtask" href="/Main_Import_file/Tasks_create content folder.htm#addtask" />
+    <Map Name="ViewTask" href="/Main_Import_file/Tasks_view.htm#ViewTask" />
+    <Map Name="viewtasks" href="/Main_Import_file/Viewing_All_Tasks.htm#viewtasks" />
+    <Map Name="EditTask" href="/Main_Import_file/Tasks_editing.htm#EditTask" />
+    <Map Name="Deletealltasks" href="/Main_Import_file/Tasks_delete.htm#Deletealltasks" />
+    <Map Name="view_rulesets" href="/Main_Import_file/BusinessRules_intro.htm#view_rulesets" />
+    <Map Name="AddRuleset" href="/Main_Import_file/BusinessRules_create_ruleset.htm#AddRuleset" />
+    <Map Name="view_ruleset" href="/Main_Import_file/BusinessRules_work_rulesets.htm#view_ruleset" />
+    <Map Name="edit_ruleset" href="/Main_Import_file/BusinessRules_work_rulesets.htm#edit_ruleset" />
+    <Map Name="RuleWizardStep1" href="/Main_Import_file/BusinessRules_work_rulesets.htm#RuleWizardStep1" />
+    <Map Name="rulewizardstep2" href="/Main_Import_file/BusinessRules_work_rulesets.htm#rulewizardstep2" />
+    <Map Name="rulewizardstep3" href="/Main_Import_file/BusinessRules_work_rulesets.htm#rulewizardstep3" />
+    <Map Name="rulewizardstep4" href="/Main_Import_file/BusinessRules_work_rulesets.htm#rulewizardstep4" />
+    <Map Name="SelectExistingRule" href="/Main_Import_file/BusinessRules_work_rulesets.htm#SelectExistingRule" />
+    <Map Name="ruleset_view_wizard" href="/Main_Import_file/BusinessRules_work_rulesets.htm#ruleset_view_wizard" />
+    <Map Name="languageadmin" href="/Main_Import_file/MultiLanguageSupport_work_w_multilang_content.htm#languageadmin" />
+    <Map Name="xliff.aspx" href="/Main_Import_file/MultiLanguageSupport_lang_export.htm#xliff.aspx" />
+    <Map Name="localize" href="/Main_Import_file/MultiLanguageSupport_lang_export.htm#localize" />
+    <Map Name="xliff" href="/Main_Import_file/MultiLanguageSupport_lang_export.htm#xliff" />
+    <Map Name="localizeexport" href="/Main_Import_file/MultiLanguageSupport_lang_export.htm#localizeexport" />
+    <Map Name="Import_XLIFF_Files" href="/Main_Import_file/MultiLanguageSupport_lang_export.htm#Import_XLIFF_Files" />
+    <Map Name="Viewnotverifiedusers" href="/Main_Import_file/webalert_users_signup_subscriptions.htm#Viewnotverifiedusers" />
+    <Map Name="ViewAllMessages" href="/Main_Import_file/webalert_create_message.htm#ViewAllMessages" />
+    <Map Name="AddSubscriptionEmailMessage" href="/Main_Import_file/webalert_create_message.htm#AddSubscriptionEmailMessage" />
+    <Map Name="EditEmailMessage" href="/Main_Import_file/webalert_create_message.htm#EditEmailMessage" />
+    <Map Name="ViewAllEmailFromAddresses" href="/Main_Import_file/webalert_create_message.htm#ViewAllEmailFromAddresses" />
+    <Map Name="viewemailfrom" href="/Main_Import_file/webalert_create_message.htm#viewemailfrom" />
+    <Map Name="EditSubscriptionEmailMessage" href="/Main_Import_file/webalert_create_message.htm#EditSubscriptionEmailMessage" />
+    <Map Name="AddEmailFrom" href="/Main_Import_file/webalert_create_message.htm#AddEmailFrom" />
+    <Map Name="AddEmailMessage" href="/Main_Import_file/webalert_create_message.htm#AddEmailMessage" />
+    <Map Name="viewasynchlogfile" href="/Main_Import_file/webalert_setup_message_queue.htm#viewasynchlogfile" />
+    <Map Name="ViewAllSubscriptions" href="/Main_Import_file/webalert_subscription.htm#ViewAllSubscriptions" />
+    <Map Name="viewsubscriptions" href="/Main_Import_file/webalert_subscription.htm#viewsubscriptions" />
+    <Map Name="EditSubscription" href="/Main_Import_file/webalert_subscription.htm#EditSubscription" />
+    <Map Name="AddSubscription" href="/Main_Import_file/webalert_subscription.htm#AddSubscription" />
+    <Map Name="ViewFontsByGroup" href="/Main_Import_file/FontsFolder.htm#ViewFontsByGroup" />
+    <Map Name="addfont" href="/Main_Import_file/FontsFolder.htm#addfont" />
+    <Map Name="viewfonts" href="/Main_Import_file/FontsFolder.htm#viewfonts" />
+    <Map Name="editfont" href="/Main_Import_file/FontsFolder.htm#editfont" />
+    <Map Name="configure_aspx" href="/Main_Import_file/setup screen.htm#configure_aspx" />
+    <Map Name="applicationsetup" href="/Main_Import_file/Viewing_Application_Setu.htm#applicationsetup" />
+    <Map Name="ApplicationSetupedit" href="/Main_Import_file/Updating_Setup_Informati.htm#ApplicationSetupedit" />
+    <Map Name="addusergrouptoolbar_none" href="/Main_Import_file/Active_Directory_Integra.htm#addusergrouptoolbar_none" />
+    <Map Name="display_mapcmsusergrouptoad" href="/Main_Import_file/Active_Directory_Integra.htm#display_mapcmsusergrouptoad" />
+    <Map Name="ADDomains" href="/Main_Import_file/Active_Directory_Integra.htm#ADDomains" />
+    <Map Name="viewadconfigure_ascx" href="/Main_Import_file/Active_Directory_Integra.htm#viewadconfigure_ascx" />
+    <Map Name="editadconfigure_ascx" href="/Main_Import_file/Active_Directory_Integra.htm#editadconfigure_ascx" />
+    <Map Name="viewallreporttypes" href="/Main_Import_file/Active_Directory_Integra.htm#viewallreporttypes" />
+    <Map Name="getusersforsynch" href="/Main_Import_file/Active_Directory_Integra.htm#getusersforsynch" />
+    <Map Name="getrelationshipsforsynch" href="/Main_Import_file/Active_Directory_Integra.htm#getrelationshipsforsynch" />
+    <Map Name="getgroupsforsynch" href="/Main_Import_file/Active_Directory_Integra.htm#getgroupsforsynch" />
+    <Map Name="desynchusers" href="/Main_Import_file/Active_Directory_Integra.htm#desynchusers" />
+    <Map Name="DropRoleMembers" href="/Main_Import_file/roles.htm#DropRoleMembers" />
+    <Map Name="viewrolemembers_aliasadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_aliasadmin" />
+    <Map Name="addrolemembers_aliasadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_aliasadmin" />
+    <Map Name="droprolemembers_aliasadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_aliasadmin" />
+    <Map Name="viewrolemembers_aliasedit" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_aliasedit" />
+    <Map Name="droprolemembers_aliasedit" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_aliasedit" />
+    <Map Name="addrolemembers_aliasedit" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_aliasedit" />
+    <Map Name="viewrolemembers_analyticsviewer" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_analyticsviewer" />
+    <Map Name="droprolemembers_analyticsviewer" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_analyticsviewer" />
+    <Map Name="viewrolemembers_ruleedit" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_ruleedit" />
+    <Map Name="droprolemembers_ruleedit" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_ruleedit" />
+    <Map Name="addrolemembers_ruleedit" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_ruleedit" />
+    <Map Name="viewrolemembers_calendaradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_calendaradmin" />
+    <Map Name="droprolemembers_calendaradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_calendaradmin" />
+    <Map Name="addrolemembers_calendaradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_calendaradmin" />
+    <Map Name="viewrolemembers_collectionmenuadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_collectionmenuadmin" />
+    <Map Name="droprolemembers_collectionmenuadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_collectionmenuadmin" />
+    <Map Name="addrolemembers_collectionmenuadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_collectionmenuadmin" />
+    <Map Name="viewrolemembers_collectionapprovers" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_collectionapprovers" />
+    <Map Name="droprolemembers_collectionapprovers" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_collectionapprovers" />
+    <Map Name="addrolemembers_collectionapprovers" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_collectionapprovers" />
+    <Map Name="viewrolemembers_commerceadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_commerceadmin" />
+    <Map Name="droprolemembers_commerceadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_commerceadmin" />
+    <Map Name="addrolemembers_commerceadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_commerceadmin" />
+    <Map Name="viewrolemembers_communityadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_communityadmin" />
+    <Map Name="addrolemembers_communityadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_communityadmin" />
+    <Map Name="droprolemembers_communityadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_communityadmin" />
+    <Map Name="viewrolemembers_communitygroupadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_communitygroupadmin" />
+    <Map Name="addrolemembers_communitygroupadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_communitygroupadmin" />
+    <Map Name="droprolemembers_communitygroupadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_communitygroupadmin" />
+    <Map Name="viewrolemembers_communitygroupcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_communitygroupcreate" />
+    <Map Name="addrolemembers_communitygroupcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_communitygroupcreate" />
+    <Map Name="droprolemembers_communitygroupcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_communitygroupcreate" />
+    <Map Name="viewrolemembers_metadataadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_metadataadmin" />
+    <Map Name="droprolemembers_metadataadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_metadataadmin" />
+    <Map Name="addrolemembers_metadataadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_metadataadmin" />
+    <Map Name="viewrolemembers_multivariatetester" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_multivariatetester" />
+    <Map Name="droprolemembers_multivariatetester" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_multivariatetester" />
+    <Map Name="addrolemembers_multivariatetester" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_multivariatetester" />
+    <Map Name="viewrolemembers_xmlconfigadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_xmlconfigadmin" />
+    <Map Name="droprolemembers_xmlconfigadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_xmlconfigadmin" />
+    <Map Name="addrolemembers_xmlconfigadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_xmlconfigadmin" />
+    <Map Name="viewrolemembers_taskcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_taskcreate" />
+    <Map Name="droprolemembers_taskcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_taskcreate" />
+    <Map Name="addrolemembers_taskcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_taskcreate" />
+    <Map Name="viewrolemembers_taskdelete" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_taskdelete" />
+    <Map Name="addrolemembers_taskdelete" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_taskdelete" />
+    <Map Name="droprolemembers_taskdelete" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_taskdelete" />
+    <Map Name="viewrolemembers_taskredirect" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_taskredirect" />
+    <Map Name="droprolemembers_taskredirect" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_taskredirect" />
+    <Map Name="addrolemembers_taskredirect" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_taskredirect" />
+    <Map Name="viewrolemembers_taxonomyadministrator" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_taxonomyadministrator" />
+    <Map Name="droprolemembers_taxonomyadministrator" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_taxonomyadministrator" />
+    <Map Name="addrolemembers_taxonomyadministrator" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_taxonomyadministrator" />
+    <Map Name="viewrolemembers_templateconfig" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_templateconfig" />
+    <Map Name="droprolemembers_templateconfig" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_templateconfig" />
+    <Map Name="addrolemembers_templateconfig" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_templateconfig" />
+    <Map Name="viewrolemembers_useradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_useradmin" />
+    <Map Name="droprolemembers_useradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_useradmin" />
+    <Map Name="addrolemembers_useradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_useradmin" />
+    <Map Name="viewrolemembers_xliffadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_xliffadmin" />
+    <Map Name="droprolemembers_xliffadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_xliffadmin" />
+    <Map Name="addrolemembers_xliffadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_xliffadmin" />
+    <Map Name="viewrolemembers_syncadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_syncadmin" />
+    <Map Name="addrolemembers_syncadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_syncadmin" />
+    <Map Name="droprolemembers_syncadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_syncadmin" />
+    <Map Name="viewrolemembers_messageboardadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_messageboardadmin" />
+    <Map Name="addrolemembers_messageboardadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_messageboardadmin" />
+    <Map Name="droprolemembers_messageboardadmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_messageboardadmin" />
+    <Map Name="viewrolemembers_folderuseradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_folderuseradmin" />
+    <Map Name="droprolemembers_folderuseradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_folderuseradmin" />
+    <Map Name="addrolemembers_folderuseradmin" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_folderuseradmin" />
+    <Map Name="viewrolemembers_moveorcopy" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_moveorcopy" />
+    <Map Name="addrolemembers_moveorcopy" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_moveorcopy" />
+    <Map Name="droprolemembers_moveorcopy" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_moveorcopy" />
+    <Map Name="ViewCustomRoles" href="/Main_Import_file/Screen_Descriptions_for.htm#ViewCustomRoles" />
+    <Map Name="DeleteCustomRoles" href="/Main_Import_file/Screen_Descriptions_for.htm#DeleteCustomRoles" />
+    <Map Name="AddCustomRoles" href="/Main_Import_file/Screen_Descriptions_for.htm#AddCustomRoles" />
+    <Map Name="ViewUserGroupstoolbar" href="/Main_Import_file/Users_UserGroups_managing_user_groups.htm#ViewUserGroupstoolbar" />
+    <Map Name="AddUserGroupToolbar" href="/Main_Import_file/Users_UserGroups_managing_user_groups.htm#AddUserGroupToolbar" />
+    <Map Name="AddUserToGrouptoolbar" href="/Main_Import_file/Users_UserGroups_managing_user_groups.htm#AddUserToGrouptoolbar" />
+    <Map Name="ViewUsersByGroupToolBar" href="/Main_Import_file/Users_UserGroups_managing_user_groups.htm#ViewUsersByGroupToolBar" />
+    <Map Name="Editusers_ascx" href="/Main_Import_file/Users_UserGroups_managing_users.htm#Editusers_ascx" />
+    <Map Name="viewusers_ascx" href="/Main_Import_file/Users_UserGroups_managing_users.htm#viewusers_ascx" />
+    <Map Name="edituseronly_ascx" href="/Main_Import_file/Users_UserGroups_managing_users.htm#edituseronly_ascx" />
+    <Map Name="Settings &gt; Configuration &gt; Custom Properties" href="/Main_Import_file/CustUserProps.htm#ViewCustomProperties" />
+    <Map Name="AddCustomProperty" href="/Main_Import_file/custom_properties.htm" />
+    <Map Name="ReorderCustomProperties" href="/Main_Import_file/CustUserProps.htm#ReorderCustomProperties" />
+    <Map Name="calendar_addsubfolder" href="/Main_Import_file/CreatingCalendar.htm" />
+    <Map Name="add_flagdef" href="/Main_Import_file/EktronService.htm#EktronService_3117580181_99308" />
+    <Map Name="calendar_viewcontentbycategory" href="/Main_Import_file/WebPage Interface.htm#calendar_viewcontentbycategory" />
+    <Map Name="Calendar_Edit_Event" href="/Main_Import_file/Adding Event.htm" />
+    <Map Name="calendar_viewfolder" href="/Main_Import_file/Changing Calendar Properties.htm" />
+    <Map Name="calendar_editfolder" href="/Main_Import_file/Changing Calendar Properties.htm#calendar_editfolder" />
+    <Map Name="site_analytics" href="/Main_Import_file/Viewing_Analytics_Data.htm" />
+    <Map Name="MostPopWidget" href="/Main_Import_file/Most_popular_widget.htm" />
+    <Map Name="ViewCustomProperties" href="/Main_Import_file/custom properties intro.htm" />
+    <Map Name="addrolemembers_masterlayoutcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#addrolemembers_masterlayoutcreate" />
+    <Map Name="viewrolemembers_masterlayoutcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#viewrolemembers_masterlayoutcreate" />
+    <Map Name="droprolemembers_masterlayoutcreate" href="/Main_Import_file/Screen_Descriptions_for.htm#droprolemembers_masterlayoutcreate" />
+    <Map Name="LoadBalancingRefresh_v801" href="/Main_Import_file/LoadBalancing_801.htm#RefreshingLoadBalancedFiles" />
+    <Map Name="ViewContentHistoryList" href="/Main_Import_file/The_Content_History_Wind.htm" />
+    <Map Name="CommunityAliasPageMaint" href="/Main_Import_file/URL_aliasing_community.htm" />
+    <Map Name="contentanalytics" href="/Main_Import_file/classic_analytics.htm#Site" />
+    <Map Name="contentanalytics_topcontent" href="/Main_Import_file/classic_analytics.htm#Top2" />
+    <Map Name="contentanalytics_toppages" href="/Main_Import_file/classic_analytics.htm#Top" />
+    <Map Name="contentanalytics_topreferrers" href="/Main_Import_file/classic_analytics.htm#Top3" />
+    <Map Name="addcommunityalias" href="/Main_Import_file/URL_aliasing_community.htm#SettingupaCommunityAlias" />
+    <Map Name="viewcommunityalias" href="/Main_Import_file/URL_aliasing_community.htm#Viewing_and_Editing_Community_Alias_Configuration" />
+    <Map Name="removecommunityalias" href="/Main_Import_file/URL_aliasing_community.htm#Deleting_a_Community_Aliasing_Configuration" />
+    <Map Name="editcommunityalias" href="/Main_Import_file/URL_aliasing_community.htm#Viewing_and_Editing_Community_Alias_Configuration" />
+    <Map Name="edit_flagdef" href="/Community_Management/Community_Management_flagging.htm#Edit_a_Flagging_Definition" />
+    <Map Name="contentflags" href="/Community_Management/Community_Management_flagging.htm#Flagged_Content" />
+    <Map Name="view_flagdef" href="/Community_Management/Community_Management_flagging.htm#Flagging_Definitions" />
+    <Map Name="rightclick" href="/Main_Import_file/loginandout_login.htm" />
+    <Map Name="selectcopymovetaxonomy" href="/Main_Import_file/taxonomy_addl_tasks.htm#Copying_and_Moving" />
+    <Map Name="editcontentproperties_ecom" href="/eCommerce/eCommerce catalog entries.htm#editcontentproperties_ecom" />
+    <Map Name="editcontentproperties" href="/Main_Import_file/Viewing_Content_from_the.htm#editcontentproperties" />
+    <Map Name="addwikilink" href="/Main_Import_file/wiki.htm#addwikilink" />
+    <Map Name="sentmessages" href="/Community_Management/Community_Management_sc_messaging.htm#sentmessages" />
+    <Map Name="view_msg" href="/Community_Management/Community_Management_sc_messaging.htm#view_sent_msg" />
+    <Map Name="composecommunitymsg" href="/Community_Management/Community_Management_sc_messaging.htm#composecommunitymsg" />
+    <Map Name="Messaging_inbox" href="/Community_Management/Community_Management_sc_messaging.htm#messaging_inbox" />
+    <Map Name="EditPreApproval" href="/Main_Import_file/Tasks_auto_create.htm#EditPreApproval" />
+    <Map Name="addagents" href="/Community_Management/Community_Management_Notifications_Notification Agents.htm#addagents" />
+    <Map Name="viewallagents" href="/Community_Management/Community_Management_Notifications_Notification Agents.htm#viewallagents" />
+</CatapultAliasFile>
